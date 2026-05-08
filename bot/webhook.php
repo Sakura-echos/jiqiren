@@ -58,12 +58,8 @@ try {
     
     error_log("[STEP 2] config.php require statement completed");
     
-    // 立即测试是否真的加载成功
-    if (defined('BOT_TOKEN')) {
-        error_log("[STEP 3] BOT_TOKEN is defined, config loaded successfully");
-    } else {
-        error_log("[STEP 3] ERROR: BOT_TOKEN not defined after require");
-    }
+    // config.php 加载完成
+    error_log("[STEP 3] config.php loaded successfully");
     
 } catch (Exception $e) {
     error_log("Failed to load config.php: " . $e->getMessage());
@@ -1555,9 +1551,9 @@ function sendUserAccountMessage($db, $chat_id, $message_text, $reply_to_message_
         $settings->getSerialization()->setInterval(60); // 60秒序列化一次
         error_log("Configured serialization interval for webhook: 60 seconds");
         
-        // 配置 API 凭证
-        $api_id = defined('TELEGRAM_API_ID') ? TELEGRAM_API_ID : 38356810;
-        $api_hash = defined('TELEGRAM_API_HASH') ? TELEGRAM_API_HASH : 'd9d6bd0d866623c86d0994cafef50147';
+        // 配置 API 凭证（统一从 config.php 读取）
+        $api_id = TELEGRAM_API_ID;
+        $api_hash = TELEGRAM_API_HASH;
         $settings->getAppInfo()->setApiId($api_id);
         $settings->getAppInfo()->setApiHash($api_hash);
         

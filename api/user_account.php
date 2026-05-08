@@ -100,9 +100,9 @@ userAccountLog("php executable: " . (is_executable('/www/server/php/82/bin/php')
                 $settings = new Settings;
                 userAccountLog("✓ Settings 创建成功");
                 
-                // 配置 API 凭证（从 config.php 读取）
-                $api_id = defined('TELEGRAM_API_ID') ? TELEGRAM_API_ID : 38356810;
-                $api_hash = defined('TELEGRAM_API_HASH') ? TELEGRAM_API_HASH : 'd9d6bd0d866623c86d0994cafef50147';
+                // 配置 API 凭证（统一从 config.php 读取）
+                $api_id = TELEGRAM_API_ID;
+                $api_hash = TELEGRAM_API_HASH;
                 userAccountLog("API ID: " . $api_id);
                 userAccountLog("API Hash: " . substr($api_hash, 0, 10) . "...");
                 
@@ -205,9 +205,9 @@ userAccountLog("php executable: " . (is_executable('/www/server/php/82/bin/php')
                 // 创建 MadelineProto 设置
                 $settings = new Settings;
                 
-                // 配置 API 凭证（从 config.php 读取）
-                $api_id = defined('TELEGRAM_API_ID') ? TELEGRAM_API_ID : 38356810;
-                $api_hash = defined('TELEGRAM_API_HASH') ? TELEGRAM_API_HASH : 'd9d6bd0d866623c86d0994cafef50147';
+                // 配置 API 凭证（统一从 config.php 读取）
+                $api_id = TELEGRAM_API_ID;
+                $api_hash = TELEGRAM_API_HASH;
                 
                 $settings->getAppInfo()->setApiId($api_id);
                 $settings->getAppInfo()->setApiHash($api_hash);

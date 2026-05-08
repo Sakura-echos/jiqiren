@@ -56,9 +56,9 @@ try {
     $settings->getLogger()->setExtra(dirname($session_file) . '/madeline.log');
     $settings->getLogger()->setLevel(Logger::ERROR);
     
-    // 配置 API 凭证
-    $api_id = defined('TELEGRAM_API_ID') ? TELEGRAM_API_ID : 38356810;
-    $api_hash = defined('TELEGRAM_API_HASH') ? TELEGRAM_API_HASH : 'd9d6bd0d866623c86d0994cafef50147';
+    // 配置 API 凭证（统一从 config.php 读取）
+    $api_id = TELEGRAM_API_ID;
+    $api_hash = TELEGRAM_API_HASH;
     $settings->getAppInfo()->setApiId($api_id);
     $settings->getAppInfo()->setApiHash($api_hash);
     
