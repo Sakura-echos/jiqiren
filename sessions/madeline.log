@@ -1,0 +1,2562 @@
+Logger:         	MadelineProto 8.0.0-beta144
+Logger:         	Copyright (C) 2016-2026 Daniil Gentili
+Logger:         	Licensed under AGPLv3
+Logger:         	https://github.com/danog/MadelineProto
+Exception:      	file_get_contents(): SSL operation failed with code 1. OpenSSL Error messages:
+error:1407742E:SSL routines:SSL23_GET_SERVER_HELLO:tlsv1 alert protocol version in Magic.php:318
+MTProto:        	The database settings have changed!
+MTProto:        	The serialization settings have changed!
+DataCenter:     	Connecting to DC 2 from scratch
+DataCenterConnection: 	Trying shared connection via tcp://149.154.167.51:443 main DC 2, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC 2.0
+Session:        	Resetting session in DC 2.0...
+Connection:     	Connected to DC 2.0!
+DataCenterConnection: 	Restoring 0 messages to DC 2
+DataCenterConnection: 	Flushing pending messages, DC 2
+DataCenter:     	OK!
+MTProto:        	Initing authorization...
+DataCenterConnection: 	Initing auth for DC 2
+DataCenterConnection: 	Generating permanent authorization key for DC 2...
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Auth key generated
+DataCenterConnection: 	Generating temporary authorization key for DC 2...
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Auth key generated
+DataCenterConnection: 	Bound temporary and permanent authorization keys, DC 2
+WriteLoop:      	Writing client info (also executing help.getConfig)...
+DataCenterConnection: 	Flushing pending messages, DC 2
+MTProto:        	Done initing authorization!
+MTProto:        	Starting update system
+DataCenterConnection: 	Flushing pending messages, DC 2
+MTProto:        	Got new DC options, reconnecting
+DataCenter:     	Connecting to DC 1 from scratch
+DataCenterConnection: 	Trying shared connection via tcp://149.154.175.58:443 main DC 1, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC 1.0
+Session:        	Resetting session in DC 1.0...
+DataCenter:     	Not reconnecting to DC 2 (-1)
+DataCenter:     	Connecting to DC -2 from scratch
+DataCenterConnection: 	Trying shared connection via tcp://149.154.167.151:443 main DC -2, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC -2.0
+Session:        	Resetting session in DC -2.0...
+DataCenter:     	Connecting to DC 3 from scratch
+DataCenterConnection: 	Trying shared connection via tcp://149.154.175.100:443 main DC 3, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC 3.0
+Session:        	Resetting session in DC 3.0...
+DataCenter:     	Connecting to DC 4 from scratch
+DataCenterConnection: 	Trying shared connection via tcp://149.154.167.92:443 main DC 4, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC 4.0
+Session:        	Resetting session in DC 4.0...
+DataCenter:     	Connecting to DC -4 from scratch
+DataCenterConnection: 	Trying shared connection via tcp://149.154.165.96:443 main DC -4, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC -4.0
+Session:        	Resetting session in DC -4.0...
+DataCenter:     	Connecting to DC 5 from scratch
+DataCenterConnection: 	Trying shared connection via tcp://91.108.56.182:443 main DC 5, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC 5.0
+Session:        	Resetting session in DC 5.0...
+PingLoop:       	Ping DC 2.0
+MTProto:        	Initing auth 2
+MTProto:        	Initing auth 2
+MTProto:        	Initing auth 2
+Connection:     	Connected to DC 1.0!
+DataCenterConnection: 	Restoring 0 messages to DC 1
+DataCenterConnection: 	Flushing pending messages, DC 1
+DataCenter:     	OK!
+Connection:     	Connected to DC 3.0!
+DataCenterConnection: 	Restoring 0 messages to DC 3
+DataCenterConnection: 	Flushing pending messages, DC 3
+DataCenter:     	OK!
+Connection:     	Connected to DC -4.0!
+DataCenterConnection: 	Restoring 0 messages to DC -4
+DataCenterConnection: 	Flushing pending messages, DC -4
+DataCenter:     	OK!
+Connection:     	Connected to DC -2.0!
+DataCenterConnection: 	Restoring 0 messages to DC -2
+DataCenterConnection: 	Flushing pending messages, DC -2
+DataCenter:     	OK!
+Connection:     	Connected to DC 4.0!
+DataCenterConnection: 	Restoring 0 messages to DC 4
+DataCenterConnection: 	Flushing pending messages, DC 4
+DataCenter:     	OK!
+Connection:     	Connected to DC 5.0!
+DataCenterConnection: 	Restoring 0 messages to DC 5
+DataCenterConnection: 	Flushing pending messages, DC 5
+DataCenter:     	OK!
+MTProto:        	Initing authorization...
+DataCenterConnection: 	Initing auth for DC 2
+DataCenterConnection: 	Initing auth for DC 1
+DataCenterConnection: 	Generating permanent authorization key for DC 1...
+DataCenterConnection: 	Initing auth for DC 3
+DataCenterConnection: 	Generating permanent authorization key for DC 3...
+DataCenterConnection: 	Initing auth for DC 4
+DataCenterConnection: 	Generating permanent authorization key for DC 4...
+DataCenterConnection: 	Initing auth for DC 5
+DataCenterConnection: 	Generating permanent authorization key for DC 5...
+PingLoop:       	Ping DC 2.0
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Auth key generated
+DataCenterConnection: 	Generating temporary authorization key for DC 1...
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Auth key generated
+DataCenterConnection: 	Generating temporary authorization key for DC 3...
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Auth key generated
+DataCenterConnection: 	Bound temporary and permanent authorization keys, DC 1
+WriteLoop:      	Writing client info (also executing help.getConfig)...
+AuthKeyHandler: 	Auth key generated
+DataCenterConnection: 	Generating temporary authorization key for DC 4...
+DataCenterConnection: 	Flushing pending messages, DC 1
+PingLoop:       	Ping DC 1.0
+AuthKeyHandler: 	Auth key generated
+DataCenterConnection: 	Generating temporary authorization key for DC 5...
+AuthKeyHandler: 	Auth key generated
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+DataCenterConnection: 	Bound temporary and permanent authorization keys, DC 3
+WriteLoop:      	Writing client info (also executing help.getConfig)...
+DataCenterConnection: 	Flushing pending messages, DC 3
+PingLoop:       	Ping DC 3.0
+AuthKeyHandler: 	Auth key generated
+DataCenterConnection: 	Bound temporary and permanent authorization keys, DC 4
+WriteLoop:      	Writing client info (also executing help.getConfig)...
+AuthKeyHandler: 	Auth key generated
+DataCenterConnection: 	Flushing pending messages, DC 4
+PingLoop:       	Ping DC 4.0
+DataCenterConnection: 	Bound temporary and permanent authorization keys, DC 5
+WriteLoop:      	Writing client info (also executing help.getConfig)...
+DataCenterConnection: 	Flushing pending messages, DC 5
+DataCenterConnection: 	Initing auth for DC -2
+DataCenterConnection: 	Generating temporary authorization key for DC -2...
+DataCenterConnection: 	Initing auth for DC -4
+DataCenterConnection: 	Generating temporary authorization key for DC -4...
+PingLoop:       	Ping DC 5.0
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Auth key generated
+DataCenterConnection: 	Bound temporary and permanent authorization keys, DC -4
+WriteLoop:      	Writing client info (also executing help.getConfig)...
+DataCenterConnection: 	Flushing pending messages, DC -4
+AuthKeyHandler: 	Auth key generated
+DataCenterConnection: 	Bound temporary and permanent authorization keys, DC -2
+WriteLoop:      	Writing client info (also executing help.getConfig)...
+DataCenterConnection: 	Flushing pending messages, DC -2
+MTProto:        	Done initing authorization!
+MTProto:        	Starting update system
+DataCenterConnection: 	Flushing pending messages, DC 2
+DataCenterConnection: 	Flushing pending messages, DC 1
+DataCenterConnection: 	Flushing pending messages, DC -2
+DataCenterConnection: 	Flushing pending messages, DC 3
+DataCenterConnection: 	Flushing pending messages, DC 4
+DataCenterConnection: 	Flushing pending messages, DC -4
+DataCenterConnection: 	Flushing pending messages, DC 5
+DataCenter:     	Not reconnecting to DC 2 (-1)
+DataCenter:     	Not reconnecting to DC 1 (-1)
+DataCenter:     	Not reconnecting to DC -2 (-1)
+DataCenter:     	Not reconnecting to DC 3 (-1)
+DataCenter:     	Not reconnecting to DC 4 (-1)
+DataCenter:     	Not reconnecting to DC -4 (-1)
+DataCenter:     	Not reconnecting to DC 5 (-1)
+MTProto:        	Initing authorization...
+DataCenterConnection: 	Initing auth for DC 2
+DataCenterConnection: 	Initing auth for DC 1
+DataCenterConnection: 	Initing auth for DC 3
+DataCenterConnection: 	Initing auth for DC 4
+DataCenterConnection: 	Initing auth for DC 5
+DataCenterConnection: 	Initing auth for DC -2
+DataCenterConnection: 	Initing auth for DC -4
+MTProto:        	Done initing authorization!
+MTProto:        	Starting update system
+DataCenterConnection: 	Flushing pending messages, DC 2
+DataCenterConnection: 	Flushing pending messages, DC 1
+DataCenterConnection: 	Flushing pending messages, DC -2
+DataCenterConnection: 	Flushing pending messages, DC 3
+DataCenterConnection: 	Flushing pending messages, DC 4
+DataCenterConnection: 	Flushing pending messages, DC -4
+DataCenterConnection: 	Flushing pending messages, DC 5
+DataCenter:     	Not reconnecting to DC 2 (-1)
+DataCenter:     	Not reconnecting to DC 1 (-1)
+DataCenter:     	Not reconnecting to DC -2 (-1)
+DataCenter:     	Not reconnecting to DC 3 (-1)
+DataCenter:     	Not reconnecting to DC 4 (-1)
+DataCenter:     	Not reconnecting to DC -4 (-1)
+DataCenter:     	Not reconnecting to DC 5 (-1)
+MTProto:        	Initing authorization...
+DataCenterConnection: 	Initing auth for DC 2
+DataCenterConnection: 	Initing auth for DC 1
+DataCenterConnection: 	Initing auth for DC 3
+DataCenterConnection: 	Initing auth for DC 4
+DataCenterConnection: 	Initing auth for DC 5
+DataCenterConnection: 	Initing auth for DC -2
+DataCenterConnection: 	Initing auth for DC -4
+MTProto:        	Done initing authorization!
+MTProto:        	Starting update system
+DataCenterConnection: 	Flushing pending messages, DC 2
+DataCenterConnection: 	Flushing pending messages, DC 1
+DataCenterConnection: 	Flushing pending messages, DC -2
+DataCenterConnection: 	Flushing pending messages, DC 3
+DataCenterConnection: 	Flushing pending messages, DC 4
+DataCenterConnection: 	Flushing pending messages, DC -4
+DataCenterConnection: 	Flushing pending messages, DC 5
+MTProto:        	Initing auth 2
+MTProto:        	Initing auth 2
+MTProto:        	Initing auth 2
+PingLoop:       	Ping DC 2.0
+PingLoop:       	Ping DC 1.0
+PingLoop:       	Ping DC 3.0
+PingLoop:       	Ping DC 4.0
+PingLoop:       	Ping DC 5.0
+MTProto:        	We're in SC, nearest DC is 4.
+MTProto:        	Starting update system
+DataCenterConnection: 	Flushing pending messages, DC 2
+DataCenterConnection: 	Flushing pending messages, DC 1
+DataCenterConnection: 	Flushing pending messages, DC -2
+DataCenterConnection: 	Flushing pending messages, DC 3
+DataCenterConnection: 	Flushing pending messages, DC 4
+DataCenterConnection: 	Flushing pending messages, DC -4
+DataCenterConnection: 	Flushing pending messages, DC 5
+APIWrapper:     	MadelineProto is ready!
+Login:          	Sending code...
+MTProto:        	Initing auth 2
+MTProto:        	Initing auth 2
+MTProto:        	Initing auth 2
+DataCenterConnection: 	Flushing pending messages, DC 1
+Login:          	Code sent successfully! Once you receive the code you should use the completePhoneLogin function.
+MTProto:        	Prompting final serialization (SHUTDOWN)...
+SessionPaths:   	Waiting for exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/safe.php.lock...
+SessionPaths:   	Got exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/safe.php.lock...
+SessionPaths:   	Waiting for exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/lightState.php.lock...
+SessionPaths:   	Got exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/lightState.php.lock...
+APIWrapper:     	Saved session!
+MTProto:        	Done final serialization (SHUTDOWN)!
+MTProto:        	Shutting down MadelineProto (MTProto)
+MTProto:        	Will unreference instance
+DataCenterConnection: 	Disconnecting from shared DC 2
+Connection:     	Disconnecting from DC 2.0
+DataCenterConnection: 	Backed up  from DC 2.0
+Connection:     	Disconnected from DC 2.0
+DataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC 2
+DataCenterConnection: 	Disconnecting from shared DC 1
+Connection:     	Disconnecting from DC 1.0
+DataCenterConnection: 	Backed up  from DC 1.0
+Connection:     	Disconnected from DC 1.0
+DataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC 1
+DataCenterConnection: 	Disconnecting from shared DC -2
+Connection:     	Disconnecting from DC -2.0
+DataCenterConnection: 	Backed up  from DC -2.0
+Connection:     	Disconnected from DC -2.0
+DataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC -2
+DataCenterConnection: 	Disconnecting from shared DC 3
+Connection:     	Disconnecting from DC 3.0
+DataCenterConnection: 	Backed up  from DC 3.0
+Connection:     	Disconnected from DC 3.0
+DataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC 3
+DataCenterConnection: 	Disconnecting from shared DC 4
+Connection:     	Disconnecting from DC 4.0
+DataCenterConnection: 	Backed up  from DC 4.0
+Connection:     	Disconnected from DC 4.0
+DataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC 4
+DataCenterConnection: 	Disconnecting from shared DC -4
+Connection:     	Disconnecting from DC -4.0
+DataCenterConnection: 	Backed up  from DC -4.0
+Connection:     	Disconnected from DC -4.0
+DataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC -4
+DataCenterConnection: 	Disconnecting from shared DC 5
+Connection:     	Disconnecting from DC 5.0
+DataCenterConnection: 	Backed up  from DC 5.0
+Connection:     	Disconnected from DC 5.0
+DataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC 5
+MTProto:        	Unreferenced instance
+MTProto:        	Successfully destroyed MadelineProto
+Logger:         	MadelineProto 8.0.0-beta144
+Logger:         	Copyright (C) 2016-2026 Daniil Gentili
+Logger:         	Licensed under AGPLv3
+Logger:         	https://github.com/danog/MadelineProto
+Server:         	Starting IPC server /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline (process)
+ProcessRunner:  	Starting process with '/www/server/php/81/bin/php' '-dhtml_errors=0' '-ddisplay_errors=0' '-dlog_errors=1' '/www/wwwroot/niuniu.5088.buzz/vendor/danog/madelineproto/src/Ipc/Runner/entry.php' 'madeline-ipc' '/www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline' '1803159846'
+WebRunner:      	Successfully connected to tls://niuniu.5088.buzz:443!
+WebRunner:      	Sending payload: GET /vendor/danog/madelineproto/src/Ipc/Runner/entry.php?argv%5B0%5D=madeline-ipc&argv%5B1%5D=%2Fwww%2Fwwwroot%2Fniuniu.5088.buzz%2Fapi%2F..%2Fsessions%2Fuser_cebf3b41f2cf9138e3593cc476e6771a.madeline&argv%5B2%5D=1803159846&cwd=%2Fwww%2Fwwwroot%2Fniuniu.5088.buzz%2Fapi&MadelineSelfRestart=1 HTTP/1.1
+Host: niuniu.5088.buzz
+
+
+WebRunner:      	Successfully connected to tcp://niuniu.5088.buzz:443!
+WebRunner:      	Sending payload: GET /vendor/danog/madelineproto/src/Ipc/Runner/entry.php?argv%5B0%5D=madeline-ipc&argv%5B1%5D=%2Fwww%2Fwwwroot%2Fniuniu.5088.buzz%2Fapi%2F..%2Fsessions%2Fuser_cebf3b41f2cf9138e3593cc476e6771a.madeline&argv%5B2%5D=1803159846&cwd=%2Fwww%2Fwwwroot%2Fniuniu.5088.buzz%2Fapi&MadelineSelfRestart=1 HTTP/1.1
+Host: niuniu.5088.buzz
+
+
+WebRunner:      	Successfully connected to tcp://niuniu.5088.buzz:80!
+WebRunner:      	Sending payload: GET /vendor/danog/madelineproto/src/Ipc/Runner/entry.php?argv%5B0%5D=madeline-ipc&argv%5B1%5D=%2Fwww%2Fwwwroot%2Fniuniu.5088.buzz%2Fapi%2F..%2Fsessions%2Fuser_cebf3b41f2cf9138e3593cc476e6771a.madeline&argv%5B2%5D=1803159846&cwd=%2Fwww%2Fwwwroot%2Fniuniu.5088.buzz%2Fapi&MadelineSelfRestart=1 HTTP/1.1
+Host: niuniu.5088.buzz
+
+
+Serialization:  	MadelineProto is starting, please wait...
+ProcessRunner:  	Got message from worker: file_get_contents(): SSL operation failed with code 1. OpenSSL Error messages:
+ProcessRunner:  	Got message from worker: error:1407742E:SSL routines:SSL23_GET_SERVER_HELLO:tlsv1 alert protocol version in Magic.php:318
+DataCenter:     	Disconnecting all before reconnect!
+DataCenter:     	Disconnecting all before reconnect!
+DataCenter:     	Disconnecting all before reconnect!
+DataCenter:     	Disconnecting all before reconnect!
+DataCenter:     	Disconnecting all before reconnect!
+DataCenter:     	Disconnecting all before reconnect!
+DataCenter:     	Disconnecting all before reconnect!
+DataCenter:     	Reconnecting to DC 1 (-1) from existing
+DataCenterConnection: 	Trying shared connection via tcp://149.154.175.58:443 main DC 1, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC 1.0
+Session:        	Resetting session in DC 1.0...
+DataCenter:     	Reconnecting to DC 2 (-1) from existing
+DataCenterConnection: 	Trying shared connection via tcp://149.154.167.50:443 main DC 2, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC 2.0
+Session:        	Resetting session in DC 2.0...
+DataCenter:     	Reconnecting to DC -2 (-1) from existing
+DataCenterConnection: 	Trying shared connection via tcp://149.154.167.151:443 main DC -2, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC -2.0
+Session:        	Resetting session in DC -2.0...
+DataCenter:     	Reconnecting to DC 3 (-1) from existing
+DataCenterConnection: 	Trying shared connection via tcp://149.154.175.100:443 main DC 3, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC 3.0
+Session:        	Resetting session in DC 3.0...
+DataCenter:     	Reconnecting to DC 4 (-1) from existing
+DataCenterConnection: 	Trying shared connection via tcp://149.154.167.92:443 main DC 4, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC 4.0
+Session:        	Resetting session in DC 4.0...
+DataCenter:     	Reconnecting to DC -4 (-1) from existing
+DataCenterConnection: 	Trying shared connection via tcp://149.154.165.96:443 main DC -4, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC -4.0
+Session:        	Resetting session in DC -4.0...
+DataCenter:     	Reconnecting to DC 5 (-1) from existing
+DataCenterConnection: 	Trying shared connection via tcp://91.108.56.182:443 main DC 5, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC 5.0
+Session:        	Resetting session in DC 5.0...
+Connection:     	Connected to DC 1.0!
+DataCenterConnection: 	Restoring 0 messages to DC 1
+DataCenterConnection: 	Flushing pending messages, DC 1
+DataCenter:     	OK!
+PingLoop:       	Ping DC 1.0
+Connection:     	Connected to DC 3.0!
+DataCenterConnection: 	Restoring 0 messages to DC 3
+DataCenterConnection: 	Flushing pending messages, DC 3
+DataCenter:     	OK!
+PingLoop:       	Ping DC 3.0
+Connection:     	Connected to DC 4.0!
+DataCenterConnection: 	Restoring 0 messages to DC 4
+DataCenterConnection: 	Flushing pending messages, DC 4
+DataCenter:     	OK!
+PingLoop:       	Ping DC 4.0
+Connection:     	Connected to DC -4.0!
+DataCenterConnection: 	Restoring 0 messages to DC -4
+DataCenterConnection: 	Flushing pending messages, DC -4
+DataCenter:     	OK!
+Connection:     	Connected to DC 2.0!
+DataCenterConnection: 	Restoring 0 messages to DC 2
+DataCenterConnection: 	Flushing pending messages, DC 2
+DataCenter:     	OK!
+PingLoop:       	Ping DC 2.0
+Connection:     	Connected to DC -2.0!
+DataCenterConnection: 	Restoring 0 messages to DC -2
+DataCenterConnection: 	Flushing pending messages, DC -2
+DataCenter:     	OK!
+Connection:     	Connected to DC 5.0!
+DataCenterConnection: 	Restoring 0 messages to DC 5
+DataCenterConnection: 	Flushing pending messages, DC 5
+DataCenter:     	OK!
+MTProto:        	Initing authorization...
+DataCenterConnection: 	Initing auth for DC 2
+DataCenterConnection: 	Initing auth for DC 1
+DataCenterConnection: 	Initing auth for DC 3
+DataCenterConnection: 	Initing auth for DC 4
+DataCenterConnection: 	Initing auth for DC 5
+DataCenterConnection: 	Initing auth for DC -2
+DataCenterConnection: 	Initing auth for DC -4
+MTProto:        	Done initing authorization!
+MTProto:        	Starting update system
+DataCenterConnection: 	Flushing pending messages, DC 2
+DataCenterConnection: 	Flushing pending messages, DC 1
+DataCenterConnection: 	Flushing pending messages, DC -2
+DataCenterConnection: 	Flushing pending messages, DC 3
+DataCenterConnection: 	Flushing pending messages, DC 4
+DataCenterConnection: 	Flushing pending messages, DC -4
+DataCenterConnection: 	Flushing pending messages, DC 5
+DataCenter:     	Reconnecting to DC 2 (-1) from existing
+DataCenterConnection: 	Trying shared connection via tcp://149.154.167.50:443 main DC 2, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+DataCenterConnection: 	Already connected!
+DataCenter:     	OK!
+DataCenter:     	Reconnecting to DC 1 (-1) from existing
+DataCenterConnection: 	Trying shared connection via tcp://149.154.175.58:443 main DC 1, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+DataCenterConnection: 	Already connected!
+DataCenter:     	OK!
+DataCenter:     	Reconnecting to DC -2 (-1) from existing
+DataCenterConnection: 	Trying shared connection via tcp://149.154.167.151:443 main DC -2, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+DataCenterConnection: 	Already connected!
+DataCenter:     	OK!
+DataCenter:     	Reconnecting to DC 3 (-1) from existing
+DataCenterConnection: 	Trying shared connection via tcp://149.154.175.100:443 main DC 3, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+DataCenterConnection: 	Already connected!
+DataCenter:     	OK!
+DataCenter:     	Reconnecting to DC 4 (-1) from existing
+DataCenterConnection: 	Trying shared connection via tcp://149.154.167.92:443 main DC 4, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+DataCenterConnection: 	Already connected!
+DataCenter:     	OK!
+DataCenter:     	Reconnecting to DC -4 (-1) from existing
+DataCenterConnection: 	Trying shared connection via tcp://149.154.165.96:443 main DC -4, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+DataCenterConnection: 	Already connected!
+DataCenter:     	OK!
+DataCenter:     	Reconnecting to DC 5 (-1) from existing
+DataCenterConnection: 	Trying shared connection via tcp://91.108.56.182:443 main DC 5, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+DataCenterConnection: 	Already connected!
+DataCenter:     	OK!
+MTProto:        	Initing authorization...
+DataCenterConnection: 	Initing auth for DC 2
+DataCenterConnection: 	Initing auth for DC 1
+DataCenterConnection: 	Initing auth for DC 3
+DataCenterConnection: 	Initing auth for DC 4
+DataCenterConnection: 	Initing auth for DC 5
+DataCenterConnection: 	Initing auth for DC -2
+DataCenterConnection: 	Initing auth for DC -4
+MTProto:        	Done initing authorization!
+MTProto:        	Starting update system
+DataCenterConnection: 	Flushing pending messages, DC 2
+DataCenterConnection: 	Flushing pending messages, DC 1
+DataCenterConnection: 	Flushing pending messages, DC -2
+DataCenterConnection: 	Flushing pending messages, DC 3
+DataCenterConnection: 	Flushing pending messages, DC 4
+DataCenterConnection: 	Flushing pending messages, DC -4
+DataCenterConnection: 	Flushing pending messages, DC 5
+PingLoop:       	Ping DC 5.0
+PingLoop:       	Ping DC 2.0
+PingLoop:       	Ping DC 1.0
+PingLoop:       	Ping DC 3.0
+PingLoop:       	Ping DC 4.0
+MTProto:        	Initing auth 2
+MTProto:        	Initing auth 2
+MTProto:        	Initing auth 2
+MTProto:        	Initing authorization...
+DataCenterConnection: 	Initing auth for DC 2
+DataCenterConnection: 	Initing auth for DC 1
+DataCenterConnection: 	Initing auth for DC 3
+DataCenterConnection: 	Initing auth for DC 4
+DataCenterConnection: 	Initing auth for DC 5
+DataCenterConnection: 	Initing auth for DC -2
+DataCenterConnection: 	Initing auth for DC -4
+MTProto:        	Done initing authorization!
+MTProto:        	Starting update system
+DataCenterConnection: 	Flushing pending messages, DC 2
+DataCenterConnection: 	Flushing pending messages, DC 1
+DataCenterConnection: 	Flushing pending messages, DC -2
+DataCenterConnection: 	Flushing pending messages, DC 3
+DataCenterConnection: 	Flushing pending messages, DC 4
+DataCenterConnection: 	Flushing pending messages, DC -4
+DataCenterConnection: 	Flushing pending messages, DC 5
+MTProto:        	AUTH_KEY_UNREGISTERED
+MTProto:        	Starting update system
+DataCenterConnection: 	Flushing pending messages, DC 2
+DataCenterConnection: 	Flushing pending messages, DC 1
+DataCenterConnection: 	Flushing pending messages, DC -2
+DataCenterConnection: 	Flushing pending messages, DC 3
+DataCenterConnection: 	Flushing pending messages, DC 4
+DataCenterConnection: 	Flushing pending messages, DC -4
+DataCenterConnection: 	Flushing pending messages, DC 5
+APIWrapper:     	MadelineProto is ready!
+SessionPaths:   	Waiting for exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/ipcState.php.lock...
+SessionPaths:   	Got exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/ipcState.php.lock...
+PingLoop:       	Ping DC 2.0
+PingLoop:       	Ping DC 1.0
+PingLoop:       	Ping DC 3.0
+PingLoop:       	Ping DC 4.0
+PingLoop:       	Ping DC 5.0
+MTProto:        	Initing auth 2
+MTProto:        	Initing auth 2
+MTProto:        	Initing auth 2
+SessionPaths:   	Waiting for exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/safe.php.lock...
+SessionPaths:   	Got exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/safe.php.lock...
+SessionPaths:   	Waiting for exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/lightState.php.lock...
+SessionPaths:   	Got exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/lightState.php.lock...
+APIWrapper:     	Saved session!
+Serialization:  	MadelineProto is starting, please wait...
+Serialization:  	Connected to IPC socket!
+MTProto:        	Accepted IPC client connection!
+Login:          	Logging in as a normal user...
+Server:         	IPC server started successfully!
+MTProto:        	Initing authorization...
+DataCenterConnection: 	Initing auth for DC 2
+DataCenterConnection: 	Trying to copy authorization from DC 1 to DC 2
+DataCenterConnection: 	Initing auth for DC 1
+DataCenterConnection: 	Initing auth for DC 3
+DataCenterConnection: 	Trying to copy authorization from DC 1 to DC 3
+DataCenterConnection: 	Initing auth for DC 4
+DataCenterConnection: 	Trying to copy authorization from DC 1 to DC 4
+DataCenterConnection: 	Initing auth for DC 5
+DataCenterConnection: 	Trying to copy authorization from DC 1 to DC 5
+PingLoop:       	Ping DC 2.0
+PingLoop:       	Ping DC 1.0
+PingLoop:       	Ping DC 3.0
+PingLoop:       	Ping DC 4.0
+DataCenterConnection: 	Initing auth for DC -2
+DataCenterConnection: 	Initing auth for DC -4
+MTProto:        	Done initing authorization!
+MTProto:        	Starting update system
+DataCenterConnection: 	Flushing pending messages, DC 2
+DataCenterConnection: 	Flushing pending messages, DC 1
+DataCenterConnection: 	Flushing pending messages, DC -2
+DataCenterConnection: 	Flushing pending messages, DC 3
+DataCenterConnection: 	Flushing pending messages, DC 4
+DataCenterConnection: 	Flushing pending messages, DC -4
+DataCenterConnection: 	Flushing pending messages, DC 5
+Login:          	Logged in successfully!
+MTProto:        	Starting update system
+DataCenterConnection: 	Flushing pending messages, DC 2
+DataCenterConnection: 	Flushing pending messages, DC 1
+DataCenterConnection: 	Flushing pending messages, DC -2
+DataCenterConnection: 	Flushing pending messages, DC 3
+DataCenterConnection: 	Flushing pending messages, DC 4
+DataCenterConnection: 	Flushing pending messages, DC -4
+DataCenterConnection: 	Flushing pending messages, DC 5
+PingLoop:       	Ping DC 5.0
+ProcessRunner:  	Got final message from worker: 
+ProcessRunner:  	Got final message from worker: 
+Logger:         	MadelineProto 8.0.0-beta144
+Logger:         	Copyright (C) 2016-2026 Daniil Gentili
+Logger:         	Licensed under AGPLv3
+Logger:         	https://github.com/danog/MadelineProto
+Serialization:  	MadelineProto is starting, please wait...
+MTProto:        	Accepted IPC client connection!
+Serialization:  	Connected to IPC socket!
+Exception:      	I'm not waiting for the code! Please call the phoneLogin method first in Login.php:210
+MTProto:        	Got error while calling IPC method: \danog\MadelineProto\Exception: I'm not waiting for the code! Please call the phoneLogin method first in /www/wwwroot/niuniu.5088.buzz/vendor/danog/madelineproto/src/Wrappers/Login.php:210
+Revision: 8.0.0-beta144 (AN UPDATE IS REQUIRED)
+TL Trace:
+
+Server.php(233):    	completePhoneLogin()
+AbstractDriver.php(430):	clientRequest()
+AbstractDriver.php(621):	invokeMicrotasks()
+Revolt\EventLoop\Internal\{closure}()
+AbstractDriver.php(502):	resume()
+AbstractDriver.php(558):	invokeCallbacks()
+Revolt\EventLoop\Internal\{closure}()
+AbstractDriver.php(96):	resume()
+DriverSuspension.php(117):	Revolt\EventLoop\Internal\{closure}()
+Future.php(251):    	suspend()
+Server.php(158):    	await()
+entry.php(119):     	waitShutdown()
+entry.php(154):     	danog\MadelineProto\Ipc\Runner\{closure}()
+Exception:      	I'm not waiting for the code! Please call the phoneLogin method first in ExitFailure.php:80
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+Logger:         	MadelineProto 8.0.0-beta144
+Logger:         	Copyright (C) 2016-2026 Daniil Gentili
+Logger:         	Licensed under AGPLv3
+Logger:         	https://github.com/danog/MadelineProto
+Serialization:  	MadelineProto is starting, please wait...
+MTProto, Btcvb49:        	Accepted IPC client connection!
+Serialization:  	Connected to IPC socket!
+Exception:      	I'm not waiting for the code! Please call the phoneLogin method first in Login.php:210
+MTProto, Btcvb49:        	Got error while calling IPC method: \danog\MadelineProto\Exception: I'm not waiting for the code! Please call the phoneLogin method first in /www/wwwroot/niuniu.5088.buzz/vendor/danog/madelineproto/src/Wrappers/Login.php:210
+Revision: 8.0.0-beta144 (AN UPDATE IS REQUIRED)
+TL Trace:
+
+Server.php(233):    	completePhoneLogin()
+AbstractDriver.php(430):	clientRequest()
+AbstractDriver.php(621):	invokeMicrotasks()
+Revolt\EventLoop\Internal\{closure}()
+AbstractDriver.php(502):	resume()
+AbstractDriver.php(558):	invokeCallbacks()
+Revolt\EventLoop\Internal\{closure}()
+AbstractDriver.php(96):	resume()
+DriverSuspension.php(117):	Revolt\EventLoop\Internal\{closure}()
+Future.php(251):    	suspend()
+Server.php(158):    	await()
+entry.php(119):     	waitShutdown()
+entry.php(154):     	danog\MadelineProto\Ipc\Runner\{closure}()
+Exception:      	I'm not waiting for the code! Please call the phoneLogin method first in ExitFailure.php:80
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+Connection, Btcvb49:     	Connecting to DC -2.1
+Session, Btcvb49:        	Resetting session in DC -2.1...
+Connection, Btcvb49:     	Connecting to DC -4.1
+Session, Btcvb49:        	Resetting session in DC -4.1...
+Connection, Btcvb49:     	Connected to DC -4.1!
+Connection, Btcvb49:     	Connecting to DC -4.2
+Session, Btcvb49:        	Resetting session in DC -4.2...
+Connection, Btcvb49:     	Connected to DC -2.1!
+Connection, Btcvb49:     	Connecting to DC -2.2
+Session, Btcvb49:        	Resetting session in DC -2.2...
+Connection, Btcvb49:     	Connected to DC -4.2!
+Connection, Btcvb49:     	Connected to DC -2.2!
+SessionPaths, Btcvb49:   	Waiting for exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/safe.php.lock...
+SessionPaths, Btcvb49:   	Got exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/safe.php.lock...
+SessionPaths, Btcvb49:   	Waiting for exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/lightState.php.lock...
+SessionPaths, Btcvb49:   	Got exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/lightState.php.lock...
+APIWrapper, Btcvb49:     	Saved session!
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+Connection, Btcvb49:     	Connecting to DC -4.3
+Session, Btcvb49:        	Resetting session in DC -4.3...
+Connection, Btcvb49:     	Connecting to DC -2.3
+Session, Btcvb49:        	Resetting session in DC -2.3...
+Connection, Btcvb49:     	Connected to DC -4.3!
+Connection, Btcvb49:     	Connecting to DC -4.4
+Session, Btcvb49:        	Resetting session in DC -4.4...
+Connection, Btcvb49:     	Connected to DC -2.3!
+Connection, Btcvb49:     	Connecting to DC -2.4
+Session, Btcvb49:        	Resetting session in DC -2.4...
+Connection, Btcvb49:     	Connected to DC -4.4!
+Connection, Btcvb49:     	Connected to DC -2.4!
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+SessionPaths, Btcvb49:   	Waiting for exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/safe.php.lock...
+SessionPaths, Btcvb49:   	Got exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/safe.php.lock...
+SessionPaths, Btcvb49:   	Waiting for exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/lightState.php.lock...
+SessionPaths, Btcvb49:   	Got exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/lightState.php.lock...
+APIWrapper, Btcvb49:     	Saved session!
+Connection, Btcvb49:     	Connecting to DC -4.5
+Session, Btcvb49:        	Resetting session in DC -4.5...
+Connection, Btcvb49:     	Connecting to DC -2.5
+Session, Btcvb49:        	Resetting session in DC -2.5...
+Connection, Btcvb49:     	Connected to DC -4.5!
+Connection, Btcvb49:     	Connecting to DC -4.6
+Session, Btcvb49:        	Resetting session in DC -4.6...
+Connection, Btcvb49:     	Connected to DC -2.5!
+Connection, Btcvb49:     	Connecting to DC -2.6
+Session, Btcvb49:        	Resetting session in DC -2.6...
+Connection, Btcvb49:     	Connected to DC -4.6!
+Connection, Btcvb49:     	Connected to DC -2.6!
+PingLoop:       	Ping DC 2.0
+PingLoop:       	Ping DC 1.0
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+PingLoop:       	Ping DC 3.0
+PingLoop:       	Ping DC 4.0
+PingLoop:       	Ping DC 5.0
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+Connection, Btcvb49:     	Connecting to DC -4.7
+Session, Btcvb49:        	Resetting session in DC -4.7...
+Connection, Btcvb49:     	Connecting to DC -2.7
+Session, Btcvb49:        	Resetting session in DC -2.7...
+Connection, Btcvb49:     	Connected to DC -4.7!
+Connection, Btcvb49:     	Connecting to DC -4.8
+Session, Btcvb49:        	Resetting session in DC -4.8...
+Connection, Btcvb49:     	Connected to DC -2.7!
+Connection, Btcvb49:     	Connecting to DC -2.8
+Session, Btcvb49:        	Resetting session in DC -2.8...
+Connection, Btcvb49:     	Connected to DC -4.8!
+Connection, Btcvb49:     	Connected to DC -2.8!
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+SessionPaths, Btcvb49:   	Waiting for exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/safe.php.lock...
+SessionPaths, Btcvb49:   	Got exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/safe.php.lock...
+SessionPaths, Btcvb49:   	Waiting for exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/lightState.php.lock...
+SessionPaths, Btcvb49:   	Got exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/lightState.php.lock...
+APIWrapper, Btcvb49:     	Saved session!
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+Connection, Btcvb49:     	Connecting to DC -4.9
+Session, Btcvb49:        	Resetting session in DC -4.9...
+Connection, Btcvb49:     	Connecting to DC -2.9
+Session, Btcvb49:        	Resetting session in DC -2.9...
+Connection, Btcvb49:     	Connected to DC -4.9!
+Connection, Btcvb49:     	Connecting to DC -4.10
+Session, Btcvb49:        	Resetting session in DC -4.10...
+Connection, Btcvb49:     	Connected to DC -2.9!
+Connection, Btcvb49:     	Connecting to DC -2.10
+Session, Btcvb49:        	Resetting session in DC -2.10...
+Connection, Btcvb49:     	Connected to DC -4.10!
+Connection, Btcvb49:     	Connected to DC -2.10!
+SessionPaths, Btcvb49:   	Waiting for exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/safe.php.lock...
+SessionPaths, Btcvb49:   	Got exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/safe.php.lock...
+SessionPaths, Btcvb49:   	Waiting for exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/lightState.php.lock...
+SessionPaths, Btcvb49:   	Got exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/lightState.php.lock...
+APIWrapper, Btcvb49:     	Saved session!
+PingLoop:       	Ping DC 2.0
+PingLoop:       	Ping DC 1.0
+PingLoop:       	Ping DC 3.0
+PingLoop:       	Ping DC 4.0
+PingLoop:       	Ping DC 5.0
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+SessionPaths, Btcvb49:   	Waiting for exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/safe.php.lock...
+SessionPaths, Btcvb49:   	Got exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/safe.php.lock...
+SessionPaths, Btcvb49:   	Waiting for exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/lightState.php.lock...
+SessionPaths, Btcvb49:   	Got exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/lightState.php.lock...
+APIWrapper, Btcvb49:     	Saved session!
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+SessionPaths, Btcvb49:   	Waiting for exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/safe.php.lock...
+SessionPaths, Btcvb49:   	Got exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/safe.php.lock...
+SessionPaths, Btcvb49:   	Waiting for exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/lightState.php.lock...
+SessionPaths, Btcvb49:   	Got exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/lightState.php.lock...
+APIWrapper, Btcvb49:     	Saved session!
+PingLoop:       	Ping DC 2.0
+PingLoop:       	Ping DC 1.0
+PingLoop:       	Ping DC 3.0
+PingLoop:       	Ping DC 4.0
+PingLoop:       	Ping DC 5.0
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+SessionPaths, Btcvb49:   	Waiting for exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/safe.php.lock...
+SessionPaths, Btcvb49:   	Got exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/safe.php.lock...
+SessionPaths, Btcvb49:   	Waiting for exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/lightState.php.lock...
+SessionPaths, Btcvb49:   	Got exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/lightState.php.lock...
+APIWrapper, Btcvb49:     	Saved session!
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+SessionPaths, Btcvb49:   	Waiting for exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/safe.php.lock...
+SessionPaths, Btcvb49:   	Got exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/safe.php.lock...
+SessionPaths, Btcvb49:   	Waiting for exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/lightState.php.lock...
+SessionPaths, Btcvb49:   	Got exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/lightState.php.lock...
+APIWrapper, Btcvb49:     	Saved session!
+PingLoop:       	Ping DC 2.0
+PingLoop:       	Ping DC 1.0
+PingLoop:       	Ping DC 3.0
+PingLoop:       	Ping DC 4.0
+PingLoop:       	Ping DC 5.0
+SessionPaths, Btcvb49:   	Waiting for exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/safe.php.lock...
+SessionPaths, Btcvb49:   	Got exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/safe.php.lock...
+SessionPaths, Btcvb49:   	Waiting for exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/lightState.php.lock...
+SessionPaths, Btcvb49:   	Got exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/lightState.php.lock...
+APIWrapper, Btcvb49:     	Saved session!
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+SessionPaths, Btcvb49:   	Waiting for exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/safe.php.lock...
+SessionPaths, Btcvb49:   	Got exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/safe.php.lock...
+SessionPaths, Btcvb49:   	Waiting for exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/lightState.php.lock...
+SessionPaths, Btcvb49:   	Got exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/lightState.php.lock...
+APIWrapper, Btcvb49:     	Saved session!
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+PingLoop:       	Ping DC 2.0
+PingLoop:       	Ping DC 1.0
+PingLoop:       	Ping DC 3.0
+PingLoop:       	Ping DC 4.0
+PingLoop:       	Ping DC 5.0
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+SessionPaths, Btcvb49:   	Waiting for exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/safe.php.lock...
+SessionPaths, Btcvb49:   	Got exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/safe.php.lock...
+SessionPaths, Btcvb49:   	Waiting for exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/lightState.php.lock...
+SessionPaths, Btcvb49:   	Got exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/lightState.php.lock...
+APIWrapper, Btcvb49:     	Saved session!
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+SessionPaths, Btcvb49:   	Waiting for exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/safe.php.lock...
+SessionPaths, Btcvb49:   	Got exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/safe.php.lock...
+SessionPaths, Btcvb49:   	Waiting for exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/lightState.php.lock...
+SessionPaths, Btcvb49:   	Got exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/lightState.php.lock...
+APIWrapper, Btcvb49:     	Saved session!
+PingLoop:       	Ping DC 2.0
+PingLoop:       	Ping DC 1.0
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+PingLoop:       	Ping DC 3.0
+PingLoop:       	Ping DC 4.0
+PingLoop:       	Ping DC 5.0
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+SessionPaths, Btcvb49:   	Waiting for exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/safe.php.lock...
+SessionPaths, Btcvb49:   	Got exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/safe.php.lock...
+SessionPaths, Btcvb49:   	Waiting for exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/lightState.php.lock...
+SessionPaths, Btcvb49:   	Got exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/lightState.php.lock...
+APIWrapper, Btcvb49:     	Saved session!
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop channel 3871264788
+FeedLoop, Btcvb49:       	Resumed update feed loop channel 3871264788
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+SessionPaths, Btcvb49:   	Waiting for exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/safe.php.lock...
+SessionPaths, Btcvb49:   	Got exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/safe.php.lock...
+SessionPaths, Btcvb49:   	Waiting for exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/lightState.php.lock...
+SessionPaths, Btcvb49:   	Got exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/lightState.php.lock...
+APIWrapper, Btcvb49:     	Saved session!
+PingLoop:       	Ping DC 2.0
+PingLoop:       	Ping DC 1.0
+PingLoop:       	Ping DC 3.0
+PingLoop:       	Ping DC 4.0
+PingLoop:       	Ping DC 5.0
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop channel 3871264788
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop channel 3871264788
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop channel 3871264788
+SessionPaths, Btcvb49:   	Waiting for exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/safe.php.lock...
+SessionPaths, Btcvb49:   	Got exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/safe.php.lock...
+SessionPaths, Btcvb49:   	Waiting for exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/lightState.php.lock...
+SessionPaths, Btcvb49:   	Got exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/lightState.php.lock...
+APIWrapper, Btcvb49:     	Saved session!
+FeedLoop, Btcvb49:       	Resumed update feed loop channel 3871264788
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop channel 3871264788
+FeedLoop, Btcvb49:       	Resumed update feed loop channel 3871264788
+Logger:         	MadelineProto 8.0.0-beta144
+Logger:         	Copyright (C) 2016-2026 Daniil Gentili
+Logger:         	Licensed under AGPLv3
+Logger:         	https://github.com/danog/MadelineProto
+Serialization:  	MadelineProto is starting, please wait...
+Serialization:  	Connected to IPC socket!
+MTProto, Btcvb49:        	Accepted IPC client connection!
+[28-Jan-2026 20:49:32 Asia/Shanghai] Sending message via MadelineProto: {"peer":-1003871264788,"message":"nihao","reply_to_msg_id":79}
+MTProto, Btcvb49:        	The serialization settings have changed!
+SessionPaths, Btcvb49:   	Waiting for exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/safe.php.lock...
+SessionPaths, Btcvb49:   	Got exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/safe.php.lock...
+SessionPaths, Btcvb49:   	Waiting for exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/lightState.php.lock...
+SessionPaths, Btcvb49:   	Got exclusive lock of /www/wwwroot/niuniu.5088.buzz/api/../sessions/user_cebf3b41f2cf9138e3593cc476e6771a.madeline/lightState.php.lock...
+APIWrapper, Btcvb49:     	Saved session!
+FeedLoop, Btcvb49:       	Resumed update feed loop channel 3871264788
+[28-Jan-2026 20:49:32 Asia/Shanghai] MadelineProto sendMessage result: {"_":"updates","updates":[{"_":"updateMessageID","id":80,"random_id":-5886177912973082050},{"_":"updateReadChannelInbox","channel_id":3871264788,"max_id":80,"still_unread_count":0,"pts":87},{"_":"updateNewChannelMessage","message":{"_":"message","out":true,"mentioned":false,"media_unread":false,"silent":false,"post":false,"from_scheduled":false,"legacy":false,"edit_hide":false,"pinned":false,"noforwards":false,"id":80,"from_id":{"_":"peerUser","user_id":8390210582},"peer_id":{"_":"peerChannel","channel_id":3871264788},"reply_to":{"_":"messageReplyHeader","reply_to_scheduled":false,"forum_topic":false,"reply_to_msg_id":79},"date":1769604572,"message":"nihao"},"pts":87,"pts_count":1}],"users":[{"_":"user","self":true,"contact":false,"mutual_contact":false,"deleted":false,"bot":false,"bot_chat_history":false,"bot_nochats":false,"verified":false,"restricted":false,"min":false,"bot_inline_geo":false,"support":false,"scam":false,"apply_min_photo":true,"fake":false,"bot_attach_menu":false,"premium":false,"attach_menu_enabled":false,"bot_can_edit":false,"close_friend":false,"stories_hidden":false,"stories_unavailable":true,"id":8390210582,"access_hash":-5398164607260168793,"first_name":"bm","last_name":"dubtc","username":"Btcvb49","phone":"13855416346","status":{"_":"userStatusOffline","was_online":1769604413}}],"chats":[{"_":"channel","creator":false,"left":false,"broadcast":false,"verified":false,"megagroup":true,"restricted":false,"signatures":false,"min":false,"scam":false,"has_link":false,"has_geo":false,"slowmode_enabled":false,"call_active":false,"call_not_empty":false,"fake":false,"gigagroup":false,"noforwards":false,"join_to_send":false,"join_request":false,"forum":false,"id":3871264788,"access_hash":1117788356902371166,"title":"\u673a\u5668\u4eba\u6d4b\u8bd5","photo":{"_":"chatPhotoEmpty"},"date":1769582729,"default_banned_rights":{"_":"chatBannedRights","view_messages":false,"send_messages":false,"send_media":false,"send_stickers":false,"send_gifs":false,"send_games":false,"send_inline":false,"embed_links":false,"send_polls":false,"change_info":false,"invite_users":false,"pin_messages":false,"manage_topics":false,"send_photos":false,"send_videos":false,"send_roundvideos":false,"send_audios":false,"send_voices":false,"send_docs":false,"send_plain":false,"until_date":2147483647}}],"date":1769604571,"seq":0,"request":{"_":"messages.sendMessage","body":{"peer":-1003871264788,"message":"nihao","reply_to_msg_id":79}}}
+[28-Jan-2026 20:49:32 Asia/Shanghai] ‚úì User account reply sent successfully
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop channel 3871264788
+[28-Jan-2026 20:49:32 Asia/Shanghai] Checking auto replies for text: tege in chat: -1003871264788
+[28-Jan-2026 20:49:32 Asia/Shanghai] Found 0 auto replies to check
+APIWrapper:     	Shutting down MadelineProto (danog\MadelineProto\API)
+APIWrapper:     	Prompting final serialization...
+APIWrapper:     	Done final serialization!
+FeedLoop, Btcvb49:       	Resumed update feed loop channel 3871264788
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop channel 3871264788
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+PingLoop:       	Ping DC 2.0
+PingLoop:       	Ping DC 1.0
+PingLoop:       	Ping DC 3.0
+PingLoop:       	Ping DC 4.0
+PingLoop:       	Ping DC 5.0
+FeedLoop, Btcvb49:       	Resumed update feed loop generic
+MTProto, Btcvb49:        	Accepted IPC client connection!
+Logger:         	MadelineProto 8.0.0-beta144
+Logger:         	Copyright (C) 2016-2026 Daniil Gentili
+Logger:         	Licensed under AGPLv3
+Logger:         	https://github.com/danog/MadelineProto
+MTProto:        	The database settings have changed!
+MTProto:        	The serialization settings have changed!
+DataCenter:     	Connecting to DC 2 from scratch
+DataCenterConnection: 	Trying shared connection via tcp://149.154.167.51:443 main DC 2, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC 2.0
+Session:        	Resetting session in DC 2.0...
+Connection:     	Connected to DC 2.0!
+DataCenterConnection: 	Restoring 0 messages to DC 2
+DataCenterConnection: 	Flushing pending messages, DC 2
+DataCenter:     	OK!
+MTProto:        	Initing authorization...
+DataCenterConnection: 	Initing auth for DC 2
+DataCenterConnection: 	Generating permanent authorization key for DC 2...
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Auth key generated
+DataCenterConnection: 	Generating temporary authorization key for DC 2...
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Auth key generated
+DataCenterConnection: 	Bound temporary and permanent authorization keys, DC 2
+WriteLoop:      	Writing client info (also executing help.getConfig)...
+DataCenterConnection: 	Flushing pending messages, DC 2
+MTProto:        	Done initing authorization!
+MTProto:        	Starting update system
+DataCenterConnection: 	Flushing pending messages, DC 2
+MTProto:        	Got new DC options, reconnecting
+DataCenter:     	Connecting to DC 1 from scratch
+DataCenterConnection: 	Trying shared connection via tcp://149.154.175.58:443 main DC 1, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC 1.0
+Session:        	Resetting session in DC 1.0...
+DataCenter:     	Not reconnecting to DC 2 (-1)
+DataCenter:     	Connecting to DC -2 from scratch
+DataCenterConnection: 	Trying shared connection via tcp://149.154.167.222:443 main DC -2, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC -2.0
+Session:        	Resetting session in DC -2.0...
+DataCenter:     	Connecting to DC 3 from scratch
+DataCenterConnection: 	Trying shared connection via tcp://149.154.175.100:443 main DC 3, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC 3.0
+Session:        	Resetting session in DC 3.0...
+DataCenter:     	Connecting to DC 4 from scratch
+DataCenterConnection: 	Trying shared connection via tcp://149.154.167.92:443 main DC 4, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC 4.0
+Session:        	Resetting session in DC 4.0...
+DataCenter:     	Connecting to DC -4 from scratch
+DataCenterConnection: 	Trying shared connection via tcp://149.154.165.111:443 main DC -4, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC -4.0
+Session:        	Resetting session in DC -4.0...
+DataCenter:     	Connecting to DC 5 from scratch
+DataCenterConnection: 	Trying shared connection via tcp://91.108.56.169:443 main DC 5, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC 5.0
+Session:        	Resetting session in DC 5.0...
+PingLoop:       	Ping DC 2.0
+MTProto:        	Initing auth 2
+MTProto:        	Initing auth 2
+MTProto:        	Initing auth 2
+Connection:     	Connected to DC 1.0!
+DataCenterConnection: 	Restoring 0 messages to DC 1
+DataCenterConnection: 	Flushing pending messages, DC 1
+DataCenter:     	OK!
+Connection:     	Connected to DC 3.0!
+DataCenterConnection: 	Restoring 0 messages to DC 3
+DataCenterConnection: 	Flushing pending messages, DC 3
+DataCenter:     	OK!
+Connection:     	Connected to DC -2.0!
+DataCenterConnection: 	Restoring 0 messages to DC -2
+DataCenterConnection: 	Flushing pending messages, DC -2
+DataCenter:     	OK!
+Connection:     	Connected to DC 4.0!
+DataCenterConnection: 	Restoring 0 messages to DC 4
+DataCenterConnection: 	Flushing pending messages, DC 4
+DataCenter:     	OK!
+Connection:     	Connected to DC -4.0!
+DataCenterConnection: 	Restoring 0 messages to DC -4
+DataCenterConnection: 	Flushing pending messages, DC -4
+DataCenter:     	OK!
+Connection:     	Connected to DC 5.0!
+DataCenterConnection: 	Restoring 0 messages to DC 5
+DataCenterConnection: 	Flushing pending messages, DC 5
+DataCenter:     	OK!
+MTProto:        	Initing authorization...
+DataCenterConnection: 	Initing auth for DC 2
+DataCenterConnection: 	Initing auth for DC 1
+DataCenterConnection: 	Generating permanent authorization key for DC 1...
+DataCenterConnection: 	Initing auth for DC 3
+DataCenterConnection: 	Generating permanent authorization key for DC 3...
+DataCenterConnection: 	Initing auth for DC 4
+DataCenterConnection: 	Generating permanent authorization key for DC 4...
+DataCenterConnection: 	Initing auth for DC 5
+DataCenterConnection: 	Generating permanent authorization key for DC 5...
+PingLoop:       	Ping DC 2.0
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Auth key generated
+DataCenterConnection: 	Generating temporary authorization key for DC 1...
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Auth key generated
+DataCenterConnection: 	Bound temporary and permanent authorization keys, DC 1
+WriteLoop:      	Writing client info (also executing help.getConfig)...
+DataCenterConnection: 	Flushing pending messages, DC 1
+PingLoop:       	Ping DC 1.0
+AuthKeyHandler: 	Auth key generated
+DataCenterConnection: 	Generating temporary authorization key for DC 3...
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Auth key generated
+DataCenterConnection: 	Generating temporary authorization key for DC 4...
+AuthKeyHandler: 	Auth key generated
+DataCenterConnection: 	Generating temporary authorization key for DC 5...
+AuthKeyHandler: 	Auth key generated
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+DataCenterConnection: 	Bound temporary and permanent authorization keys, DC 3
+WriteLoop:      	Writing client info (also executing help.getConfig)...
+DataCenterConnection: 	Flushing pending messages, DC 3
+PingLoop:       	Ping DC 3.0
+AuthKeyHandler: 	Auth key generated
+DataCenterConnection: 	Bound temporary and permanent authorization keys, DC 4
+WriteLoop:      	Writing client info (also executing help.getConfig)...
+AuthKeyHandler: 	Auth key generated
+DataCenterConnection: 	Flushing pending messages, DC 4
+PingLoop:       	Ping DC 4.0
+DataCenterConnection: 	Bound temporary and permanent authorization keys, DC 5
+WriteLoop:      	Writing client info (also executing help.getConfig)...
+DataCenterConnection: 	Flushing pending messages, DC 5
+DataCenterConnection: 	Initing auth for DC -2
+DataCenterConnection: 	Generating temporary authorization key for DC -2...
+DataCenterConnection: 	Initing auth for DC -4
+DataCenterConnection: 	Generating temporary authorization key for DC -4...
+PingLoop:       	Ping DC 5.0
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Auth key generated
+DataCenterConnection: 	Bound temporary and permanent authorization keys, DC -4
+WriteLoop:      	Writing client info (also executing help.getConfig)...
+AuthKeyHandler: 	Auth key generated
+DataCenterConnection: 	Flushing pending messages, DC -4
+DataCenterConnection: 	Bound temporary and permanent authorization keys, DC -2
+WriteLoop:      	Writing client info (also executing help.getConfig)...
+DataCenterConnection: 	Flushing pending messages, DC -2
+MTProto:        	Done initing authorization!
+MTProto:        	Starting update system
+DataCenterConnection: 	Flushing pending messages, DC 2
+DataCenterConnection: 	Flushing pending messages, DC 1
+DataCenterConnection: 	Flushing pending messages, DC -2
+DataCenterConnection: 	Flushing pending messages, DC 3
+DataCenterConnection: 	Flushing pending messages, DC 4
+DataCenterConnection: 	Flushing pending messages, DC -4
+DataCenterConnection: 	Flushing pending messages, DC 5
+DataCenter:     	Not reconnecting to DC 2 (-1)
+DataCenter:     	Not reconnecting to DC 1 (-1)
+DataCenter:     	Not reconnecting to DC -2 (-1)
+DataCenter:     	Not reconnecting to DC 3 (-1)
+DataCenter:     	Not reconnecting to DC 4 (-1)
+DataCenter:     	Not reconnecting to DC -4 (-1)
+DataCenter:     	Not reconnecting to DC 5 (-1)
+MTProto:        	Initing authorization...
+DataCenterConnection: 	Initing auth for DC 2
+DataCenterConnection: 	Initing auth for DC 1
+DataCenterConnection: 	Initing auth for DC 3
+DataCenterConnection: 	Initing auth for DC 4
+DataCenterConnection: 	Initing auth for DC 5
+DataCenterConnection: 	Initing auth for DC -2
+DataCenterConnection: 	Initing auth for DC -4
+MTProto:        	Done initing authorization!
+MTProto:        	Starting update system
+DataCenterConnection: 	Flushing pending messages, DC 2
+DataCenterConnection: 	Flushing pending messages, DC 1
+DataCenterConnection: 	Flushing pending messages, DC -2
+DataCenterConnection: 	Flushing pending messages, DC 3
+DataCenterConnection: 	Flushing pending messages, DC 4
+DataCenterConnection: 	Flushing pending messages, DC -4
+DataCenterConnection: 	Flushing pending messages, DC 5
+DataCenter:     	Not reconnecting to DC 2 (-1)
+DataCenter:     	Not reconnecting to DC 1 (-1)
+DataCenter:     	Not reconnecting to DC -2 (-1)
+DataCenter:     	Not reconnecting to DC 3 (-1)
+DataCenter:     	Not reconnecting to DC 4 (-1)
+DataCenter:     	Not reconnecting to DC -4 (-1)
+DataCenter:     	Not reconnecting to DC 5 (-1)
+MTProto:        	Initing authorization...
+DataCenterConnection: 	Initing auth for DC 2
+DataCenterConnection: 	Initing auth for DC 1
+DataCenterConnection: 	Initing auth for DC 3
+DataCenterConnection: 	Initing auth for DC 4
+DataCenterConnection: 	Initing auth for DC 5
+DataCenterConnection: 	Initing auth for DC -2
+DataCenterConnection: 	Initing auth for DC -4
+MTProto:        	Done initing authorization!
+MTProto:        	Starting update system
+DataCenterConnection: 	Flushing pending messages, DC 2
+DataCenterConnection: 	Flushing pending messages, DC 1
+DataCenterConnection: 	Flushing pending messages, DC -2
+DataCenterConnection: 	Flushing pending messages, DC 3
+DataCenterConnection: 	Flushing pending messages, DC 4
+DataCenterConnection: 	Flushing pending messages, DC -4
+DataCenterConnection: 	Flushing pending messages, DC 5
+MTProto:        	Initing auth 2
+MTProto:        	Initing auth 2
+MTProto:        	Initing auth 2
+PingLoop:       	Ping DC 2.0
+PingLoop:       	Ping DC 1.0
+PingLoop:       	Ping DC 3.0
+PingLoop:       	Ping DC 4.0
+PingLoop:       	Ping DC 5.0
+MTProto:        	We're in US, nearest DC is 1.
+MTProto:        	Starting update system
+DataCenterConnection: 	Flushing pending messages, DC 2
+DataCenterConnection: 	Flushing pending messages, DC 1
+DataCenterConnection: 	Flushing pending messages, DC -2
+DataCenterConnection: 	Flushing pending messages, DC 3
+DataCenterConnection: 	Flushing pending messages, DC 4
+DataCenterConnection: 	Flushing pending messages, DC -4
+DataCenterConnection: 	Flushing pending messages, DC 5
+APIWrapper:     	MadelineProto is ready!
+Login:          	Sending code...
+MTProto:        	Initing auth 2
+MTProto:        	Initing auth 2
+MTProto:        	Initing auth 2
+DataCenterConnection: 	Flushing pending messages, DC 5
+Login:          	Code sent successfully! Once you receive the code you should use the completePhoneLogin function.
+MTProto:        	Prompting final serialization (SHUTDOWN)...
+SessionPaths:   	Waiting for exclusive lock of /www/wwwroot/jiqiren.cryptoxthefuture.cc/api/../sessions/user_1524bd3c3b3cd05a50f1386c8bf8f690.madeline/safe.php.lock...
+SessionPaths:   	Got exclusive lock of /www/wwwroot/jiqiren.cryptoxthefuture.cc/api/../sessions/user_1524bd3c3b3cd05a50f1386c8bf8f690.madeline/safe.php.lock...
+SessionPaths:   	Waiting for exclusive lock of /www/wwwroot/jiqiren.cryptoxthefuture.cc/api/../sessions/user_1524bd3c3b3cd05a50f1386c8bf8f690.madeline/lightState.php.lock...
+SessionPaths:   	Got exclusive lock of /www/wwwroot/jiqiren.cryptoxthefuture.cc/api/../sessions/user_1524bd3c3b3cd05a50f1386c8bf8f690.madeline/lightState.php.lock...
+APIWrapper:     	Saved session!
+MTProto:        	Done final serialization (SHUTDOWN)!
+MTProto:        	Shutting down MadelineProto (MTProto)
+MTProto:        	Will unreference instance
+DataCenterConnection: 	Disconnecting from shared DC 2
+Connection:     	Disconnecting from DC 2.0
+DataCenterConnection: 	Backed up  from DC 2.0
+Connection:     	Disconnected from DC 2.0
+DataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC 2
+DataCenterConnection: 	Disconnecting from shared DC 1
+Connection:     	Disconnecting from DC 1.0
+DataCenterConnection: 	Backed up  from DC 1.0
+Connection:     	Disconnected from DC 1.0
+DataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC 1
+DataCenterConnection: 	Disconnecting from shared DC -2
+Connection:     	Disconnecting from DC -2.0
+DataCenterConnection: 	Backed up  from DC -2.0
+Connection:     	Disconnected from DC -2.0
+DataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC -2
+DataCenterConnection: 	Disconnecting from shared DC 3
+Connection:     	Disconnecting from DC 3.0
+DataCenterConnection: 	Backed up  from DC 3.0
+Connection:     	Disconnected from DC 3.0
+DataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC 3
+DataCenterConnection: 	Disconnecting from shared DC 4
+Connection:     	Disconnecting from DC 4.0
+DataCenterConnection: 	Backed up  from DC 4.0
+Connection:     	Disconnected from DC 4.0
+DataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC 4
+DataCenterConnection: 	Disconnecting from shared DC -4
+Connection:     	Disconnecting from DC -4.0
+DataCenterConnection: 	Backed up  from DC -4.0
+Connection:     	Disconnected from DC -4.0
+DataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC -4
+DataCenterConnection: 	Disconnecting from shared DC 5
+Connection:     	Disconnecting from DC 5.0
+DataCenterConnection: 	Backed up  from DC 5.0
+Connection:     	Disconnected from DC 5.0
+DataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC 5
+MTProto:        	Unreferenced instance
+MTProto:        	Successfully destroyed MadelineProto
+Logger:         	MadelineProto 8.0.0-beta144
+Logger:         	Copyright (C) 2016-2026 Daniil Gentili
+Logger:         	Licensed under AGPLv3
+Logger:         	https://github.com/danog/MadelineProto
+Exception:      	MadelineProto requires the fileinfo extension to run. Try running sudo apt-get install php8.2-fileinfo. in MadelineProto:1
+MTProto:        	Prompting final serialization (SHUTDOWN)...
+MTProto:        	Done final serialization (SHUTDOWN)!
+[22-Apr-2026 22:27:28 Asia/Shanghai] PHP Fatal error:  Uncaught Error: Call to undefined function pcntl_waitpid() in /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/amphp/process/src/Internal/Posix/PosixHandle.php:108
+Stack trace:
+#0 /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/amphp/process/src/Process.php(109): Amp\Process\Internal\Posix\PosixHandle->wait()
+#1 [internal function]: Amp\Process\Process::Amp\Process\{closure}()
+#2 {main}
+  thrown in /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/amphp/process/src/Internal/Posix/PosixHandle.php on line 108
+[22-Apr-2026 22:27:28 Asia/Shanghai] PHP Fatal error:  Uncaught Error: Call to undefined function pcntl_waitpid() in /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/amphp/process/src/Internal/Posix/PosixHandle.php:88
+Stack trace:
+#0 /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/amphp/process/src/Internal/Posix/PosixHandle.php(79): Amp\Process\Internal\Posix\PosixHandle::hasChildExited()
+#1 /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/amphp/process/src/Internal/Posix/PosixHandle.php(102): Amp\Process\Internal\Posix\PosixHandle::asyncWaitPid()
+#2 [internal function]: Amp\Process\Internal\Posix\PosixHandle->__destruct()
+#3 {main}
+  thrown in /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/amphp/process/src/Internal/Posix/PosixHandle.php on line 88
+Logger:         	MadelineProto 8.0.0-beta144
+Logger:         	Copyright (C) 2016-2026 Daniil Gentili
+Logger:         	Licensed under AGPLv3
+Logger:         	https://github.com/danog/MadelineProto
+MTProto:        	The database settings have changed!
+MTProto:        	The serialization settings have changed!
+DataCenter:     	Connecting to DC 2 from scratch
+DataCenterConnection: 	Trying shared connection via tcp://149.154.167.51:443 main DC 2, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC 2.0
+Session:        	Resetting session in DC 2.0...
+Connection:     	Connected to DC 2.0!
+DataCenterConnection: 	Restoring 0 messages to DC 2
+DataCenterConnection: 	Flushing pending messages, DC 2
+DataCenter:     	OK!
+MTProto:        	Initing authorization...
+DataCenterConnection: 	Initing auth for DC 2
+DataCenterConnection: 	Generating permanent authorization key for DC 2...
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with python_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with native_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Auth key generated
+DataCenterConnection: 	Generating temporary authorization key for DC 2...
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with python_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with native_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Auth key generated
+DataCenterConnection: 	Bound temporary and permanent authorization keys, DC 2
+WriteLoop:      	Writing client info (also executing help.getConfig)...
+DataCenterConnection: 	Flushing pending messages, DC 2
+MTProto:        	Done initing authorization!
+MTProto:        	Starting update system
+DataCenterConnection: 	Flushing pending messages, DC 2
+MTProto:        	Got new DC options, reconnecting
+DataCenter:     	Connecting to DC 1 from scratch
+DataCenterConnection: 	Trying shared connection via tcp://149.154.175.60:443 main DC 1, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC 1.0
+Session:        	Resetting session in DC 1.0...
+DataCenter:     	Not reconnecting to DC 2 (-1)
+DataCenter:     	Connecting to DC -2 from scratch
+DataCenterConnection: 	Trying shared connection via tcp://149.154.167.151:443 main DC -2, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC -2.0
+Session:        	Resetting session in DC -2.0...
+DataCenter:     	Connecting to DC 3 from scratch
+DataCenterConnection: 	Trying shared connection via tcp://149.154.175.100:443 main DC 3, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC 3.0
+Session:        	Resetting session in DC 3.0...
+DataCenter:     	Connecting to DC 4 from scratch
+DataCenterConnection: 	Trying shared connection via tcp://149.154.167.91:443 main DC 4, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC 4.0
+Session:        	Resetting session in DC 4.0...
+DataCenter:     	Connecting to DC -4 from scratch
+DataCenterConnection: 	Trying shared connection via tcp://149.154.165.111:443 main DC -4, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC -4.0
+Session:        	Resetting session in DC -4.0...
+DataCenter:     	Connecting to DC 5 from scratch
+DataCenterConnection: 	Trying shared connection via tcp://91.108.56.195:443 main DC 5, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC 5.0
+Session:        	Resetting session in DC 5.0...
+PingLoop:       	Ping DC 2.0
+MTProto:        	Initing auth 2
+MTProto:        	Initing auth 2
+MTProto:        	Initing auth 2
+Connection:     	Connected to DC 1.0!
+DataCenterConnection: 	Restoring 0 messages to DC 1
+DataCenterConnection: 	Flushing pending messages, DC 1
+DataCenter:     	OK!
+Connection:     	Connected to DC -2.0!
+DataCenterConnection: 	Restoring 0 messages to DC -2
+DataCenterConnection: 	Flushing pending messages, DC -2
+DataCenter:     	OK!
+Connection:     	Connected to DC -4.0!
+DataCenterConnection: 	Restoring 0 messages to DC -4
+DataCenterConnection: 	Flushing pending messages, DC -4
+DataCenter:     	OK!
+Connection:     	Connected to DC 4.0!
+DataCenterConnection: 	Restoring 0 messages to DC 4
+DataCenterConnection: 	Flushing pending messages, DC 4
+DataCenter:     	OK!
+Connection:     	Connected to DC 3.0!
+DataCenterConnection: 	Restoring 0 messages to DC 3
+DataCenterConnection: 	Flushing pending messages, DC 3
+DataCenter:     	OK!
+Connection:     	Connected to DC 5.0!
+DataCenterConnection: 	Restoring 0 messages to DC 5
+DataCenterConnection: 	Flushing pending messages, DC 5
+DataCenter:     	OK!
+MTProto:        	Initing authorization...
+DataCenterConnection: 	Initing auth for DC 2
+DataCenterConnection: 	Initing auth for DC 1
+DataCenterConnection: 	Generating permanent authorization key for DC 1...
+DataCenterConnection: 	Initing auth for DC 3
+DataCenterConnection: 	Generating permanent authorization key for DC 3...
+DataCenterConnection: 	Initing auth for DC 4
+DataCenterConnection: 	Generating permanent authorization key for DC 4...
+DataCenterConnection: 	Initing auth for DC 5
+DataCenterConnection: 	Generating permanent authorization key for DC 5...
+PingLoop:       	Ping DC 2.0
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with python_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with native_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with python_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with native_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Auth key generated
+DataCenterConnection: 	Generating temporary authorization key for DC 4...
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with python_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with native_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Auth key generated
+DataCenterConnection: 	Bound temporary and permanent authorization keys, DC 4
+WriteLoop:      	Writing client info (also executing help.getConfig)...
+DataCenterConnection: 	Flushing pending messages, DC 4
+PingLoop:       	Ping DC 4.0
+AuthKeyHandler: 	Auth key generated
+DataCenterConnection: 	Generating temporary authorization key for DC 5...
+CheckLoop:      	Still missing req_pq_multi with message ID 7631591499792568004 sent 10 seconds ago on DC 1.0, resending
+CheckLoop:      	Still missing req_pq_multi with message ID 7631591499792645812 sent 10 seconds ago on DC 3.0, resending
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with python_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with native_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with python_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with native_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+Connection:     	Connecting to DC -2.1
+Session:        	Resetting session in DC -2.1...
+Connection:     	Connecting to DC -4.1
+Session:        	Resetting session in DC -4.1...
+Connection:     	Connected to DC -2.1!
+Connection:     	Connecting to DC -2.2
+Session:        	Resetting session in DC -2.2...
+Connection:     	Connected to DC -4.1!
+Connection:     	Connecting to DC -4.2
+Session:        	Resetting session in DC -4.2...
+Connection:     	Connected to DC -2.2!
+Connection:     	Connected to DC -4.2!
+CheckLoop:      	Still missing req_pq_multi with message ID 7631591499792568004 sent 10 seconds ago on DC 1.0, resending
+AuthKeyHandler: 	Auth key generated
+CheckLoop:      	Still missing req_DH_params with message ID 7631591551332682536 sent 10 seconds ago on DC 3.0, resending
+DataCenterConnection: 	Bound temporary and permanent authorization keys, DC 5
+WriteLoop:      	Writing client info (also executing help.getConfig)...
+DataCenterConnection: 	Flushing pending messages, DC 5
+PingLoop:       	Ping DC 5.0
+ResponseHandler: 	Dunno how to handle 
+array (
+  '_' => 'resPQ',
+  'nonce' => 'dö4u»gK·hΩ·≠≥D',
+  'server_nonce' => 'ﬂPãªæ◊/ˆ=>Fñ9·',
+  'pq' => '#óˆnÈmÏ',
+  'server_public_key_fingerprints' => 
+  array (
+    0 => 'Ö˝dﬁÖù–',
+    1 => '•∑˜	5_√',
+    2 => '!kËl+¥√',
+  ),
+)
+ResponseHandler: 	Dunno how to handle 
+array (
+  '_' => 'server_DH_params_ok',
+  'nonce' => 'dö4u»gK·hΩ·≠≥D',
+  'server_nonce' => '˜0ªsùfò∆<®+Åı€¨',
+  'encrypted_answer' => '' . "\0" . 'XÃìÖö€∑/ulÆ‡ﬁc1–Ó’ÿtêÅƒµ≈î‘äÎã<g≤_◊◊dÔP„˘PÌõ^‹#NÔVî*wÄs¨ﬁ∑›„zÏõ–£®â!˙<ïãÃ≤VÎ\\^´¢aSòﬁ6¶iŒ_§ÖÒ∂«œ' . "\0" . '£ôŒ‘∑ú˘T4HïU≤N\'«ß‹˛ÉΩ\'9ÒäE‹^/ÿí∆õ~A⁄XjL†ﬁ¬úﬂ:Xú Ju7k,èÎüjπ„oêˆVÎPòc©ûÎ¢kjìí_—Jü8à°73‹=≠å]µD¥.∏Ê–,˜≥ﬂì˛qˆObz_äΩ=QÁ˚‹Ê®í¬Ìòê«≤qﬁ‰S†ÌØq‘«•Îƒ«e¸Z÷‹√ËyP~)≥Íj(' . "\0" . 'F·œf€ªoaéâù|#=Gì–æaù“W≠ˇr∏S‰	{iOöÀWÉ>Ï1vﬁ.)\'ø˘Ë›*Rt0I‹' . "\0" . 'MŸcN˘_;∫àê2`tŒª≤zr∂=¿‹ l?W"ﬁb' . "\0" . '=¶µ*kŸ˚V3®æù=úv˜Ïh»Ô†Ar-ˇh;qj≤…’W›yÒ[úHÃ”z‹)7	4a~≈æ|ÄΩ}’œÖÅ8)AÊﬁ_Ü¶æ√´üãs&†Xé/CvºáÆb¢Böuá' . "\0" . 'ı›2YVîR1~Mˆ®´.√±wQ˙∂TÕÂèe∏—Ì6Âik™ãRJ≈ÌW36Ñ»ù‚$ÛÍÿÂj‘1SΩ†íxã¢Áb:ÆÒÑ∑hO§/Ã£e·[“ÚM◊ATn™b{`øßEø‚',
+)
+AuthKeyHandler: 	Auth key generated
+DataCenterConnection: 	Generating temporary authorization key for DC 3...
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with python_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with native_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+CheckLoop:      	Still missing req_pq_multi with message ID 7631591499792568004 sent 11 seconds ago on DC 1.0, resending
+AuthKeyHandler: 	Auth key generated
+DataCenterConnection: 	Bound temporary and permanent authorization keys, DC 3
+WriteLoop:      	Writing client info (also executing help.getConfig)...
+DataCenterConnection: 	Flushing pending messages, DC 3
+PingLoop:       	Ping DC 3.0
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with python_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with native_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+ResponseHandler: 	Dunno how to handle 
+array (
+  '_' => 'resPQ',
+  'nonce' => '∞ºQ)%å05¡ÙHndÄ',
+  'server_nonce' => 'µa?Qa„P–À*ºÚ6M)õ',
+  'pq' => 'ØBÃ®_áC',
+  'server_public_key_fingerprints' => 
+  array (
+    0 => 'Ö˝dﬁÖù–',
+    1 => '•∑˜	5_√',
+    2 => '!kËl+¥√',
+  ),
+)
+ResponseHandler: 	Dunno how to handle 
+array (
+  '_' => 'resPQ',
+  'nonce' => '∞ºQ)%å05¡ÙHndÄ',
+  'server_nonce' => 'éŒ>aò—‰≠øÜqüo%',
+  'pq' => '1jﬁT≈7',
+  'server_public_key_fingerprints' => 
+  array (
+    0 => 'Ö˝dﬁÖù–',
+    1 => '•∑˜	5_√',
+    2 => '!kËl+¥√',
+  ),
+)
+AuthKeyHandler: 	Auth key generated
+DataCenterConnection: 	Generating temporary authorization key for DC 1...
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with python_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with native_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+Connection:     	Connecting to DC -2.3
+Session:        	Resetting session in DC -2.3...
+Connection:     	Connecting to DC -4.3
+Session:        	Resetting session in DC -4.3...
+AuthKeyHandler: 	Auth key generated
+Connection:     	Connected to DC -2.3!
+Connection:     	Connecting to DC -2.4
+Session:        	Resetting session in DC -2.4...
+Connection:     	Connected to DC -4.3!
+Connection:     	Connecting to DC -4.4
+Session:        	Resetting session in DC -4.4...
+Connection:     	Connected to DC -2.4!
+Connection:     	Connected to DC -4.4!
+DataCenterConnection: 	Bound temporary and permanent authorization keys, DC 1
+WriteLoop:      	Writing client info (also executing help.getConfig)...
+DataCenterConnection: 	Flushing pending messages, DC 1
+DataCenterConnection: 	Initing auth for DC -2
+DataCenterConnection: 	Generating temporary authorization key for DC -2...
+DataCenterConnection: 	Initing auth for DC -4
+DataCenterConnection: 	Generating temporary authorization key for DC -4...
+PingLoop:       	Ping DC 1.0
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with python_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with native_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Auth key generated
+DataCenterConnection: 	Bound temporary and permanent authorization keys, DC -2
+WriteLoop:      	Writing client info (also executing help.getConfig)...
+DataCenterConnection: 	Flushing pending messages, DC -2
+CheckLoop:      	Still missing req_pq_multi with message ID 7631591675886674252 sent 10 seconds ago on DC -4.0, resending
+ReadLoop:       	Got nothing in the socket in DC -4.0, reconnecting...
+Connection:     	Reconnecting DC -4.0
+Connection:     	Disconnecting from DC -4.0
+Connection:     	Disconnected from DC -4.0
+DataCenter:     	Reconnecting to DC -4 (0) from existing
+DataCenterConnection: 	Trying shared connection via tcp://149.154.165.111:443 main DC -4, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (0)
+Connection:     	Connecting to DC -4.0
+Connection:     	Connected to DC -4.0!
+DataCenter:     	OK!
+Exception:      	Restart because we were reconnected in Connection.php:280
+AuthKeyHandler: 	An exception occurred while generating the authorization key in DC -4: Restart because we were reconnected in Connection on line 280. Retrying...
+Connection:     	Reconnecting DC -4.0
+Connection:     	Disconnecting from DC -4.0
+Connection:     	Disconnected from DC -4.0
+DataCenter:     	Reconnecting to DC -4 (0) from existing
+DataCenterConnection: 	Trying shared connection via tcp://149.154.165.111:443 main DC -4, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (0)
+Connection:     	Connecting to DC -4.0
+Connection:     	Connected to DC -4.0!
+DataCenter:     	OK!
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with python_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with native_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Auth key generated
+DataCenterConnection: 	Bound temporary and permanent authorization keys, DC -4
+WriteLoop:      	Writing client info (also executing help.getConfig)...
+DataCenterConnection: 	Flushing pending messages, DC -4
+MTProto:        	Done initing authorization!
+MTProto:        	Starting update system
+DataCenterConnection: 	Flushing pending messages, DC 2
+DataCenterConnection: 	Flushing pending messages, DC 1
+DataCenterConnection: 	Flushing pending messages, DC -2
+DataCenterConnection: 	Flushing pending messages, DC 3
+DataCenterConnection: 	Flushing pending messages, DC 4
+DataCenterConnection: 	Flushing pending messages, DC -4
+DataCenterConnection: 	Flushing pending messages, DC 5
+DataCenter:     	Not reconnecting to DC 2 (-1)
+DataCenter:     	Not reconnecting to DC 1 (-1)
+DataCenter:     	Not reconnecting to DC -2 (-1)
+DataCenter:     	Not reconnecting to DC 3 (-1)
+DataCenter:     	Not reconnecting to DC 4 (-1)
+DataCenter:     	Not reconnecting to DC -4 (-1)
+DataCenter:     	Not reconnecting to DC 5 (-1)
+MTProto:        	Initing authorization...
+DataCenterConnection: 	Initing auth for DC 2
+DataCenterConnection: 	Initing auth for DC 1
+DataCenterConnection: 	Initing auth for DC 3
+DataCenterConnection: 	Initing auth for DC 4
+DataCenterConnection: 	Initing auth for DC 5
+DataCenterConnection: 	Initing auth for DC -2
+DataCenterConnection: 	Initing auth for DC -4
+MTProto:        	Done initing authorization!
+MTProto:        	Starting update system
+DataCenterConnection: 	Flushing pending messages, DC 2
+DataCenterConnection: 	Flushing pending messages, DC 1
+DataCenterConnection: 	Flushing pending messages, DC -2
+DataCenterConnection: 	Flushing pending messages, DC 3
+DataCenterConnection: 	Flushing pending messages, DC 4
+DataCenterConnection: 	Flushing pending messages, DC -4
+DataCenterConnection: 	Flushing pending messages, DC 5
+DataCenter:     	Not reconnecting to DC 2 (-1)
+DataCenter:     	Not reconnecting to DC 1 (-1)
+DataCenter:     	Not reconnecting to DC -2 (-1)
+DataCenter:     	Not reconnecting to DC 3 (-1)
+DataCenter:     	Not reconnecting to DC 4 (-1)
+DataCenter:     	Not reconnecting to DC -4 (-1)
+DataCenter:     	Not reconnecting to DC 5 (-1)
+MTProto:        	Initing authorization...
+DataCenterConnection: 	Initing auth for DC 2
+DataCenterConnection: 	Initing auth for DC 1
+DataCenterConnection: 	Initing auth for DC 3
+DataCenterConnection: 	Initing auth for DC 4
+DataCenterConnection: 	Initing auth for DC 5
+DataCenterConnection: 	Initing auth for DC -2
+DataCenterConnection: 	Initing auth for DC -4
+MTProto:        	Done initing authorization!
+MTProto:        	Starting update system
+DataCenterConnection: 	Flushing pending messages, DC 2
+DataCenterConnection: 	Flushing pending messages, DC 1
+DataCenterConnection: 	Flushing pending messages, DC -2
+DataCenterConnection: 	Flushing pending messages, DC 3
+DataCenterConnection: 	Flushing pending messages, DC 4
+DataCenterConnection: 	Flushing pending messages, DC -4
+DataCenterConnection: 	Flushing pending messages, DC 5
+MTProto:        	Initing auth 2
+MTProto:        	Initing auth 2
+MTProto:        	Initing auth 2
+PingLoop:       	Ping DC 2.0
+PingLoop:       	Ping DC 1.0
+PingLoop:       	Ping DC 3.0
+PingLoop:       	Ping DC 4.0
+PingLoop:       	Ping DC 5.0
+MTProto:        	We're in SC, nearest DC is 4.
+MTProto:        	Starting update system
+DataCenterConnection: 	Flushing pending messages, DC 2
+DataCenterConnection: 	Flushing pending messages, DC 1
+DataCenterConnection: 	Flushing pending messages, DC -2
+DataCenterConnection: 	Flushing pending messages, DC 3
+DataCenterConnection: 	Flushing pending messages, DC 4
+DataCenterConnection: 	Flushing pending messages, DC -4
+DataCenterConnection: 	Flushing pending messages, DC 5
+APIWrapper:     	MadelineProto is ready!
+Login:          	Sending code...
+MTProto:        	Initing auth 2
+MTProto:        	Initing auth 2
+MTProto:        	Initing auth 2
+DataCenterConnection: 	Flushing pending messages, DC 5
+Login:          	Code sent successfully! Once you receive the code you should use the completePhoneLogin function.
+MTProto:        	Prompting final serialization (SHUTDOWN)...
+SessionPaths:   	Waiting for exclusive lock of /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/api/../sessions/user_c5c0bd701b98f6e6cc62585da54037ab.madeline/safe.php.lock...
+SessionPaths:   	Got exclusive lock of /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/api/../sessions/user_c5c0bd701b98f6e6cc62585da54037ab.madeline/safe.php.lock...
+SessionPaths:   	Waiting for exclusive lock of /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/api/../sessions/user_c5c0bd701b98f6e6cc62585da54037ab.madeline/lightState.php.lock...
+SessionPaths:   	Got exclusive lock of /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/api/../sessions/user_c5c0bd701b98f6e6cc62585da54037ab.madeline/lightState.php.lock...
+APIWrapper:     	Saved session!
+MTProto:        	Done final serialization (SHUTDOWN)!
+MTProto:        	Shutting down MadelineProto (MTProto)
+MTProto:        	Will unreference instance
+DataCenterConnection: 	Disconnecting from shared DC 2
+Connection:     	Disconnecting from DC 2.0
+DataCenterConnection: 	Backed up  from DC 2.0
+Connection:     	Disconnected from DC 2.0
+DataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC 2
+DataCenterConnection: 	Disconnecting from shared DC 1
+Connection:     	Disconnecting from DC 1.0
+DataCenterConnection: 	Backed up  from DC 1.0
+Connection:     	Disconnected from DC 1.0
+DataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC 1
+DataCenterConnection: 	Disconnecting from shared DC -2
+Connection:     	Disconnecting from DC -2.0
+DataCenterConnection: 	Backed up  from DC -2.0
+Connection:     	Disconnected from DC -2.0
+Connection:     	Disconnecting from DC -2.1
+DataCenterConnection: 	Backed up  from DC -2.1
+Connection:     	Disconnected from DC -2.1
+Connection:     	Disconnecting from DC -2.2
+DataCenterConnection: 	Backed up  from DC -2.2
+Connection:     	Disconnected from DC -2.2
+Connection:     	Disconnecting from DC -2.3
+DataCenterConnection: 	Backed up  from DC -2.3
+Connection:     	Disconnected from DC -2.3
+Connection:     	Disconnecting from DC -2.4
+DataCenterConnection: 	Backed up  from DC -2.4
+Connection:     	Disconnected from DC -2.4
+DataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC -2
+DataCenterConnection: 	Disconnecting from shared DC 3
+Connection:     	Disconnecting from DC 3.0
+DataCenterConnection: 	Backed up  from DC 3.0
+Connection:     	Disconnected from DC 3.0
+DataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC 3
+DataCenterConnection: 	Disconnecting from shared DC 4
+Connection:     	Disconnecting from DC 4.0
+DataCenterConnection: 	Backed up  from DC 4.0
+Connection:     	Disconnected from DC 4.0
+DataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC 4
+DataCenterConnection: 	Disconnecting from shared DC -4
+Connection:     	Disconnecting from DC -4.0
+DataCenterConnection: 	Backed up  from DC -4.0
+Connection:     	Disconnected from DC -4.0
+Connection:     	Disconnecting from DC -4.1
+DataCenterConnection: 	Backed up  from DC -4.1
+Connection:     	Disconnected from DC -4.1
+Connection:     	Disconnecting from DC -4.2
+DataCenterConnection: 	Backed up  from DC -4.2
+Connection:     	Disconnected from DC -4.2
+Connection:     	Disconnecting from DC -4.3
+DataCenterConnection: 	Backed up  from DC -4.3
+Connection:     	Disconnected from DC -4.3
+Connection:     	Disconnecting from DC -4.4
+DataCenterConnection: 	Backed up  from DC -4.4
+Connection:     	Disconnected from DC -4.4
+DataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC -4
+DataCenterConnection: 	Disconnecting from shared DC 5
+Connection:     	Disconnecting from DC 5.0
+DataCenterConnection: 	Backed up  from DC 5.0
+Connection:     	Disconnected from DC 5.0
+DataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC 5
+MTProto:        	Unreferenced instance
+MTProto:        	Successfully destroyed MadelineProto
+Logger:         	MadelineProto 8.0.0-beta144
+Logger:         	Copyright (C) 2016-2026 Daniil Gentili
+Logger:         	Licensed under AGPLv3
+Logger:         	https://github.com/danog/MadelineProto
+MTProto:        	The database settings have changed!
+MTProto:        	The serialization settings have changed!
+DataCenter:     	Connecting to DC 2 from scratch
+DataCenterConnection: 	Trying shared connection via tcp://149.154.167.51:443 main DC 2, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC 2.0
+Session:        	Resetting session in DC 2.0...
+Connection:     	Connected to DC 2.0!
+DataCenterConnection: 	Restoring 0 messages to DC 2
+DataCenterConnection: 	Flushing pending messages, DC 2
+DataCenter:     	OK!
+MTProto:        	Initing authorization...
+DataCenterConnection: 	Initing auth for DC 2
+DataCenterConnection: 	Generating permanent authorization key for DC 2...
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with python_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with native_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Auth key generated
+DataCenterConnection: 	Generating temporary authorization key for DC 2...
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with python_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with native_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Auth key generated
+DataCenterConnection: 	Bound temporary and permanent authorization keys, DC 2
+WriteLoop:      	Writing client info (also executing help.getConfig)...
+DataCenterConnection: 	Flushing pending messages, DC 2
+MTProto:        	Done initing authorization!
+MTProto:        	Starting update system
+DataCenterConnection: 	Flushing pending messages, DC 2
+MTProto:        	Got new DC options, reconnecting
+DataCenter:     	Connecting to DC 1 from scratch
+DataCenterConnection: 	Trying shared connection via tcp://149.154.175.60:443 main DC 1, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC 1.0
+Session:        	Resetting session in DC 1.0...
+DataCenter:     	Not reconnecting to DC 2 (-1)
+DataCenter:     	Connecting to DC -2 from scratch
+DataCenterConnection: 	Trying shared connection via tcp://149.154.167.151:443 main DC -2, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC -2.0
+Session:        	Resetting session in DC -2.0...
+DataCenter:     	Connecting to DC 3 from scratch
+DataCenterConnection: 	Trying shared connection via tcp://149.154.175.100:443 main DC 3, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC 3.0
+Session:        	Resetting session in DC 3.0...
+DataCenter:     	Connecting to DC 4 from scratch
+DataCenterConnection: 	Trying shared connection via tcp://149.154.167.91:443 main DC 4, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC 4.0
+Session:        	Resetting session in DC 4.0...
+DataCenter:     	Connecting to DC -4 from scratch
+DataCenterConnection: 	Trying shared connection via tcp://149.154.165.111:443 main DC -4, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC -4.0
+Session:        	Resetting session in DC -4.0...
+DataCenter:     	Connecting to DC 5 from scratch
+DataCenterConnection: 	Trying shared connection via tcp://91.108.56.195:443 main DC 5, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC 5.0
+Session:        	Resetting session in DC 5.0...
+PingLoop:       	Ping DC 2.0
+MTProto:        	Initing auth 2
+MTProto:        	Initing auth 2
+MTProto:        	Initing auth 2
+Connection:     	Connected to DC 1.0!
+DataCenterConnection: 	Restoring 0 messages to DC 1
+DataCenterConnection: 	Flushing pending messages, DC 1
+DataCenter:     	OK!
+Connection:     	Connected to DC 3.0!
+DataCenterConnection: 	Restoring 0 messages to DC 3
+DataCenterConnection: 	Flushing pending messages, DC 3
+DataCenter:     	OK!
+Connection:     	Connected to DC -2.0!
+DataCenterConnection: 	Restoring 0 messages to DC -2
+DataCenterConnection: 	Flushing pending messages, DC -2
+DataCenter:     	OK!
+Connection:     	Connected to DC 4.0!
+DataCenterConnection: 	Restoring 0 messages to DC 4
+DataCenterConnection: 	Flushing pending messages, DC 4
+DataCenter:     	OK!
+Connection:     	Connected to DC -4.0!
+DataCenterConnection: 	Restoring 0 messages to DC -4
+DataCenterConnection: 	Flushing pending messages, DC -4
+DataCenter:     	OK!
+Connection:     	Connected to DC 5.0!
+DataCenterConnection: 	Restoring 0 messages to DC 5
+DataCenterConnection: 	Flushing pending messages, DC 5
+DataCenter:     	OK!
+MTProto:        	Initing authorization...
+DataCenterConnection: 	Initing auth for DC 2
+DataCenterConnection: 	Initing auth for DC 1
+DataCenterConnection: 	Generating permanent authorization key for DC 1...
+DataCenterConnection: 	Initing auth for DC 3
+DataCenterConnection: 	Generating permanent authorization key for DC 3...
+DataCenterConnection: 	Initing auth for DC 4
+DataCenterConnection: 	Generating permanent authorization key for DC 4...
+DataCenterConnection: 	Initing auth for DC 5
+DataCenterConnection: 	Generating permanent authorization key for DC 5...
+PingLoop:       	Ping DC 2.0
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with python_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with native_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with python_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with native_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with python_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with native_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with python_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with native_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Auth key generated
+DataCenterConnection: 	Generating temporary authorization key for DC 1...
+AuthKeyHandler: 	Auth key generated
+DataCenterConnection: 	Generating temporary authorization key for DC 3...
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with python_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with native_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with python_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with native_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Auth key generated
+DataCenterConnection: 	Generating temporary authorization key for DC 5...
+AuthKeyHandler: 	Auth key generated
+DataCenterConnection: 	Generating temporary authorization key for DC 4...
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with python_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with native_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with python_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with native_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Auth key generated
+AuthKeyHandler: 	Auth key generated
+AuthKeyHandler: 	Auth key generated
+DataCenterConnection: 	Bound temporary and permanent authorization keys, DC 1
+DataCenterConnection: 	Bound temporary and permanent authorization keys, DC 3
+WriteLoop:      	Writing client info (also executing help.getConfig)...
+WriteLoop:      	Writing client info (also executing help.getConfig)...
+DataCenterConnection: 	Flushing pending messages, DC 1
+PingLoop:       	Ping DC 1.0
+DataCenterConnection: 	Flushing pending messages, DC 3
+PingLoop:       	Ping DC 3.0
+AuthKeyHandler: 	Auth key generated
+DataCenterConnection: 	Bound temporary and permanent authorization keys, DC 4
+WriteLoop:      	Writing client info (also executing help.getConfig)...
+DataCenterConnection: 	Bound temporary and permanent authorization keys, DC 5
+WriteLoop:      	Writing client info (also executing help.getConfig)...
+DataCenterConnection: 	Flushing pending messages, DC 4
+PingLoop:       	Ping DC 4.0
+DataCenterConnection: 	Flushing pending messages, DC 5
+DataCenterConnection: 	Initing auth for DC -2
+DataCenterConnection: 	Generating temporary authorization key for DC -2...
+DataCenterConnection: 	Initing auth for DC -4
+DataCenterConnection: 	Generating temporary authorization key for DC -4...
+PingLoop:       	Ping DC 5.0
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with python_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with native_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with python_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Factorizing with native_single (please wait, might take a while)
+AuthKeyHandler: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler: 	Auth key generated
+AuthKeyHandler: 	Auth key generated
+DataCenterConnection: 	Bound temporary and permanent authorization keys, DC -4
+WriteLoop:      	Writing client info (also executing help.getConfig)...
+Connection:     	Connecting to DC -2.1
+Session:        	Resetting session in DC -2.1...
+Connection:     	Connecting to DC -4.1
+Session:        	Resetting session in DC -4.1...
+Connection:     	Connected to DC -2.1!
+Connection:     	Connecting to DC -2.2
+Session:        	Resetting session in DC -2.2...
+Connection:     	Connected to DC -4.1!
+Connection:     	Connecting to DC -4.2
+Session:        	Resetting session in DC -4.2...
+Connection:     	Connected to DC -2.2!
+Connection:     	Connected to DC -4.2!
+DataCenterConnection: 	Bound temporary and permanent authorization keys, DC -2
+WriteLoop:      	Writing client info (also executing help.getConfig)...
+DataCenterConnection: 	Flushing pending messages, DC -4
+DataCenterConnection: 	Flushing pending messages, DC -2
+MTProto:        	Done initing authorization!
+MTProto:        	Starting update system
+DataCenterConnection: 	Flushing pending messages, DC 2
+DataCenterConnection: 	Flushing pending messages, DC 1
+DataCenterConnection: 	Flushing pending messages, DC -2
+DataCenterConnection: 	Flushing pending messages, DC 3
+DataCenterConnection: 	Flushing pending messages, DC 4
+DataCenterConnection: 	Flushing pending messages, DC -4
+DataCenterConnection: 	Flushing pending messages, DC 5
+DataCenter:     	Not reconnecting to DC 2 (-1)
+DataCenter:     	Not reconnecting to DC 1 (-1)
+DataCenter:     	Not reconnecting to DC -2 (-1)
+DataCenter:     	Not reconnecting to DC 3 (-1)
+DataCenter:     	Not reconnecting to DC 4 (-1)
+DataCenter:     	Not reconnecting to DC -4 (-1)
+DataCenter:     	Not reconnecting to DC 5 (-1)
+MTProto:        	Initing authorization...
+DataCenterConnection: 	Initing auth for DC 2
+DataCenterConnection: 	Initing auth for DC 1
+DataCenterConnection: 	Initing auth for DC 3
+DataCenterConnection: 	Initing auth for DC 4
+DataCenterConnection: 	Initing auth for DC 5
+DataCenterConnection: 	Initing auth for DC -2
+DataCenterConnection: 	Initing auth for DC -4
+MTProto:        	Done initing authorization!
+MTProto:        	Starting update system
+DataCenterConnection: 	Flushing pending messages, DC 2
+DataCenterConnection: 	Flushing pending messages, DC 1
+DataCenterConnection: 	Flushing pending messages, DC -2
+DataCenterConnection: 	Flushing pending messages, DC 3
+DataCenterConnection: 	Flushing pending messages, DC 4
+DataCenterConnection: 	Flushing pending messages, DC -4
+DataCenterConnection: 	Flushing pending messages, DC 5
+DataCenter:     	Not reconnecting to DC 2 (-1)
+DataCenter:     	Not reconnecting to DC 1 (-1)
+DataCenter:     	Not reconnecting to DC -2 (-1)
+DataCenter:     	Not reconnecting to DC 3 (-1)
+DataCenter:     	Not reconnecting to DC 4 (-1)
+DataCenter:     	Not reconnecting to DC -4 (-1)
+DataCenter:     	Not reconnecting to DC 5 (-1)
+MTProto:        	Initing authorization...
+DataCenterConnection: 	Initing auth for DC 2
+DataCenterConnection: 	Initing auth for DC 1
+DataCenterConnection: 	Initing auth for DC 3
+DataCenterConnection: 	Initing auth for DC 4
+DataCenterConnection: 	Initing auth for DC 5
+DataCenterConnection: 	Initing auth for DC -2
+DataCenterConnection: 	Initing auth for DC -4
+MTProto:        	Done initing authorization!
+MTProto:        	Starting update system
+DataCenterConnection: 	Flushing pending messages, DC 2
+DataCenterConnection: 	Flushing pending messages, DC 1
+DataCenterConnection: 	Flushing pending messages, DC -2
+DataCenterConnection: 	Flushing pending messages, DC 3
+DataCenterConnection: 	Flushing pending messages, DC 4
+DataCenterConnection: 	Flushing pending messages, DC -4
+DataCenterConnection: 	Flushing pending messages, DC 5
+MTProto:        	Initing auth 2
+MTProto:        	Initing auth 2
+MTProto:        	Initing auth 2
+PingLoop:       	Ping DC 2.0
+PingLoop:       	Ping DC 1.0
+PingLoop:       	Ping DC 3.0
+PingLoop:       	Ping DC 4.0
+PingLoop:       	Ping DC 5.0
+MTProto:        	We're in SC, nearest DC is 4.
+MTProto:        	Starting update system
+DataCenterConnection: 	Flushing pending messages, DC 2
+DataCenterConnection: 	Flushing pending messages, DC 1
+DataCenterConnection: 	Flushing pending messages, DC -2
+DataCenterConnection: 	Flushing pending messages, DC 3
+DataCenterConnection: 	Flushing pending messages, DC 4
+DataCenterConnection: 	Flushing pending messages, DC -4
+DataCenterConnection: 	Flushing pending messages, DC 5
+APIWrapper:     	MadelineProto is ready!
+Login:          	Sending code...
+MTProto:        	Initing auth 2
+MTProto:        	Initing auth 2
+MTProto:        	Initing auth 2
+DataCenterConnection: 	Flushing pending messages, DC 5
+Login:          	Code sent successfully! Once you receive the code you should use the completePhoneLogin function.
+MTProto:        	Prompting final serialization (SHUTDOWN)...
+SessionPaths:   	Waiting for exclusive lock of /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/api/../sessions/user_85bff54970cff483a8f9a4ca630408bf.madeline/safe.php.lock...
+SessionPaths:   	Got exclusive lock of /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/api/../sessions/user_85bff54970cff483a8f9a4ca630408bf.madeline/safe.php.lock...
+SessionPaths:   	Waiting for exclusive lock of /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/api/../sessions/user_85bff54970cff483a8f9a4ca630408bf.madeline/lightState.php.lock...
+SessionPaths:   	Got exclusive lock of /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/api/../sessions/user_85bff54970cff483a8f9a4ca630408bf.madeline/lightState.php.lock...
+APIWrapper:     	Saved session!
+MTProto:        	Done final serialization (SHUTDOWN)!
+MTProto:        	Shutting down MadelineProto (MTProto)
+MTProto:        	Will unreference instance
+DataCenterConnection: 	Disconnecting from shared DC 2
+Connection:     	Disconnecting from DC 2.0
+DataCenterConnection: 	Backed up  from DC 2.0
+Connection:     	Disconnected from DC 2.0
+DataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC 2
+DataCenterConnection: 	Disconnecting from shared DC 1
+Connection:     	Disconnecting from DC 1.0
+DataCenterConnection: 	Backed up  from DC 1.0
+Connection:     	Disconnected from DC 1.0
+DataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC 1
+DataCenterConnection: 	Disconnecting from shared DC -2
+Connection:     	Disconnecting from DC -2.0
+DataCenterConnection: 	Backed up  from DC -2.0
+Connection:     	Disconnected from DC -2.0
+Connection:     	Disconnecting from DC -2.1
+DataCenterConnection: 	Backed up  from DC -2.1
+Connection:     	Disconnected from DC -2.1
+Connection:     	Disconnecting from DC -2.2
+DataCenterConnection: 	Backed up  from DC -2.2
+Connection:     	Disconnected from DC -2.2
+DataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC -2
+DataCenterConnection: 	Disconnecting from shared DC 3
+Connection:     	Disconnecting from DC 3.0
+DataCenterConnection: 	Backed up  from DC 3.0
+Connection:     	Disconnected from DC 3.0
+DataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC 3
+DataCenterConnection: 	Disconnecting from shared DC 4
+Connection:     	Disconnecting from DC 4.0
+DataCenterConnection: 	Backed up  from DC 4.0
+Connection:     	Disconnected from DC 4.0
+DataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC 4
+DataCenterConnection: 	Disconnecting from shared DC -4
+Connection:     	Disconnecting from DC -4.0
+DataCenterConnection: 	Backed up  from DC -4.0
+Connection:     	Disconnected from DC -4.0
+Connection:     	Disconnecting from DC -4.1
+DataCenterConnection: 	Backed up  from DC -4.1
+Connection:     	Disconnected from DC -4.1
+Connection:     	Disconnecting from DC -4.2
+DataCenterConnection: 	Backed up  from DC -4.2
+Connection:     	Disconnected from DC -4.2
+DataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC -4
+DataCenterConnection: 	Disconnecting from shared DC 5
+Connection:     	Disconnecting from DC 5.0
+DataCenterConnection: 	Backed up  from DC 5.0
+Connection:     	Disconnected from DC 5.0
+DataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC 5
+MTProto:        	Unreferenced instance
+MTProto:        	Successfully destroyed MadelineProto
+Logger:         	MadelineProto 8.0.0-beta144
+Logger:         	Copyright (C) 2016-2026 Daniil Gentili
+Logger:         	Licensed under AGPLv3
+Logger:         	https://github.com/danog/MadelineProto
+Server:         	Starting IPC server /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/api/../sessions/user_85bff54970cff483a8f9a4ca630408bf.madeline (process)
+ProcessRunner:  	Starting process with '/www/server/php/82/bin/php' '-dhtml_errors=0' '-ddisplay_errors=0' '-dlog_errors=1' '/www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/danog/madelineproto/src/Ipc/Runner/entry.php' 'madeline-ipc' '/www/wwwroot/jiqirenbot.cryptoxthefuture.cc/api/../sessions/user_85bff54970cff483a8f9a4ca630408bf.madeline' '73955078'
+WebRunner:      	Successfully connected to tls://154.201.73.162:443!
+WebRunner:      	Sending payload: GET /vendor/danog/madelineproto/src/Ipc/Runner/entry.php?argv%5B0%5D=madeline-ipc&argv%5B1%5D=%2Fwww%2Fwwwroot%2Fjiqirenbot.cryptoxthefuture.cc%2Fapi%2F..%2Fsessions%2Fuser_85bff54970cff483a8f9a4ca630408bf.madeline&argv%5B2%5D=73955078&cwd=%2Fwww%2Fwwwroot%2Fjiqirenbot.cryptoxthefuture.cc%2Fapi&MadelineSelfRestart=1 HTTP/1.1
+Host: 154.201.73.162
+
+
+WebRunner:      	Successfully connected to tcp://154.201.73.162:443!
+WebRunner:      	Sending payload: GET /vendor/danog/madelineproto/src/Ipc/Runner/entry.php?argv%5B0%5D=madeline-ipc&argv%5B1%5D=%2Fwww%2Fwwwroot%2Fjiqirenbot.cryptoxthefuture.cc%2Fapi%2F..%2Fsessions%2Fuser_85bff54970cff483a8f9a4ca630408bf.madeline&argv%5B2%5D=73955078&cwd=%2Fwww%2Fwwwroot%2Fjiqirenbot.cryptoxthefuture.cc%2Fapi&MadelineSelfRestart=1 HTTP/1.1
+Host: 154.201.73.162
+
+
+WebRunner:      	Successfully connected to tcp://154.201.73.162:80!
+WebRunner:      	Sending payload: GET /vendor/danog/madelineproto/src/Ipc/Runner/entry.php?argv%5B0%5D=madeline-ipc&argv%5B1%5D=%2Fwww%2Fwwwroot%2Fjiqirenbot.cryptoxthefuture.cc%2Fapi%2F..%2Fsessions%2Fuser_85bff54970cff483a8f9a4ca630408bf.madeline&argv%5B2%5D=73955078&cwd=%2Fwww%2Fwwwroot%2Fjiqirenbot.cryptoxthefuture.cc%2Fapi&MadelineSelfRestart=1 HTTP/1.1
+Host: 154.201.73.162
+
+
+Serialization:  	MadelineProto is starting, please wait...
+Serialization:  	MadelineProto is starting, please wait...
+DataCenter:     	Disconnecting all before reconnect!
+DataCenter:     	Disconnecting all before reconnect!
+DataCenter:     	Disconnecting all before reconnect!
+DataCenter:     	Disconnecting all before reconnect!
+DataCenter:     	Disconnecting all before reconnect!
+DataCenter:     	Disconnecting all before reconnect!
+DataCenter:     	Disconnecting all before reconnect!
+DataCenter:     	Reconnecting to DC 1 (-1) from existing
+DataCenterConnection: 	Trying shared connection via tcp://149.154.175.60:443 main DC 1, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC 1.0
+Session:        	Resetting session in DC 1.0...
+DataCenter:     	Reconnecting to DC 2 (-1) from existing
+DataCenterConnection: 	Trying shared connection via tcp://149.154.167.41:443 main DC 2, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC 2.0
+Session:        	Resetting session in DC 2.0...
+DataCenter:     	Reconnecting to DC -2 (-1) from existing
+DataCenterConnection: 	Trying shared connection via tcp://149.154.167.151:443 main DC -2, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC -2.0
+Session:        	Resetting session in DC -2.0...
+DataCenter:     	Reconnecting to DC 3 (-1) from existing
+DataCenterConnection: 	Trying shared connection via tcp://149.154.175.100:443 main DC 3, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC 3.0
+Session:        	Resetting session in DC 3.0...
+DataCenter:     	Reconnecting to DC 4 (-1) from existing
+DataCenterConnection: 	Trying shared connection via tcp://149.154.167.91:443 main DC 4, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC 4.0
+Session:        	Resetting session in DC 4.0...
+DataCenter:     	Reconnecting to DC -4 (-1) from existing
+DataCenterConnection: 	Trying shared connection via tcp://149.154.165.111:443 main DC -4, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC -4.0
+Session:        	Resetting session in DC -4.0...
+DataCenter:     	Reconnecting to DC 5 (-1) from existing
+DataCenterConnection: 	Trying shared connection via tcp://91.108.56.195:443 main DC 5, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection:     	Connecting to DC 5.0
+Session:        	Resetting session in DC 5.0...
+Connection:     	Connected to DC 1.0!
+DataCenterConnection: 	Restoring 0 messages to DC 1
+DataCenterConnection: 	Flushing pending messages, DC 1
+DataCenter:     	OK!
+PingLoop:       	Ping DC 1.0
+Connection:     	Connected to DC 3.0!
+DataCenterConnection: 	Restoring 0 messages to DC 3
+DataCenterConnection: 	Flushing pending messages, DC 3
+DataCenter:     	OK!
+PingLoop:       	Ping DC 3.0
+Connection:     	Connected to DC -2.0!
+DataCenterConnection: 	Restoring 0 messages to DC -2
+DataCenterConnection: 	Flushing pending messages, DC -2
+DataCenter:     	OK!
+Connection:     	Connected to DC 2.0!
+DataCenterConnection: 	Restoring 0 messages to DC 2
+DataCenterConnection: 	Flushing pending messages, DC 2
+DataCenter:     	OK!
+PingLoop:       	Ping DC 2.0
+Connection:     	Connected to DC 4.0!
+DataCenterConnection: 	Restoring 0 messages to DC 4
+DataCenterConnection: 	Flushing pending messages, DC 4
+DataCenter:     	OK!
+PingLoop:       	Ping DC 4.0
+Connection:     	Connected to DC -4.0!
+DataCenterConnection: 	Restoring 0 messages to DC -4
+DataCenterConnection: 	Flushing pending messages, DC -4
+DataCenter:     	OK!
+Connection:     	Connected to DC 5.0!
+DataCenterConnection: 	Restoring 0 messages to DC 5
+DataCenterConnection: 	Flushing pending messages, DC 5
+DataCenter:     	OK!
+MTProto:        	Initing authorization...
+DataCenterConnection: 	Initing auth for DC 2
+DataCenterConnection: 	Initing auth for DC 1
+DataCenterConnection: 	Initing auth for DC 3
+DataCenterConnection: 	Initing auth for DC 4
+DataCenterConnection: 	Initing auth for DC 5
+DataCenterConnection: 	Initing auth for DC -2
+DataCenterConnection: 	Initing auth for DC -4
+MTProto:        	Done initing authorization!
+MTProto:        	Starting update system
+DataCenterConnection: 	Flushing pending messages, DC 2
+DataCenterConnection: 	Flushing pending messages, DC 1
+DataCenterConnection: 	Flushing pending messages, DC -2
+DataCenterConnection: 	Flushing pending messages, DC 3
+DataCenterConnection: 	Flushing pending messages, DC 4
+DataCenterConnection: 	Flushing pending messages, DC -4
+DataCenterConnection: 	Flushing pending messages, DC 5
+DataCenter:     	Reconnecting to DC 2 (-1) from existing
+DataCenterConnection: 	Trying shared connection via tcp://149.154.167.41:443 main DC 2, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+DataCenterConnection: 	Already connected!
+DataCenter:     	OK!
+DataCenter:     	Reconnecting to DC 1 (-1) from existing
+DataCenterConnection: 	Trying shared connection via tcp://149.154.175.60:443 main DC 1, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+DataCenterConnection: 	Already connected!
+DataCenter:     	OK!
+DataCenter:     	Reconnecting to DC -2 (-1) from existing
+DataCenterConnection: 	Trying shared connection via tcp://149.154.167.151:443 main DC -2, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+DataCenterConnection: 	Already connected!
+DataCenter:     	OK!
+DataCenter:     	Reconnecting to DC 3 (-1) from existing
+DataCenterConnection: 	Trying shared connection via tcp://149.154.175.100:443 main DC 3, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+DataCenterConnection: 	Already connected!
+DataCenter:     	OK!
+DataCenter:     	Reconnecting to DC 4 (-1) from existing
+DataCenterConnection: 	Trying shared connection via tcp://149.154.167.91:443 main DC 4, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+DataCenterConnection: 	Already connected!
+DataCenter:     	OK!
+DataCenter:     	Reconnecting to DC -4 (-1) from existing
+DataCenterConnection: 	Trying shared connection via tcp://149.154.165.111:443 main DC -4, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+DataCenterConnection: 	Already connected!
+DataCenter:     	OK!
+DataCenter:     	Reconnecting to DC 5 (-1) from existing
+DataCenterConnection: 	Trying shared connection via tcp://91.108.56.195:443 main DC 5, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+DataCenterConnection: 	Already connected!
+DataCenter:     	OK!
+MTProto:        	Initing authorization...
+DataCenterConnection: 	Initing auth for DC 2
+DataCenterConnection: 	Initing auth for DC 1
+DataCenterConnection: 	Initing auth for DC 3
+DataCenterConnection: 	Initing auth for DC 4
+DataCenterConnection: 	Initing auth for DC 5
+DataCenterConnection: 	Initing auth for DC -2
+DataCenterConnection: 	Initing auth for DC -4
+MTProto:        	Done initing authorization!
+MTProto:        	Starting update system
+DataCenterConnection: 	Flushing pending messages, DC 2
+DataCenterConnection: 	Flushing pending messages, DC 1
+DataCenterConnection: 	Flushing pending messages, DC -2
+DataCenterConnection: 	Flushing pending messages, DC 3
+DataCenterConnection: 	Flushing pending messages, DC 4
+DataCenterConnection: 	Flushing pending messages, DC -4
+DataCenterConnection: 	Flushing pending messages, DC 5
+PingLoop:       	Ping DC 5.0
+PingLoop:       	Ping DC 2.0
+PingLoop:       	Ping DC 1.0
+PingLoop:       	Ping DC 3.0
+PingLoop:       	Ping DC 4.0
+MTProto:        	Initing auth 2
+MTProto:        	Initing auth 2
+MTProto:        	Initing auth 2
+Serialization:  	MadelineProto is starting, please wait...
+Serialization:  	Connected to IPC socket!
+MTProto:        	Initing authorization...
+DataCenterConnection: 	Initing auth for DC 2
+DataCenterConnection: 	Initing auth for DC 1
+DataCenterConnection: 	Initing auth for DC 3
+DataCenterConnection: 	Initing auth for DC 4
+DataCenterConnection: 	Initing auth for DC 5
+DataCenterConnection: 	Initing auth for DC -2
+DataCenterConnection: 	Initing auth for DC -4
+MTProto:        	Done initing authorization!
+MTProto:        	Starting update system
+DataCenterConnection: 	Flushing pending messages, DC 2
+DataCenterConnection: 	Flushing pending messages, DC 1
+DataCenterConnection: 	Flushing pending messages, DC -2
+DataCenterConnection: 	Flushing pending messages, DC 3
+DataCenterConnection: 	Flushing pending messages, DC 4
+DataCenterConnection: 	Flushing pending messages, DC -4
+DataCenterConnection: 	Flushing pending messages, DC 5
+MTProto:        	AUTH_KEY_UNREGISTERED
+MTProto:        	Starting update system
+DataCenterConnection: 	Flushing pending messages, DC 2
+DataCenterConnection: 	Flushing pending messages, DC 1
+DataCenterConnection: 	Flushing pending messages, DC -2
+DataCenterConnection: 	Flushing pending messages, DC 3
+DataCenterConnection: 	Flushing pending messages, DC 4
+DataCenterConnection: 	Flushing pending messages, DC -4
+DataCenterConnection: 	Flushing pending messages, DC 5
+APIWrapper:     	MadelineProto is ready!
+Loop:           	Self-restarted, restart token 1
+Loop:           	Will self-restart
+Loop:           	Adding restart callback!
+Loop:           	Added restart callback with ID restarter!
+Loop:           	Done webhost init process!
+MTProto:        	The bot was started!
+SessionPaths:   	Waiting for exclusive lock of /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/api/../sessions/user_85bff54970cff483a8f9a4ca630408bf.madeline/ipcState.php.lock...
+SessionPaths:   	Got exclusive lock of /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/api/../sessions/user_85bff54970cff483a8f9a4ca630408bf.madeline/ipcState.php.lock...
+MTProto:        	Accepted IPC client connection!
+Login:          	Logging in as a normal user...
+PingLoop:       	Ping DC 2.0
+PingLoop:       	Ping DC 1.0
+PingLoop:       	Ping DC 3.0
+PingLoop:       	Ping DC 4.0
+PingLoop:       	Ping DC 5.0
+MTProto:        	Initing auth 2
+MTProto:        	Initing auth 2
+MTProto:        	Initing auth 2
+SessionPaths:   	Waiting for exclusive lock of /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/api/../sessions/user_85bff54970cff483a8f9a4ca630408bf.madeline/safe.php.lock...
+SessionPaths:   	Got exclusive lock of /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/api/../sessions/user_85bff54970cff483a8f9a4ca630408bf.madeline/safe.php.lock...
+SessionPaths:   	Waiting for exclusive lock of /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/api/../sessions/user_85bff54970cff483a8f9a4ca630408bf.madeline/lightState.php.lock...
+SessionPaths:   	Got exclusive lock of /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/api/../sessions/user_85bff54970cff483a8f9a4ca630408bf.madeline/lightState.php.lock...
+APIWrapper:     	Saved session!
+Server:         	IPC server started successfully!
+MTProto:        	Initing authorization...
+DataCenterConnection: 	Initing auth for DC 2
+DataCenterConnection: 	Trying to copy authorization from DC 5 to DC 2
+DataCenterConnection: 	Initing auth for DC 1
+DataCenterConnection: 	Trying to copy authorization from DC 5 to DC 1
+DataCenterConnection: 	Initing auth for DC 3
+DataCenterConnection: 	Trying to copy authorization from DC 5 to DC 3
+DataCenterConnection: 	Initing auth for DC 4
+DataCenterConnection: 	Trying to copy authorization from DC 5 to DC 4
+DataCenterConnection: 	Initing auth for DC 5
+PingLoop:       	Ping DC 2.0
+PingLoop:       	Ping DC 5.0
+PingLoop:       	Ping DC 1.0
+PingLoop:       	Ping DC 3.0
+DataCenterConnection: 	Initing auth for DC -2
+DataCenterConnection: 	Initing auth for DC -4
+MTProto:        	Done initing authorization!
+MTProto:        	Starting update system
+DataCenterConnection: 	Flushing pending messages, DC 2
+DataCenterConnection: 	Flushing pending messages, DC 1
+DataCenterConnection: 	Flushing pending messages, DC -2
+DataCenterConnection: 	Flushing pending messages, DC 3
+DataCenterConnection: 	Flushing pending messages, DC 4
+DataCenterConnection: 	Flushing pending messages, DC -4
+DataCenterConnection: 	Flushing pending messages, DC 5
+Login:          	Logged in successfully!
+MTProto:        	Starting update system
+DataCenterConnection: 	Flushing pending messages, DC 2
+DataCenterConnection: 	Flushing pending messages, DC 1
+DataCenterConnection: 	Flushing pending messages, DC -2
+DataCenterConnection: 	Flushing pending messages, DC 3
+DataCenterConnection: 	Flushing pending messages, DC 4
+DataCenterConnection: 	Flushing pending messages, DC -4
+DataCenterConnection: 	Flushing pending messages, DC 5
+PingLoop:       	Ping DC 4.0
+ProcessRunner:  	Got final message from worker: 
+ProcessRunner:  	Got final message from worker: 
+FeedLoop:       	Resumed update feed loop generic
+FeedLoop:       	Resumed update feed loop generic
+FeedLoop:       	Resumed update feed loop channel 2668261595
+FeedLoop:       	Resumed update feed loop generic
+FeedLoop:       	Resumed update feed loop generic
+Connection:     	Connecting to DC -2.1
+Session:        	Resetting session in DC -2.1...
+Connection:     	Connecting to DC -4.1
+Session:        	Resetting session in DC -4.1...
+Connection:     	Connected to DC -2.1!
+Connection:     	Connecting to DC -2.2
+Session:        	Resetting session in DC -2.2...
+Connection:     	Connected to DC -4.1!
+Connection:     	Connecting to DC -4.2
+Session:        	Resetting session in DC -4.2...
+Connection:     	Connected to DC -2.2!
+Connection:     	Connected to DC -4.2!
+FeedLoop:       	Resumed update feed loop channel 2668261595
+FeedLoop:       	Resumed update feed loop generic
+SessionPaths:   	Waiting for exclusive lock of /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/api/../sessions/user_85bff54970cff483a8f9a4ca630408bf.madeline/safe.php.lock...
+SessionPaths:   	Got exclusive lock of /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/api/../sessions/user_85bff54970cff483a8f9a4ca630408bf.madeline/safe.php.lock...
+SessionPaths:   	Waiting for exclusive lock of /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/api/../sessions/user_85bff54970cff483a8f9a4ca630408bf.madeline/lightState.php.lock...
+SessionPaths:   	Got exclusive lock of /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/api/../sessions/user_85bff54970cff483a8f9a4ca630408bf.madeline/lightState.php.lock...
+APIWrapper:     	Saved session!
+FeedLoop:       	Resumed update feed loop channel 2668261595
+Connection:     	Connecting to DC -2.3
+Session:        	Resetting session in DC -2.3...
+Connection:     	Connecting to DC -4.3
+Session:        	Resetting session in DC -4.3...
+Connection:     	Connected to DC -2.3!
+Connection:     	Connecting to DC -2.4
+Session:        	Resetting session in DC -2.4...
+Connection:     	Connected to DC -4.3!
+Connection:     	Connecting to DC -4.4
+Session:        	Resetting session in DC -4.4...
+Connection:     	Connected to DC -2.4!
+Connection:     	Connected to DC -4.4!
+FeedLoop:       	Resumed update feed loop channel 2668261595
+Connection:     	Connecting to DC -2.5
+Session:        	Resetting session in DC -2.5...
+Connection:     	Connecting to DC -4.5
+Session:        	Resetting session in DC -4.5...
+SessionPaths:   	Waiting for exclusive lock of /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/api/../sessions/user_85bff54970cff483a8f9a4ca630408bf.madeline/safe.php.lock...
+Exception:      	touch(): Unable to create file /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/api/../sessions/user_85bff54970cff483a8f9a4ca630408bf.madeline/safe.php.lock because No such file or directory in AsyncTools.php:86
+entry:          	\danog\MadelineProto\Exception: touch(): Unable to create file /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/api/../sessions/user_85bff54970cff483a8f9a4ca630408bf.madeline/safe.php.lock because No such file or directory in /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/danog/madelineproto/src/AsyncTools.php:86
+Revision: 8.0.0-beta144 (AN UPDATE IS REQUIRED)
+TL Trace:
+<br>
+exceptionErrorHandler()<br>
+AsyncTools.php(86): 	touch()<br>
+SessionPaths.php(133):	flock()<br>
+APIWrapper.php(105):	serialize()<br>
+MTProto.php(776):   	serialize()<br>
+PeriodicLoopInternal.php(48):	serialize()<br>
+PeriodicLoop.php(41):	danog\MadelineProto\Loop\Generic\{closure}()<br>
+GenericLoop.php(55):	danog\Loop\{closure}()<br>
+Loop.php(139):      	loop()<br>
+Loop.php(166):      	loopInternal()<br>
+AbstractDriver.php(602):	danog\Loop\{closure}()<br>
+Revolt\EventLoop\Internal\{closure}()<br>
+DriverSuspension.php(64):	resume()<br>
+AbstractDriver.php(430):	Revolt\EventLoop\Internal\{closure}()<br>
+AbstractDriver.php(567):	invokeMicrotasks()<br>
+Revolt\EventLoop\Internal\{closure}()<br>
+AbstractDriver.php(503):	start()<br>
+AbstractDriver.php(558):	invokeCallbacks()<br>
+Revolt\EventLoop\Internal\{closure}()<br>
+AbstractDriver.php(96):	resume()<br>
+DriverSuspension.php(117):	Revolt\EventLoop\Internal\{closure}()<br>
+Future.php(251):    	suspend()<br>
+Server.php(158):    	await()<br>
+entry.php(119):     	waitShutdown()<br>
+entry.php(154):     	danog\MadelineProto\Ipc\Runner\{closure}()
+Connection:     	Connected to DC -2.5!
+Connection:     	Connecting to DC -2.6
+Session:        	Resetting session in DC -2.6...
+Connection:     	Connected to DC -4.5!
+Connection:     	Connecting to DC -4.6
+Session:        	Resetting session in DC -4.6...
+Connection:     	Connected to DC -2.6!
+Connection:     	Connected to DC -4.6!
+PingLoop:       	Ping DC 2.0
+PingLoop:       	Ping DC 5.0
+PingLoop:       	Ping DC 1.0
+PingLoop:       	Ping DC 3.0
+PingLoop:       	Ping DC 4.0
+FeedLoop:       	Resumed update feed loop generic
+FeedLoop:       	Resumed update feed loop channel 2668261595
+FeedLoop:       	Resumed update feed loop generic
+FeedLoop:       	Resumed update feed loop channel 2668261595
+FeedLoop:       	Resumed update feed loop channel 2668261595
+Connection:     	Connecting to DC -2.7
+Session:        	Resetting session in DC -2.7...
+Connection:     	Connecting to DC -4.7
+Session:        	Resetting session in DC -4.7...
+Connection:     	Connected to DC -2.7!
+Connection:     	Connecting to DC -2.8
+Session:        	Resetting session in DC -2.8...
+Connection:     	Connected to DC -4.7!
+Connection:     	Connecting to DC -4.8
+Session:        	Resetting session in DC -4.8...
+Connection:     	Connected to DC -2.8!
+Connection:     	Connected to DC -4.8!
+FeedLoop:       	Resumed update feed loop channel 2668261595
+FeedLoop:       	Resumed update feed loop channel 2668261595
+FeedLoop:       	Resumed update feed loop channel 2668261595
+Connection:     	Connecting to DC -2.9
+Session:        	Resetting session in DC -2.9...
+Connection:     	Connecting to DC -4.9
+Session:        	Resetting session in DC -4.9...
+Connection:     	Connected to DC -4.9!
+Connection:     	Connecting to DC -4.10
+Session:        	Resetting session in DC -4.10...
+Connection:     	Connected to DC -2.9!
+Connection:     	Connecting to DC -2.10
+Session:        	Resetting session in DC -2.10...
+Connection:     	Connected to DC -4.10!
+Connection:     	Connected to DC -2.10!
+entry:          	Amp\SignalException: SIGTERM received in /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/danog/madelineproto/src/Magic.php:276
+Stack trace:
+#0 /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/revolt/event-loop/src/EventLoop/Internal/AbstractDriver.php(598): danog\MadelineProto\Magic::danog\MadelineProto\{closure}()
+#1 [internal function]: Revolt\EventLoop\Internal\AbstractDriver->Revolt\EventLoop\Internal\{closure}()
+#2 /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/revolt/event-loop/src/EventLoop/Internal/AbstractDriver.php(502): Fiber->resume()
+#3 /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/revolt/event-loop/src/EventLoop/Internal/AbstractDriver.php(558): Revolt\EventLoop\Internal\AbstractDriver->invokeCallbacks()
+#4 [internal function]: Revolt\EventLoop\Internal\AbstractDriver->Revolt\EventLoop\Internal\{closure}()
+#5 /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/revolt/event-loop/src/EventLoop/Internal/AbstractDriver.php(96): Fiber->resume()
+#6 /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/revolt/event-loop/src/EventLoop/Internal/DriverSuspension.php(117): Revolt\EventLoop\Internal\AbstractDriver->Revolt\EventLoop\Internal\{closure}()
+#7 /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/amphp/amp/src/Future.php(251): Revolt\EventLoop\Internal\DriverSuspension->suspend()
+#8 /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/danog/madelineproto/src/Ipc/Server.php(158): Amp\Future->await()
+#9 /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/danog/madelineproto/src/Ipc/Runner/entry.php(119): danog\MadelineProto\Ipc\Server::waitShutdown()
+#10 /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/danog/madelineproto/src/Ipc/Runner/entry.php(154): danog\MadelineProto\Ipc\Runner\{closure}()
+#11 {main}
+entry:          	Got exception in IPC server, exiting...
+entry:          	Reporting error!
+SessionPaths:   	Waiting for exclusive lock of /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/api/../sessions/user_85bff54970cff483a8f9a4ca630408bf.madeline/ipcState.php.lock...
+Exception:      	touch(): Unable to create file /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/api/../sessions/user_85bff54970cff483a8f9a4ca630408bf.madeline/ipcState.php.lock because No such file or directory in AsyncTools.php:86
+Exception:      	\danog\MadelineProto\Exception: touch(): Unable to create file /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/api/../sessions/user_85bff54970cff483a8f9a4ca630408bf.madeline/ipcState.php.lock because No such file or directory in /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/danog/madelineproto/src/AsyncTools.php:86
+Revision: 8.0.0-beta144 (AN UPDATE IS REQUIRED)
+TL Trace:
+<br>
+exceptionErrorHandler()<br>
+AsyncTools.php(86): 	touch()<br>
+SessionPaths.php(133):	flock()<br>
+SessionPaths.php(270):	serialize()<br>
+entry.php(147):     	storeIpcState()<br>
+entry.php(154):     	danog\MadelineProto\Ipc\Runner\{closure}()
+WebRunner:      	Successfully connected to tls://154.201.73.162:443!
+WebRunner:      	Sending payload: GET /vendor/danog/madelineproto/src/Ipc/Runner/entry.php?argv%5B0%5D=madeline-ipc&argv%5B1%5D=%2Fwww%2Fwwwroot%2Fjiqirenbot.cryptoxthefuture.cc%2Fapi%2F..%2Fsessions%2Fuser_85bff54970cff483a8f9a4ca630408bf.madeline&argv%5B2%5D=73955078&cwd=%2Fwww%2Fwwwroot%2Fjiqirenbot.cryptoxthefuture.cc%2Fapi&MadelineSelfRestart=3431640406908959563 HTTP/1.1
+Host: 154.201.73.162
+
+
+WebRunner:      	Successfully connected to tcp://154.201.73.162:443!
+WebRunner:      	Sending payload: GET /vendor/danog/madelineproto/src/Ipc/Runner/entry.php?argv%5B0%5D=madeline-ipc&argv%5B1%5D=%2Fwww%2Fwwwroot%2Fjiqirenbot.cryptoxthefuture.cc%2Fapi%2F..%2Fsessions%2Fuser_85bff54970cff483a8f9a4ca630408bf.madeline&argv%5B2%5D=73955078&cwd=%2Fwww%2Fwwwroot%2Fjiqirenbot.cryptoxthefuture.cc%2Fapi&MadelineSelfRestart=3431640406908959563 HTTP/1.1
+Host: 154.201.73.162
+
+
+WebRunner:      	Successfully connected to tcp://154.201.73.162:80!
+WebRunner:      	Sending payload: GET /vendor/danog/madelineproto/src/Ipc/Runner/entry.php?argv%5B0%5D=madeline-ipc&argv%5B1%5D=%2Fwww%2Fwwwroot%2Fjiqirenbot.cryptoxthefuture.cc%2Fapi%2F..%2Fsessions%2Fuser_85bff54970cff483a8f9a4ca630408bf.madeline&argv%5B2%5D=73955078&cwd=%2Fwww%2Fwwwroot%2Fjiqirenbot.cryptoxthefuture.cc%2Fapi&MadelineSelfRestart=3431640406908959563 HTTP/1.1
+Host: 154.201.73.162
+
+
+Loop:           	Payload sent with token 3431640406908959563, waiting for self-restart
+Loop:           	Shutdown of self-restart callback
+APIWrapper:     	Shutting down MadelineProto (danog\MadelineProto\API)
+MTProto:        	Will unreference instance
+Exception:      	unlink(/www/wwwroot/jiqirenbot.cryptoxthefuture.cc/api/../sessions/user_85bff54970cff483a8f9a4ca630408bf.madeline/ipc): No such file or directory in IpcServer.php:241
+Exception:      	unlink(/www/wwwroot/jiqirenbot.cryptoxthefuture.cc/api/../sessions/user_85bff54970cff483a8f9a4ca630408bf.madeline/callback.ipc): No such file or directory in IpcServer.php:241
+[22-Apr-2026 22:36:57 PRC] PHP Fatal error:  Uncaught danog\MadelineProto\Exception: unlink(/www/wwwroot/jiqirenbot.cryptoxthefuture.cc/api/../sessions/user_85bff54970cff483a8f9a4ca630408bf.madeline/callback.ipc): No such file or directory in /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/danog/ipc/lib/IpcServer.php:241
+Stack trace:
+#0 [internal function]: danog\MadelineProto\Exception::exceptionErrorHandler()
+#1 /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/danog/ipc/lib/IpcServer.php(241): unlink()
+#2 /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/danog/madelineproto/src/Ipc/Server.php(187): Amp\Ipc\IpcServer->close()
+#3 /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/danog/loop/lib/Loop.php(139): danog\MadelineProto\Ipc\Server->loop()
+#4 /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/danog/loop/lib/Loop.php(251): danog\Loop\Loop->loopInternal()
+#5 /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/revolt/event-loop/src/EventLoop/Internal/AbstractDriver.php(602): danog\Loop\Loop->danog\Loop\{closure}()
+#6 [internal function]: Revolt\EventLoop\Internal\AbstractDriver->Revolt\EventLoop\Internal\{closure}()
+#7 /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/revolt/event-loop/src/EventLoop/Internal/DriverSuspension.php(64): Fiber->resume()
+#8 /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/revolt/event-loop/src/EventLoop/Internal/AbstractDriver.php(430): Revolt\EventLoop\Internal\DriverSuspension::Revolt\EventLoop\Internal\{closure}()
+#9 /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/revolt/event-loop/src/EventLoop/Internal/AbstractDriver.php(621): Revolt\EventLoop\Internal\AbstractDriver->invokeMicrotasks()
+#10 [internal function]: Revolt\EventLoop\Internal\AbstractDriver->Revolt\EventLoop\Internal\{closure}()
+#11 /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/revolt/event-loop/src/EventLoop/Internal/AbstractDriver.php(502): Fiber->resume()
+#12 /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/revolt/event-loop/src/EventLoop/Internal/AbstractDriver.php(558): Revolt\EventLoop\Internal\AbstractDriver->invokeCallbacks()
+#13 [internal function]: Revolt\EventLoop\Internal\AbstractDriver->Revolt\EventLoop\Internal\{closure}()
+#14 /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/revolt/event-loop/src/EventLoop/Internal/AbstractDriver.php(96): Fiber->resume()
+#15 /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/revolt/event-loop/src/EventLoop/Internal/DriverSuspension.php(117): Revolt\EventLoop\Internal\AbstractDriver->Revolt\EventLoop\Internal\{closure}()
+#16 /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/amphp/amp/src/Future.php(251): Revolt\EventLoop\Internal\DriverSuspension->suspend()
+#17 /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/amphp/amp/src/Future/functions.php(152): Amp\Future->await()
+#18 /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/danog/madelineproto/src/API.php(382): Amp\Future\await()
+#19 /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/danog/madelineproto/src/Shutdown.php(74): danog\MadelineProto\API::finalize()
+#20 /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/danog/madelineproto/src/Shutdown.php(86): danog\MadelineProto\Shutdown::shutdown()
+#21 [internal function]: danog\MadelineProto\Shutdown::danog\MadelineProto\{closure}()
+#22 {main}
+
+Next Revolt\EventLoop\UncaughtThrowable: Uncaught danog\MadelineProto\Exception thrown in event loop callback danog\Loop\Loop::danog\Loop\{closure} defined in /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/danog/loop/lib/Loop.php:249; use Revolt\EventLoop::setErrorHandler() to gracefully handle such exceptions: unlink(/www/wwwroot/jiqirenbot.cryptoxthefuture.cc/api/../sessions/user_85bff54970cff483a8f9a4ca630408bf.madeline/callback.ipc): No such file or directory in /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/revolt/event-loop/src/EventLoop/UncaughtThrowable.php:13
+Stack trace:
+#0 /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/revolt/event-loop/src/EventLoop/Internal/AbstractDriver.php(405): Revolt\EventLoop\UncaughtThrowable::throwingCallback()
+#1 /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/revolt/event-loop/src/EventLoop/Internal/DriverSuspension.php(127): Revolt\EventLoop\Internal\AbstractDriver::Revolt\EventLoop\Internal\{closure}()
+#2 /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/amphp/amp/src/Future.php(251): Revolt\EventLoop\Internal\DriverSuspension->suspend()
+#3 /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/amphp/amp/src/Future/functions.php(152): Amp\Future->await()
+#4 /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/danog/madelineproto/src/API.php(382): Amp\Future\await()
+#5 /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/danog/madelineproto/src/Shutdown.php(74): danog\MadelineProto\API::finalize()
+#6 /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/danog/madelineproto/src/Shutdown.php(86): danog\MadelineProto\Shutdown::shutdown()
+#7 [internal function]: danog\MadelineProto\Shutdown::danog\MadelineProto\{closure}()
+#8 {main}
+  thrown in /www/wwwroot/jiqirenbot.cryptoxthefuture.cc/vendor/revolt/event-loop/src/EventLoop/UncaughtThrowable.php on line 13
+MTProto:        	Shutting down MadelineProto (MTProto)
+MTProto:        	Will unreference instance
+DataCenterConnection: 	Disconnecting from shared DC 2
+Connection:     	Disconnecting from DC 2.0
+DataCenterConnection: 	Backed up  from DC 2.0
+Connection:     	Disconnected from DC 2.0
+DataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC 2
+DataCenterConnection: 	Disconnecting from shared DC 1
+Connection:     	Disconnecting from DC 1.0
+DataCenterConnection: 	Backed up  from DC 1.0
+Connection:     	Disconnected from DC 1.0
+DataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC 1
+DataCenterConnection: 	Disconnecting from shared DC -2
+Connection:     	Disconnecting from DC -2.0
+DataCenterConnection: 	Backed up  from DC -2.0
+Connection:     	Disconnected from DC -2.0
+Connection:     	Disconnecting from DC -2.1
+DataCenterConnection: 	Backed up  from DC -2.1
+Connection:     	Disconnected from DC -2.1
+Connection:     	Disconnecting from DC -2.2
+DataCenterConnection: 	Backed up  from DC -2.2
+Connection:     	Disconnected from DC -2.2
+Connection:     	Disconnecting from DC -2.3
+DataCenterConnection: 	Backed up  from DC -2.3
+Connection:     	Disconnected from DC -2.3
+Connection:     	Disconnecting from DC -2.4
+DataCenterConnection: 	Backed up  from DC -2.4
+Connection:     	Disconnected from DC -2.4
+Connection:     	Disconnecting from DC -2.5
+DataCenterConnection: 	Backed up  from DC -2.5
+Connection:     	Disconnected from DC -2.5
+Connection:     	Disconnecting from DC -2.6
+DataCenterConnection: 	Backed up  from DC -2.6
+Connection:     	Disconnected from DC -2.6
+Connection:     	Disconnecting from DC -2.7
+DataCenterConnection: 	Backed up  from DC -2.7
+Connection:     	Disconnected from DC -2.7
+Connection:     	Disconnecting from DC -2.8
+DataCenterConnection: 	Backed up  from DC -2.8
+Connection:     	Disconnected from DC -2.8
+Connection:     	Disconnecting from DC -2.9
+DataCenterConnection: 	Backed up  from DC -2.9
+Connection:     	Disconnected from DC -2.9
+Connection:     	Disconnecting from DC -2.10
+DataCenterConnection: 	Backed up  from DC -2.10
+Connection:     	Disconnected from DC -2.10
+DataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC -2
+DataCenterConnection: 	Disconnecting from shared DC 3
+Connection:     	Disconnecting from DC 3.0
+DataCenterConnection: 	Backed up  from DC 3.0
+Connection:     	Disconnected from DC 3.0
+DataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC 3
+DataCenterConnection: 	Disconnecting from shared DC 4
+Connection:     	Disconnecting from DC 4.0
+DataCenterConnection: 	Backed up  from DC 4.0
+Connection:     	Disconnected from DC 4.0
+DataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC 4
+DataCenterConnection: 	Disconnecting from shared DC -4
+Connection:     	Disconnecting from DC -4.0
+DataCenterConnection: 	Backed up  from DC -4.0
+Connection:     	Disconnected from DC -4.0
+Connection:     	Disconnecting from DC -4.1
+DataCenterConnection: 	Backed up  from DC -4.1
+Connection:     	Disconnected from DC -4.1
+Connection:     	Disconnecting from DC -4.2
+DataCenterConnection: 	Backed up  from DC -4.2
+Connection:     	Disconnected from DC -4.2
+Connection:     	Disconnecting from DC -4.3
+DataCenterConnection: 	Backed up  from DC -4.3
+Connection:     	Disconnected from DC -4.3
+Connection:     	Disconnecting from DC -4.4
+DataCenterConnection: 	Backed up  from DC -4.4
+Connection:     	Disconnected from DC -4.4
+Connection:     	Disconnecting from DC -4.5
+DataCenterConnection: 	Backed up  from DC -4.5
+Connection:     	Disconnected from DC -4.5
+Connection:     	Disconnecting from DC -4.6
+DataCenterConnection: 	Backed up  from DC -4.6
+Connection:     	Disconnected from DC -4.6
+Connection:     	Disconnecting from DC -4.7
+DataCenterConnection: 	Backed up  from DC -4.7
+Connection:     	Disconnected from DC -4.7
+Connection:     	Disconnecting from DC -4.8
+DataCenterConnection: 	Backed up  from DC -4.8
+Connection:     	Disconnected from DC -4.8
+Connection:     	Disconnecting from DC -4.9
+DataCenterConnection: 	Backed up  from DC -4.9
+Connection:     	Disconnected from DC -4.9
+Connection:     	Disconnecting from DC -4.10
+DataCenterConnection: 	Backed up  from DC -4.10
+Connection:     	Disconnected from DC -4.10
+DataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC -4
+DataCenterConnection: 	Disconnecting from shared DC 5
+Connection:     	Disconnecting from DC 5.0
+DataCenterConnection: 	Backed up updates.getDifference,  from DC 5.0
+Connection:     	Disconnected from DC 5.0
+DataCenterConnection: 	Backed up 1, added to 0 existing messages) from DC 5
+MTProto:        	Unreferenced instance
+MTProto:        	Successfully destroyed MadelineProto

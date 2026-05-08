@@ -1,0 +1,71 @@
+[02-Nov-2025 00:40:53 Asia/Shanghai] Configured serialization interval for webhook: 60 seconds
+[02-Nov-2025 01:09:12 Asia/Shanghai] Configured serialization interval for webhook: 60 seconds
+[04-Nov-2025 18:56:21 Asia/Shanghai] Configured serialization interval for webhook: 60 seconds
+Logger:         	MadelineProto 8.0.0-beta144
+Logger:         	Copyright (C) 2016-2025 Daniil Gentili
+Logger:         	Licensed under AGPLv3
+Logger:         	https://github.com/danog/MadelineProto
+Serialization:  	Got exclusive session lock!
+Logger:         	MadelineProto 8.0.0-beta144
+Logger:         	Copyright (C) 2016-2025 Daniil Gentili
+Logger:         	Licensed under AGPLv3
+Logger:         	https://github.com/danog/MadelineProto
+GarbageCollector: 	gc_collect_cycles done. Cleaned memory: 0 Mb
+Serialization:  	MadelineProto self-restarted successfully!
+Exception:      	Could not connect to MadelineProto, please enable proc_open or disable webserver path rewrites to fix! If you already did that, make sure the CLI version of PHP is exactly the same as the web version (same version, extensions, et cetera) and check out the MadelineProto.log file for more info about the error that prevented the IPC server from starting. in API.php:334
+entry:          	\danog\MadelineProto\Exception: Could not connect to MadelineProto, please enable proc_open or disable webserver path rewrites to fix! If you already did that, make sure the CLI version of PHP is exactly the same as the web version (same version, extensions, et cetera) and check out the MadelineProto.log file for more info about the error that prevented the IPC server from starting. in /www/wwwroot/tgbot.5088.buzz/vendor/danog/madelineproto/src/API.php:334
+Revision: 8.0.0-beta144 (AN UPDATE IS REQUIRED)
+TL Trace:
+<br>
+API.php(213):       	connectToMadelineProto()<br>
+entry.php(114):     	__construct()<br>
+entry.php(154):     	danog\MadelineProto\Ipc\Runner\{closure}()
+entry:          	Got exception in IPC server, exiting...
+entry:          	Not reporting error!
+[27-Nov-2025 14:45:17 Asia/Shanghai] Configured serialization interval for webhook: 60 seconds
+[27-Nov-2025 14:45:39 Asia/Shanghai] Configured serialization interval for webhook: 60 seconds
+[27-Nov-2025 14:50:24 Asia/Shanghai] Configured serialization interval for webhook: 60 seconds
+Logger:         	MadelineProto 8.0.0-beta144
+Logger:         	Copyright (C) 2016-2025 Daniil Gentili
+Logger:         	Licensed under AGPLv3
+Logger:         	https://github.com/danog/MadelineProto
+Serialization:  	Got exclusive session lock!
+Logger:         	MadelineProto 8.0.0-beta144
+Logger:         	Copyright (C) 2016-2025 Daniil Gentili
+Logger:         	Licensed under AGPLv3
+Logger:         	https://github.com/danog/MadelineProto
+GarbageCollector: 	gc_collect_cycles done. Cleaned memory: 0 Mb
+Serialization:  	It seems like the session is busy.
+Serialization:  	Telegram does not support starting multiple instances of the same session, make sure no other instance of the session is running.
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Exception:      	Could not connect to MadelineProto, please enable proc_open or disable webserver path rewrites to fix! If you already did that, make sure the CLI version of PHP is exactly the same as the web version (same version, extensions, et cetera) and check out the MadelineProto.log file for more info about the error that prevented the IPC server from starting. in API.php:334
+Logger:         	MadelineProto 8.0.0-beta144
+Logger:         	Copyright (C) 2016-2025 Daniil Gentili
+Logger:         	Licensed under AGPLv3
+Logger:         	https://github.com/danog/MadelineProto
+Serialization:  	Got exclusive session lock!
+Logger:         	MadelineProto 8.0.0-beta144
+Logger:         	Copyright (C) 2016-2025 Daniil Gentili
+Logger:         	Licensed under AGPLv3
+Logger:         	https://github.com/danog/MadelineProto
+Serialization:  	Got exclusive session lock!
+Logger:         	MadelineProto 8.0.0-beta144
+Logger:         	Copyright (C) 2016-2025 Daniil Gentili
+Logger:         	Licensed under AGPLv3
+Logger:         	https://github.com/danog/MadelineProto
+Serialization:  	Got exclusive session lock!
+Logger:         	MadelineProto 8.0.0-beta144
+Logger:         	Copyright (C) 2016-2025 Daniil Gentili
+Logger:         	Licensed under AGPLv3
+Logger:         	https://github.com/danog/MadelineProto
+Serialization:  	Got exclusive session lock!
+Logger:         	MadelineProto 8.0.0-beta144
+Logger:         	Copyright (C) 2016-2025 Daniil Gentili
+Logger:         	Licensed under AGPLv3
+Logger:         	https://github.com/danog/MadelineProto
+Serialization:  	Got exclusive session lock!
+[28-Jan-2026 20:49:32 Asia/Shanghai] Configured serialization interval for webhook: 60 seconds

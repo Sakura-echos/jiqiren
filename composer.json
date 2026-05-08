@@ -1,0 +1,14 @@
+{
+    "name": "telegram/bot",
+    "description": "Telegram Bot",
+    "require": {
+        "php": ">=7.4",
+        "danog/madelineproto": "^8.0",
+        "league/uri": "^6.7"
+    },
+    "config": {
+        "optimize-autoloader": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
