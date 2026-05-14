@@ -95,6 +95,141 @@ use danog\MadelineProto\API;
 use danog\MadelineProto\Settings;
 use danog\MadelineProto\Logger;
 
+/**
+ * 确保 webhook 更新去重表存在
+ */
+function ensureWebhookProcessedUpdatesTable($db) {
+    static $initialized = false;
+    if ($initialized) {
+        return;
+    }
+
+    try {
+        $db->exec("
+            CREATE TABLE IF NOT EXISTS webhook_processed_updates (
+                id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+                bot_hash VARCHAR(64) NOT NULL,
+                update_id BIGINT NOT NULL,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                UNIQUE KEY uniq_bot_update (bot_hash, update_id),
+                KEY idx_created_at (created_at)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+        ");
+        $db->exec("
+            CREATE TABLE IF NOT EXISTS webhook_processed_events (
+                id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+                bot_hash VARCHAR(64) NOT NULL,
+                event_key VARCHAR(191) NOT NULL,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                UNIQUE KEY uniq_bot_event (bot_hash, event_key),
+                KEY idx_created_at (created_at)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+        ");
+        $initialized = true;
+    } catch (Exception $e) {
+        error_log("Failed to ensure webhook_processed_updates table: " . $e->getMessage());
+    }
+}
+
+/**
+ * update_id 幂等去重：已处理过则返回 true
+ */
+function isDuplicateWebhookUpdate($db, $update_id) {
+    if ($update_id === null || $update_id === '') {
+        return false;
+    }
+
+    try {
+        ensureWebhookProcessedUpdatesTable($db);
+
+        $bot_hash = hash('sha256', BOT_TOKEN);
+        $stmt = $db->prepare("INSERT IGNORE INTO webhook_processed_updates (bot_hash, update_id) VALUES (?, ?)");
+        $stmt->execute([$bot_hash, (int)$update_id]);
+
+        // 定期清理，避免表无限增长
+        if (mt_rand(1, 200) === 1) {
+            $db->exec("DELETE FROM webhook_processed_updates WHERE created_at < DATE_SUB(NOW(), INTERVAL 7 DAY)");
+        }
+
+        return $stmt->rowCount() === 0;
+    } catch (Exception $e) {
+        // 去重失败时不阻断主流程，避免误伤消息处理
+        error_log("Webhook dedup check failed: " . $e->getMessage());
+        return false;
+    }
+}
+
+/**
+ * 生成入群事件指纹：用于不同 update_id 的重复事件去重
+ */
+function buildJoinEventDedupKey($update) {
+    // 服务消息：new_chat_members
+    if (isset($update['message']['new_chat_members'])) {
+        $message = $update['message'];
+        $chat_id = $message['chat']['id'] ?? null;
+        $message_id = $message['message_id'] ?? null;
+        if ($chat_id === null || $message_id === null) {
+            return null;
+        }
+
+        $member_ids = [];
+        foreach ($message['new_chat_members'] as $member) {
+            if (isset($member['id'])) {
+                $member_ids[] = (string)$member['id'];
+            }
+        }
+        sort($member_ids);
+
+        return 'join_msg:' . $chat_id . ':' . $message_id . ':' . implode(',', $member_ids);
+    }
+
+    // chat_member：left/kicked -> member 的入群变更
+    if (isset($update['chat_member'])) {
+        $cm = $update['chat_member'];
+        $chat_id = $cm['chat']['id'] ?? null;
+        $new_user_id = $cm['new_chat_member']['user']['id'] ?? null;
+        $old_status = $cm['old_chat_member']['status'] ?? '';
+        $new_status = $cm['new_chat_member']['status'] ?? '';
+        $event_date = $cm['date'] ?? null;
+        if ($chat_id === null || $new_user_id === null || $event_date === null) {
+            return null;
+        }
+
+        if ($new_status === 'member' && in_array($old_status, ['left', 'kicked'], true)) {
+            return 'join_cm:' . $chat_id . ':' . $new_user_id . ':' . $event_date;
+        }
+    }
+
+    return null;
+}
+
+/**
+ * 入群事件幂等去重：已处理过则返回 true
+ */
+function isDuplicateJoinEvent($db, $event_key) {
+    if (empty($event_key)) {
+        return false;
+    }
+
+    try {
+        ensureWebhookProcessedUpdatesTable($db);
+
+        $bot_hash = hash('sha256', BOT_TOKEN);
+        $stmt = $db->prepare("INSERT IGNORE INTO webhook_processed_events (bot_hash, event_key) VALUES (?, ?)");
+        $stmt->execute([$bot_hash, $event_key]);
+
+        // 与 update_id 去重保持一致，低频清理历史记录
+        if (mt_rand(1, 200) === 1) {
+            $db->exec("DELETE FROM webhook_processed_events WHERE created_at < DATE_SUB(NOW(), INTERVAL 7 DAY)");
+        }
+
+        return $stmt->rowCount() === 0;
+    } catch (Exception $e) {
+        error_log("Join event dedup check failed: " . $e->getMessage());
+        return false;
+    }
+}
+
 // 获取 Telegram 发送的更新
 // 注意：php://input 只能读取一次，所以使用前面已经读取的 $raw_input
 $content = '';
@@ -129,6 +264,28 @@ error_log("Decoded update: " . print_r($update, true));  // 记录解码后的�
 if (!$update) {
     error_log("No valid update data received, JSON decode error: " . json_last_error_msg());
     exit;
+}
+
+// update_id 去重：防止 Telegram 重试/重复投递导致重复处理
+try {
+    $db_for_dedup = getDB();
+    $current_update_id = $update['update_id'] ?? null;
+    if (isDuplicateWebhookUpdate($db_for_dedup, $current_update_id)) {
+        error_log("Duplicate update skipped, update_id: " . $current_update_id);
+        http_response_code(200);
+        exit;
+    }
+
+    // 事件指纹去重：拦截不同 update_id 但同一入群事件的重复投递
+    $join_event_key = buildJoinEventDedupKey($update);
+    if ($join_event_key && isDuplicateJoinEvent($db_for_dedup, $join_event_key)) {
+        error_log("Duplicate join event skipped, key: " . $join_event_key);
+        http_response_code(200);
+        exit;
+    }
+} catch (Exception $e) {
+    // 去重环节异常时不终止，继续处理业务逻辑
+    error_log("Dedup init failed, continue processing: " . $e->getMessage());
 }
 
 // 记录详细的消息信息
