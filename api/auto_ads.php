@@ -33,6 +33,41 @@ try {
     error_log("Init group_categories table error: " . $e->getMessage());
 }
 
+// 确保话题相关表/字段存在
+try {
+    $db->exec("
+        CREATE TABLE IF NOT EXISTS group_topics (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            group_id INT NOT NULL,
+            topic_id BIGINT NOT NULL,
+            topic_name VARCHAR(255) DEFAULT NULL,
+            icon_color VARCHAR(20) DEFAULT NULL,
+            icon_custom_emoji_id VARCHAR(64) DEFAULT NULL,
+            is_closed TINYINT(1) DEFAULT 0,
+            is_hidden TINYINT(1) DEFAULT 0,
+            last_seen_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+            UNIQUE KEY uniq_group_topic (group_id, topic_id),
+            KEY idx_group_topics_group (group_id)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+    ");
+
+    $stmt = $db->query("SHOW COLUMNS FROM auto_ads LIKE 'topic_id'");
+    if ($stmt->rowCount() == 0) {
+        $db->exec("ALTER TABLE auto_ads ADD COLUMN topic_id BIGINT DEFAULT NULL AFTER group_id");
+        $db->exec("ALTER TABLE auto_ads ADD INDEX idx_auto_ads_topic_id (topic_id)");
+    }
+
+    $stmt = $db->query("SHOW COLUMNS FROM auto_ad_templates LIKE 'topic_id'");
+    if ($stmt->rowCount() == 0) {
+        $db->exec("ALTER TABLE auto_ad_templates ADD COLUMN topic_id BIGINT DEFAULT NULL AFTER group_id");
+        $db->exec("ALTER TABLE auto_ad_templates ADD INDEX idx_auto_ad_templates_topic_id (topic_id)");
+    }
+} catch (Exception $e) {
+    error_log("Init topic schema error: " . $e->getMessage());
+}
+
 /**
  * 解析关键词（支持空格、逗号、换行、#号分隔，保留#号前缀）
  * @param string $text 原始输入文本
@@ -65,10 +100,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             $stmt = $db->query("
                 SELECT aa.*, 
                     COALESCE(g.title, '所有群组') as group_title,
+                    CASE
+                        WHEN aa.topic_id IS NULL THEN '#General'
+                        ELSE COALESCE(gt.topic_name, CONCAT('Topic #', aa.topic_id))
+                    END as topic_title,
                     gc.name as category_name,
                     gc.color as category_color
                 FROM auto_ads aa 
                 LEFT JOIN groups g ON aa.group_id = g.id 
+                LEFT JOIN group_topics gt ON aa.group_id = gt.group_id AND aa.topic_id = gt.topic_id
                 LEFT JOIN group_categories gc ON g.category_id = gc.id
                 ORDER BY aa.id DESC
             ");
@@ -100,6 +140,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             logSystem('error', 'Fetch auto ad error', $e->getMessage());
             jsonResponse(['success' => false, 'message' => '获取失败'], 500);
         }
+    } elseif ($action == 'group_topics') {
+        $group_id = intval($_GET['group_id'] ?? 0);
+        if ($group_id <= 0) {
+            jsonResponse(['success' => true, 'data' => []]);
+        }
+
+        try {
+            $stmt = $db->prepare("
+                SELECT topic_id, topic_name, is_closed, is_hidden
+                FROM group_topics
+                WHERE group_id = ?
+                ORDER BY
+                    CASE WHEN topic_id = 1 THEN 0 ELSE 1 END,
+                    topic_name ASC,
+                    topic_id ASC
+            ");
+            $stmt->execute([$group_id]);
+            $topics = $stmt->fetchAll();
+            jsonResponse(['success' => true, 'data' => $topics]);
+        } catch (Exception $e) {
+            logSystem('error', 'Fetch group topics error', $e->getMessage());
+            jsonResponse(['success' => false, 'message' => '获取话题失败'], 500);
+        }
     }
 }
 
@@ -120,7 +183,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     switch ($action) {
         case 'add':
             if ($isFormData) {
-                // 支持多群组选择
+                // 支持多群组 + 话题选择
+                $group_targets_json = $_POST['group_targets'] ?? null;
+                $group_targets = $group_targets_json ? json_decode($group_targets_json, true) : [];
                 $group_ids_json = $_POST['group_ids'] ?? null;
                 $group_ids = $group_ids_json ? json_decode($group_ids_json, true) : [];
                 
@@ -128,13 +193,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 if (empty($group_ids) && isset($_POST['group_id'])) {
                     $group_ids = [$_POST['group_id']];
                 }
+
+                if (empty($group_targets) && !empty($group_ids)) {
+                    foreach ($group_ids as $gid) {
+                        $group_targets[] = [
+                            'group_id' => $gid,
+                            'topic_id' => null
+                        ];
+                    }
+                }
                 
                 $message = $_POST['message'] ?? '';
                 $keywords = parseKeywords($_POST['keywords'] ?? '');
                 $keywords_per_send = intval($_POST['keywords_per_send'] ?? 3);
                 $interval_minutes = $_POST['interval_minutes'] ?? 60;
                 $delete_after_seconds = $_POST['delete_after_seconds'] ?? 0;
-                $use_user_account = $_POST['use_user_account'] ?? 0;
+                $use_user_account = 0;
                 $buttons = $_POST['buttons'] ?? null;
                 
                 // Handle image upload
@@ -215,7 +289,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     error_log("No image file in upload");
                 }
             } else {
+                $group_targets = $data['group_targets'] ?? [];
                 $group_ids = $data['group_ids'] ?? [];
+                if (empty($group_targets) && !empty($group_ids)) {
+                    foreach ($group_ids as $gid) {
+                        $group_targets[] = [
+                            'group_id' => $gid,
+                            'topic_id' => null
+                        ];
+                    }
+                }
                 $message = $data['message'] ?? '';
                 $keywords = parseKeywords($data['keywords'] ?? '');
                 $keywords_per_send = intval($data['keywords_per_send'] ?? 3);
@@ -223,26 +306,34 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $buttons = $data['buttons'] ?? null;
                 $interval_minutes = $data['interval_minutes'] ?? 60;
                 $delete_after_seconds = $data['delete_after_seconds'] ?? 0;
-                $use_user_account = $data['use_user_account'] ?? 0;
+                $use_user_account = 0;
             }
             
-            if (empty($message) || empty($group_ids)) {
+            if (empty($message) || empty($group_targets)) {
                 jsonResponse(['success' => false, 'message' => '请填写所有必填字段'], 400);
             }
             
             try {
                 // 为每个选中的群组创建一条广告记录
                 $inserted_count = 0;
-                foreach ($group_ids as $group_id) {
+                foreach ($group_targets as $target) {
+                    $group_id = $target['group_id'] ?? null;
+                    $topic_id_raw = $target['topic_id'] ?? null;
+                    $topic_id = (is_numeric($topic_id_raw) && intval($topic_id_raw) > 0) ? intval($topic_id_raw) : null;
+
                     // Convert 0 to NULL for "all groups"
                     $final_group_id = ($group_id == '0' || $group_id == 0) ? null : $group_id;
+                    if ($final_group_id === null) {
+                        // "所有群组"不支持设置单独话题，强制回退到默认 General
+                        $topic_id = null;
+                    }
                     
-                    $stmt = $db->prepare("INSERT INTO auto_ads (group_id, message, keywords, keywords_per_send, keywords_index, image_url, buttons, interval_minutes, delete_after_seconds, use_user_account) VALUES (?, ?, ?, ?, 0, ?, ?, ?, ?, ?)");
-                    $stmt->execute([$final_group_id, $message, $keywords, $keywords_per_send, $image_url, $buttons, $interval_minutes, $delete_after_seconds, $use_user_account]);
+                    $stmt = $db->prepare("INSERT INTO auto_ads (group_id, topic_id, message, keywords, keywords_per_send, keywords_index, image_url, buttons, interval_minutes, delete_after_seconds, use_user_account) VALUES (?, ?, ?, ?, ?, 0, ?, ?, ?, ?, ?)");
+                    $stmt->execute([$final_group_id, $topic_id, $message, $keywords, $keywords_per_send, $image_url, $buttons, $interval_minutes, $delete_after_seconds, $use_user_account]);
                     $inserted_count++;
                 }
                 
-                logSystem('info', 'Added auto ads', ['group_ids' => $group_ids, 'count' => $inserted_count]);
+                logSystem('info', 'Added auto ads', ['group_targets' => $group_targets, 'count' => $inserted_count]);
                 jsonResponse(['success' => true, 'message' => "添加成功，共创建 {$inserted_count} 条广告"]);
             } catch (Exception $e) {
                 logSystem('error', 'Add auto ad error', $e->getMessage());
@@ -254,12 +345,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if ($isFormData) {
                 $id = $_POST['id'] ?? 0;
                 $group_id = $_POST['group_id'] ?? 0;
+                $topic_id_raw = $_POST['topic_id'] ?? null;
                 $message = $_POST['message'] ?? '';
                 $keywords = parseKeywords($_POST['keywords'] ?? '');
                 $keywords_per_send = intval($_POST['keywords_per_send'] ?? 3);
                 $interval_minutes = $_POST['interval_minutes'] ?? 60;
                 $delete_after_seconds = $_POST['delete_after_seconds'] ?? 0;
-                $use_user_account = $_POST['use_user_account'] ?? 0;
+                $use_user_account = 0;
                 $buttons = $_POST['buttons'] ?? null;
                 
                 // Handle image upload (optional for update)
@@ -307,12 +399,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             } else {
                 $id = $data['id'] ?? 0;
                 $group_id = $data['group_id'] ?? 0;
+                $topic_id_raw = $data['topic_id'] ?? null;
                 $message = $data['message'] ?? '';
                 $keywords = parseKeywords($data['keywords'] ?? '');
                 $keywords_per_send = intval($data['keywords_per_send'] ?? 3);
                 $interval_minutes = $data['interval_minutes'] ?? 60;
                 $delete_after_seconds = $data['delete_after_seconds'] ?? 0;
-                $use_user_account = $data['use_user_account'] ?? 0;
+                $use_user_account = 0;
                 $image_url = $data['image_url'] ?? null;
                 $buttons = $data['buttons'] ?? null;
                 $updateImage = isset($data['image_url']);
@@ -324,15 +417,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             
             // Convert 0 to NULL for "all groups"
             $final_group_id = ($group_id == 0) ? null : $group_id;
+            $topic_id = (is_numeric($topic_id_raw) && intval($topic_id_raw) > 0) ? intval($topic_id_raw) : null;
+            if ($final_group_id === null) {
+                $topic_id = null;
+            }
             
             try {
                 // Build update query - 更新关键词时重置索引为0
                 if ($updateImage) {
-                    $stmt = $db->prepare("UPDATE auto_ads SET group_id = ?, message = ?, keywords = ?, keywords_per_send = ?, keywords_index = 0, image_url = ?, buttons = ?, interval_minutes = ?, delete_after_seconds = ?, use_user_account = ? WHERE id = ?");
-                    $stmt->execute([$final_group_id, $message, $keywords, $keywords_per_send, $image_url, $buttons, $interval_minutes, $delete_after_seconds, $use_user_account, $id]);
+                    $stmt = $db->prepare("UPDATE auto_ads SET group_id = ?, topic_id = ?, message = ?, keywords = ?, keywords_per_send = ?, keywords_index = 0, image_url = ?, buttons = ?, interval_minutes = ?, delete_after_seconds = ?, use_user_account = ? WHERE id = ?");
+                    $stmt->execute([$final_group_id, $topic_id, $message, $keywords, $keywords_per_send, $image_url, $buttons, $interval_minutes, $delete_after_seconds, $use_user_account, $id]);
                 } else {
-                    $stmt = $db->prepare("UPDATE auto_ads SET group_id = ?, message = ?, keywords = ?, keywords_per_send = ?, keywords_index = 0, buttons = ?, interval_minutes = ?, delete_after_seconds = ?, use_user_account = ? WHERE id = ?");
-                    $stmt->execute([$final_group_id, $message, $keywords, $keywords_per_send, $buttons, $interval_minutes, $delete_after_seconds, $use_user_account, $id]);
+                    $stmt = $db->prepare("UPDATE auto_ads SET group_id = ?, topic_id = ?, message = ?, keywords = ?, keywords_per_send = ?, keywords_index = 0, buttons = ?, interval_minutes = ?, delete_after_seconds = ?, use_user_account = ? WHERE id = ?");
+                    $stmt->execute([$final_group_id, $topic_id, $message, $keywords, $keywords_per_send, $buttons, $interval_minutes, $delete_after_seconds, $use_user_account, $id]);
                 }
                 
                 logSystem('info', 'Updated auto ad', ['id' => $id]);

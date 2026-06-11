@@ -494,6 +494,8 @@ if (isset($update['message']) || isset($update['channel_post'])) {
     
     // 强制保存群组信息
     saveGroup($db, $message['chat']);
+    // 记录论坛话题信息（用于自动广告话题选择）
+    syncGroupTopicFromMessage($db, $message);
     
     // 记录消息到系统日志
     logSystem('info', '处理新消息', [
@@ -927,6 +929,135 @@ function saveGroup($db, $chat) {
             'chat_id' => $chat['id'],
             'error' => $e->getMessage()
         ]);
+    }
+}
+
+/**
+ * 确保群组话题表存在
+ */
+function ensureGroupTopicsSchema($db) {
+    static $checked = false;
+    if ($checked) {
+        return;
+    }
+    $checked = true;
+
+    try {
+        $db->exec("
+            CREATE TABLE IF NOT EXISTS group_topics (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                group_id INT NOT NULL,
+                topic_id BIGINT NOT NULL,
+                topic_name VARCHAR(255) DEFAULT NULL,
+                icon_color VARCHAR(20) DEFAULT NULL,
+                icon_custom_emoji_id VARCHAR(64) DEFAULT NULL,
+                is_closed TINYINT(1) DEFAULT 0,
+                is_hidden TINYINT(1) DEFAULT 0,
+                last_seen_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                UNIQUE KEY uniq_group_topic (group_id, topic_id),
+                KEY idx_group_topics_group (group_id)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+        ");
+    } catch (Exception $e) {
+        error_log("ensureGroupTopicsSchema error: " . $e->getMessage());
+    }
+}
+
+/**
+ * 从消息中同步论坛话题信息
+ */
+function syncGroupTopicFromMessage($db, $message) {
+    try {
+        $chat = $message['chat'] ?? null;
+        if (!$chat || !isset($chat['id'])) {
+            return;
+        }
+
+        $chat_type = $chat['type'] ?? '';
+        if ($chat_type !== 'supergroup') {
+            return;
+        }
+
+        $message_thread_id = $message['message_thread_id'] ?? null;
+        if ($message_thread_id === null) {
+            return;
+        }
+
+        ensureGroupTopicsSchema($db);
+
+        $stmt = $db->prepare("SELECT id FROM groups WHERE chat_id = ? LIMIT 1");
+        $stmt->execute([$chat['id']]);
+        $group = $stmt->fetch();
+        if (!$group) {
+            return;
+        }
+
+        $topic_name = null;
+        $icon_color = null;
+        $icon_custom_emoji_id = null;
+        $is_closed = 0;
+        $is_hidden = 0;
+
+        if (isset($message['forum_topic_created']) && is_array($message['forum_topic_created'])) {
+            $topic_name = $message['forum_topic_created']['name'] ?? null;
+            $icon_color = isset($message['forum_topic_created']['icon_color']) ? (string)$message['forum_topic_created']['icon_color'] : null;
+            $icon_custom_emoji_id = $message['forum_topic_created']['icon_custom_emoji_id'] ?? null;
+        }
+
+        if (isset($message['forum_topic_edited']) && is_array($message['forum_topic_edited'])) {
+            if (!empty($message['forum_topic_edited']['name'])) {
+                $topic_name = $message['forum_topic_edited']['name'];
+            }
+            if (isset($message['forum_topic_edited']['icon_custom_emoji_id'])) {
+                $icon_custom_emoji_id = $message['forum_topic_edited']['icon_custom_emoji_id'];
+            }
+        }
+
+        if (isset($message['forum_topic_closed'])) {
+            $is_closed = 1;
+        }
+        if (isset($message['forum_topic_reopened'])) {
+            $is_closed = 0;
+        }
+        if (isset($message['general_forum_topic_hidden'])) {
+            $is_hidden = 1;
+        }
+        if (isset($message['general_forum_topic_unhidden'])) {
+            $is_hidden = 0;
+        }
+
+        if ($topic_name === null && isset($message['reply_to_message']['forum_topic_created']['name'])) {
+            $topic_name = $message['reply_to_message']['forum_topic_created']['name'];
+        }
+        if ($topic_name === null) {
+            $topic_name = 'Topic #' . $message_thread_id;
+        }
+
+        $upsert = $db->prepare("
+            INSERT INTO group_topics (group_id, topic_id, topic_name, icon_color, icon_custom_emoji_id, is_closed, is_hidden, last_seen_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?, NOW())
+            ON DUPLICATE KEY UPDATE
+                topic_name = COALESCE(NULLIF(VALUES(topic_name), ''), topic_name),
+                icon_color = COALESCE(VALUES(icon_color), icon_color),
+                icon_custom_emoji_id = COALESCE(VALUES(icon_custom_emoji_id), icon_custom_emoji_id),
+                is_closed = VALUES(is_closed),
+                is_hidden = VALUES(is_hidden),
+                last_seen_at = NOW(),
+                updated_at = CURRENT_TIMESTAMP
+        ");
+        $upsert->execute([
+            $group['id'],
+            intval($message_thread_id),
+            $topic_name,
+            $icon_color,
+            $icon_custom_emoji_id,
+            $is_closed,
+            $is_hidden
+        ]);
+    } catch (Exception $e) {
+        error_log("syncGroupTopicFromMessage error: " . $e->getMessage());
     }
 }
 

@@ -14,14 +14,14 @@ define('DB_PASS', 'jiqiren');
 define('DB_CHARSET', 'utf8mb4');
 
 // 默认配置（如果数据库中没有设置则使用这些值）
-define('DEFAULT_BOT_TOKEN', '8691081603:AAFkxfux7t_vNk49y_hQw63ZJZbbd2wrVno');
-define('DEFAULT_BOT_USERNAME', 'mili9813_bot');
-define('DEFAULT_SITE_URL', 'https://jiqiren2.cryptoxthefuture.cc');
+define('DEFAULT_BOT_TOKEN', '8635685098:AAHpAx-V5aSHqFuVrgaVSRWBsMqfuDac7r4');
+define('DEFAULT_BOT_USERNAME', 'ash');
+define('DEFAULT_SITE_URL', 'https://jiqiren3.cryptoxthefuture.cc');
 
 // Telegram User API 配置（用于真人账号登录）
 // 已配置您的 API 凭证
-define('TELEGRAM_API_ID', 38356810);
-define('TELEGRAM_API_HASH', 'd9d6bd0d866623c86d0994cafef50147');
+define('TELEGRAM_API_ID', 37248033);
+define('TELEGRAM_API_HASH', '4001bafe4305c92c32159ea2bf3cbe1');
 
 // Session 配置
 define('SESSION_LIFETIME', 86400); // 24小时

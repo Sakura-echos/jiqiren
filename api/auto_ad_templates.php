@@ -8,6 +8,40 @@ checkLogin();
 
 $db = getDB();
 
+// 确保模板话题字段存在
+try {
+    $db->exec("
+        CREATE TABLE IF NOT EXISTS group_topics (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            group_id INT NOT NULL,
+            topic_id BIGINT NOT NULL,
+            topic_name VARCHAR(255) DEFAULT NULL,
+            icon_color VARCHAR(20) DEFAULT NULL,
+            icon_custom_emoji_id VARCHAR(64) DEFAULT NULL,
+            is_closed TINYINT(1) DEFAULT 0,
+            is_hidden TINYINT(1) DEFAULT 0,
+            last_seen_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+            UNIQUE KEY uniq_group_topic (group_id, topic_id),
+            KEY idx_group_topics_group (group_id)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+    ");
+
+    $stmt = $db->query("SHOW COLUMNS FROM auto_ad_templates LIKE 'topic_id'");
+    if ($stmt->rowCount() == 0) {
+        $db->exec("ALTER TABLE auto_ad_templates ADD COLUMN topic_id BIGINT DEFAULT NULL AFTER group_id");
+        $db->exec("ALTER TABLE auto_ad_templates ADD INDEX idx_auto_ad_templates_topic_id (topic_id)");
+    }
+    $stmt = $db->query("SHOW COLUMNS FROM auto_ads LIKE 'topic_id'");
+    if ($stmt->rowCount() == 0) {
+        $db->exec("ALTER TABLE auto_ads ADD COLUMN topic_id BIGINT DEFAULT NULL AFTER group_id");
+        $db->exec("ALTER TABLE auto_ads ADD INDEX idx_auto_ads_topic_id (topic_id)");
+    }
+} catch (Exception $e) {
+    error_log("Init template topic schema error: " . $e->getMessage());
+}
+
 // GET 请求 - 列表或获取单个
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $action = $_GET['action'] ?? 'list';
@@ -18,9 +52,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                 SELECT 
                     t.*, 
                     COALESCE(g.title, '所有群组') as group_title,
+                    CASE
+                        WHEN t.topic_id IS NULL THEN '#General'
+                        ELSE COALESCE(gt.topic_name, CONCAT('Topic #', t.topic_id))
+                    END as topic_title,
                     COUNT(a.id) as ad_count
                 FROM auto_ad_templates t
                 LEFT JOIN groups g ON t.group_id = g.id 
+                LEFT JOIN group_topics gt ON t.group_id = gt.group_id AND t.topic_id = gt.topic_id
                 LEFT JOIN auto_ads a ON t.id = a.template_id
                 GROUP BY t.id
                 ORDER BY t.id DESC
@@ -80,9 +119,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         case 'add':
             $template_name = $data['template_name'] ?? '';
             $group_id = $data['group_id'] ?? 0;
+            $topic_id_raw = $data['topic_id'] ?? null;
             $interval_minutes = $data['interval_minutes'] ?? 60;
             $cycle_interval_minutes = $data['cycle_interval_minutes'] ?? 0;
-            $use_user_account = $data['use_user_account'] ?? 0;
+            $use_user_account = 0;
             $ads = $data['ads'] ?? [];
             
             if (empty($template_name) || empty($ads)) {
@@ -91,25 +131,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             
             // Convert 0 to NULL for "all groups"
             $final_group_id = ($group_id == 0) ? null : $group_id;
+            $topic_id = (is_numeric($topic_id_raw) && intval($topic_id_raw) > 0) ? intval($topic_id_raw) : null;
+            if ($final_group_id === null) {
+                $topic_id = null;
+            }
             
             try {
                 $db->beginTransaction();
                 
                 // 创建模板
-                $stmt = $db->prepare("INSERT INTO auto_ad_templates (template_name, group_id, interval_minutes, cycle_interval_minutes, use_user_account) VALUES (?, ?, ?, ?, ?)");
-                $stmt->execute([$template_name, $final_group_id, $interval_minutes, $cycle_interval_minutes, $use_user_account]);
+                $stmt = $db->prepare("INSERT INTO auto_ad_templates (template_name, group_id, topic_id, interval_minutes, cycle_interval_minutes, use_user_account) VALUES (?, ?, ?, ?, ?, ?)");
+                $stmt->execute([$template_name, $final_group_id, $topic_id, $interval_minutes, $cycle_interval_minutes, $use_user_account]);
                 $template_id = $db->lastInsertId();
                 
                 // 添加广告
                 $order = 1;
                 foreach ($ads as $ad) {
                     $stmt = $db->prepare("
-                        INSERT INTO auto_ads (template_id, group_id, sequence_order, message, image_url, buttons, interval_minutes, delete_after_seconds) 
-                        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                        INSERT INTO auto_ads (template_id, group_id, topic_id, sequence_order, message, image_url, buttons, interval_minutes, delete_after_seconds) 
+                        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
                     ");
                     $stmt->execute([
                         $template_id,
                         $final_group_id,
+                        $topic_id,
                         $order,
                         $ad['message'] ?? '',
                         $ad['image_url'] ?? null,
@@ -135,9 +180,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $id = $data['id'] ?? 0;
             $template_name = $data['template_name'] ?? '';
             $group_id = $data['group_id'] ?? 0;
+            $topic_id_raw = $data['topic_id'] ?? null;
             $interval_minutes = $data['interval_minutes'] ?? 60;
             $cycle_interval_minutes = $data['cycle_interval_minutes'] ?? 0;
-            $use_user_account = $data['use_user_account'] ?? 0;
+            $use_user_account = 0;
             $ads = $data['ads'] ?? [];
             
             if (!$id || empty($template_name) || empty($ads)) {
@@ -145,13 +191,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
             
             $final_group_id = ($group_id == 0) ? null : $group_id;
+            $topic_id = (is_numeric($topic_id_raw) && intval($topic_id_raw) > 0) ? intval($topic_id_raw) : null;
+            if ($final_group_id === null) {
+                $topic_id = null;
+            }
             
             try {
                 $db->beginTransaction();
                 
                 // 更新模板
-                $stmt = $db->prepare("UPDATE auto_ad_templates SET template_name = ?, group_id = ?, interval_minutes = ?, cycle_interval_minutes = ?, use_user_account = ? WHERE id = ?");
-                $stmt->execute([$template_name, $final_group_id, $interval_minutes, $cycle_interval_minutes, $use_user_account, $id]);
+                $stmt = $db->prepare("UPDATE auto_ad_templates SET template_name = ?, group_id = ?, topic_id = ?, interval_minutes = ?, cycle_interval_minutes = ?, use_user_account = ? WHERE id = ?");
+                $stmt->execute([$template_name, $final_group_id, $topic_id, $interval_minutes, $cycle_interval_minutes, $use_user_account, $id]);
                 
                 // 删除旧的广告
                 $stmt = $db->prepare("DELETE FROM auto_ads WHERE template_id = ?");
@@ -161,12 +211,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $order = 1;
                 foreach ($ads as $ad) {
                     $stmt = $db->prepare("
-                        INSERT INTO auto_ads (template_id, group_id, sequence_order, message, image_url, buttons, interval_minutes, delete_after_seconds) 
-                        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                        INSERT INTO auto_ads (template_id, group_id, topic_id, sequence_order, message, image_url, buttons, interval_minutes, delete_after_seconds) 
+                        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
                     ");
                     $stmt->execute([
                         $id,
                         $final_group_id,
+                        $topic_id,
                         $order,
                         $ad['message'] ?? '',
                         $ad['image_url'] ?? null,

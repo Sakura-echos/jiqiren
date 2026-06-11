@@ -287,8 +287,15 @@ function processAutoAdTemplates($bot, $db) {
                 error_log("Sending template ad to chat " . $group['chat_id'] . " (" . $group['title'] . ")");
                 
                 try {
-                    // 检查是否使用真人账号发送
-                    $useUserAccount = isset($template['use_user_account']) && $template['use_user_account'] == 1;
+                    $targetTopicId = null;
+                    if (!empty($ad['topic_id']) && $template['group_id'] !== null) {
+                        $targetTopicId = intval($ad['topic_id']);
+                    } elseif (!empty($template['topic_id']) && $template['group_id'] !== null) {
+                        $targetTopicId = intval($template['topic_id']);
+                    }
+
+                    // 自动广告只允许机器人发送，不使用真人账号
+                    $useUserAccount = false;
                     
                     if ($useUserAccount) {
                         // 使用真人账号发送
@@ -315,9 +322,9 @@ function processAutoAdTemplates($bot, $db) {
                                 $imageUrl = SITE_URL . '/' . ltrim($imageUrl, '/');
                             }
                             
-                            $result = $bot->sendPhoto($group['chat_id'], $imageUrl, $ad['message'], $replyMarkup, 'HTML');
+                            $result = $bot->sendPhoto($group['chat_id'], $imageUrl, $ad['message'], $replyMarkup, 'HTML', null, $targetTopicId);
                         } else {
-                            $result = $bot->sendMessage($group['chat_id'], $ad['message'], 'HTML', $replyMarkup);
+                            $result = $bot->sendMessage($group['chat_id'], $ad['message'], 'HTML', $replyMarkup, null, null, $targetTopicId);
                         }
                     }
                     
@@ -329,6 +336,7 @@ function processAutoAdTemplates($bot, $db) {
                             'ad_id' => $ad['id'],
                             'index' => $currentIndex,
                             'chat_id' => $group['chat_id'],
+                            'topic_id' => $targetTopicId,
                             'group_title' => $group['title'],
                             'send_method' => $useUserAccount ? 'user_account' : 'bot'
                         ]);
@@ -567,6 +575,11 @@ function processAutoAds($bot, $db) {
                 error_log("Sending ad ID " . $ad['id'] . " to chat " . $group['chat_id'] . " (" . $group['title'] . ")");
                 
                 try {
+                    $targetTopicId = null;
+                    if (!empty($ad['topic_id']) && $ad['group_id'] !== null) {
+                        $targetTopicId = intval($ad['topic_id']);
+                    }
+
                     // 只使用机器人发送（已禁用真人发送）
                     error_log("[Auto Ad] Sending ad ID " . $ad['id'] . " via bot");
                     
@@ -577,9 +590,9 @@ function processAutoAds($bot, $db) {
                             $imageUrl = SITE_URL . '/' . ltrim($imageUrl, '/');
                         }
                         
-                        $result = $bot->sendPhoto($group['chat_id'], $imageUrl, $messageContent, $replyMarkup, 'HTML');
+                        $result = $bot->sendPhoto($group['chat_id'], $imageUrl, $messageContent, $replyMarkup, 'HTML', null, $targetTopicId);
                     } else {
-                        $result = $bot->sendMessage($group['chat_id'], $messageContent, 'HTML', $replyMarkup);
+                        $result = $bot->sendMessage($group['chat_id'], $messageContent, 'HTML', $replyMarkup, null, null, $targetTopicId);
                     }
                     
                     if ($result) {
@@ -588,6 +601,7 @@ function processAutoAds($bot, $db) {
                         logSystem('info', 'Auto ad sent successfully', [
                             'ad_id' => $ad['id'], 
                             'chat_id' => $group['chat_id'],
+                            'topic_id' => $targetTopicId,
                             'group_title' => $group['title']
                         ]);
                         

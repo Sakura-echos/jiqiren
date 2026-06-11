@@ -104,6 +104,7 @@ $admin_username = $_SESSION['admin_username'] ?? 'Admin';
                                 <tr>
                                     <th>ID</th>
                                     <th>群组</th>
+                                    <th>话题</th>
                                     <th>广告内容</th>
                                     <th>图片</th>
                                     <th>按钮</th>
@@ -114,7 +115,7 @@ $admin_username = $_SESSION['admin_username'] ?? 'Admin';
                             </thead>
                             <tbody id="autoAdsTable">
                                 <tr>
-                                    <td colspan="6" class="loading">加载中...</td>
+                                    <td colspan="9" class="loading">加载中...</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -136,6 +137,7 @@ $admin_username = $_SESSION['admin_username'] ?? 'Admin';
                                     <th>ID</th>
                                     <th>模板名称</th>
                                     <th>群组</th>
+                                    <th>话题</th>
                                     <th>广告数量</th>
                                     <th>当前索引</th>
                                     <th>间隔时间</th>
@@ -145,7 +147,7 @@ $admin_username = $_SESSION['admin_username'] ?? 'Admin';
                             </thead>
                             <tbody id="templatesTable">
                                 <tr>
-                                    <td colspan="8" class="loading">加载中...</td>
+                                    <td colspan="9" class="loading">加载中...</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -199,6 +201,13 @@ $admin_username = $_SESSION['admin_username'] ?? 'Admin';
                         <?php endforeach; ?>
                     </div>
                     <small class="form-text">选择"所有群组"将自动取消其他选择；也可以按分类快速选择</small>
+                </div>
+                
+                <div class="form-group">
+                    <label>选择话题（可选）</label>
+                    <div id="adTopicsContainer" style="border: 1px solid #ddd; border-radius: 4px; padding: 10px; background: #fff;">
+                        <small style="color: #666;">请先选择群组后，再为每个群组选择发送话题（默认 #General）</small>
+                    </div>
                 </div>
                 
                 <div class="form-group">
@@ -276,6 +285,14 @@ $admin_username = $_SESSION['admin_username'] ?? 'Admin';
                             <option value="<?php echo $group['id']; ?>"><?php echo escape($group['title']); ?></option>
                         <?php endforeach; ?>
                     </select>
+                </div>
+
+                <div class="form-group">
+                    <label>选择话题（可选）</label>
+                    <select id="editAdTopicId" class="form-control">
+                        <option value="">#General（默认）</option>
+                    </select>
+                    <small class="form-text">仅超级群论坛可选；留空表示发送到默认话题</small>
                 </div>
                 
                 <div class="form-group">
@@ -393,6 +410,13 @@ $admin_username = $_SESSION['admin_username'] ?? 'Admin';
                 </div>
                 
                 <div class="form-group">
+                    <label>选择话题（可选）</label>
+                    <div id="templateTopicsContainer" style="border: 1px solid #ddd; border-radius: 4px; padding: 10px; background: #fff;">
+                        <small style="color: #666;">请先选择群组后，再为每个群组选择发送话题（默认 #General）</small>
+                    </div>
+                </div>
+                
+                <div class="form-group">
                     <label>发送间隔（分钟）*</label>
                     <input type="number" id="templateInterval" class="form-control" value="60" min="1" required>
                     <small style="color: #777;">每条广告之间的发送间隔时间</small>
@@ -462,6 +486,14 @@ $admin_username = $_SESSION['admin_username'] ?? 'Admin';
                             <option value="<?php echo $group['id']; ?>"><?php echo escape($group['title']); ?></option>
                         <?php endforeach; ?>
                     </select>
+                </div>
+
+                <div class="form-group">
+                    <label>选择话题（可选）</label>
+                    <select id="editTemplateTopicId" class="form-control">
+                        <option value="">#General（默认）</option>
+                    </select>
+                    <small class="form-text">留空表示发送到默认话题</small>
                 </div>
                 
                 <div class="form-group">
@@ -572,6 +604,110 @@ $admin_username = $_SESSION['admin_username'] ?? 'Admin';
         });
         
         // ========== 群组选择处理 ==========
+        const groupTopicCache = {};
+        const selectedTopicByGroup = { ad: {}, template: {} };
+
+        async function fetchGroupTopics(groupId) {
+            const gid = String(groupId || '');
+            if (!gid || gid === '0') return [];
+            if (groupTopicCache[gid]) return groupTopicCache[gid];
+
+            try {
+                const response = await fetch(`api/auto_ads.php?action=group_topics&group_id=${encodeURIComponent(gid)}`);
+                const result = await response.json();
+                const topics = result && result.success ? (result.data || []) : [];
+                groupTopicCache[gid] = topics;
+                return topics;
+            } catch (error) {
+                console.error('Load topics failed:', error);
+                return [];
+            }
+        }
+
+        function getCheckboxGroupLabel(prefix, groupId) {
+            const input = document.querySelector(`.${prefix}-group-checkbox[value="${groupId}"]`);
+            if (!input) return `群组 ${groupId}`;
+            return (input.parentElement?.textContent || `群组 ${groupId}`).trim();
+        }
+
+        async function renderGroupTopicSelectors(prefix, containerId) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+
+            const existingSelects = container.querySelectorAll(`.${prefix}-topic-select`);
+            existingSelects.forEach(select => {
+                const gid = select.dataset.groupId;
+                if (gid) {
+                    selectedTopicByGroup[prefix][gid] = select.value || '';
+                }
+            });
+
+            const allCheckbox = document.getElementById(`${prefix}GroupAll`);
+            if (allCheckbox && allCheckbox.checked) {
+                container.innerHTML = '<small style="color: #666;">已选择“所有群组”，将发送到默认话题 #General</small>';
+                return;
+            }
+
+            const selectedGroupIds = getSelectedGroupIds(prefix).filter(id => id !== '0');
+            if (selectedGroupIds.length === 0) {
+                container.innerHTML = '<small style="color: #666;">请先选择群组后，再为每个群组选择发送话题（默认 #General）</small>';
+                return;
+            }
+
+            const htmlParts = [];
+            for (const groupId of selectedGroupIds) {
+                const topics = await fetchGroupTopics(groupId);
+                const topicOptions = ['<option value="">#General（默认）</option>'].concat(
+                    topics.map(topic => {
+                        const name = topic.topic_name || (`Topic #${topic.topic_id}`);
+                        const closedSuffix = topic.is_closed == 1 ? '（已关闭）' : '';
+                        return `<option value="${topic.topic_id}">${name}${closedSuffix}</option>`;
+                    })
+                );
+                htmlParts.push(`
+                    <div style="display:flex; gap: 10px; align-items: center; margin-bottom: 8px;">
+                        <span style="min-width: 220px; color:#333;">${escapeHtml(getCheckboxGroupLabel(prefix, groupId))}</span>
+                        <select class="form-control ${prefix}-topic-select" data-group-id="${groupId}" style="max-width: 320px;">
+                            ${topicOptions.join('')}
+                        </select>
+                    </div>
+                `);
+            }
+
+            container.innerHTML = htmlParts.join('');
+            const newSelects = container.querySelectorAll(`.${prefix}-topic-select`);
+            newSelects.forEach(select => {
+                const gid = select.dataset.groupId;
+                if (gid && selectedTopicByGroup[prefix][gid] !== undefined) {
+                    select.value = selectedTopicByGroup[prefix][gid];
+                }
+                select.addEventListener('change', () => {
+                    selectedTopicByGroup[prefix][gid] = select.value || '';
+                });
+            });
+        }
+
+        function getSelectedGroupTargets(prefix, containerId) {
+            const allCheckbox = document.getElementById(`${prefix}GroupAll`);
+            if (allCheckbox && allCheckbox.checked) {
+                return [{ group_id: '0', topic_id: null }];
+            }
+
+            const selectedGroupIds = getSelectedGroupIds(prefix).filter(id => id !== '0');
+            const container = document.getElementById(containerId);
+            const targets = [];
+
+            selectedGroupIds.forEach(groupId => {
+                const topicSelect = container?.querySelector(`.${prefix}-topic-select[data-group-id="${groupId}"]`);
+                const topicId = topicSelect && topicSelect.value ? topicSelect.value : null;
+                targets.push({
+                    group_id: groupId,
+                    topic_id: topicId
+                });
+            });
+
+            return targets;
+        }
         
         // 切换"所有群组"选项
         function toggleAllGroups(checkbox, prefix) {
@@ -581,6 +717,10 @@ $admin_username = $_SESSION['admin_username'] ?? 'Admin';
                 // 如果勾选"所有群组"，取消其他所有选项
                 checkboxes.forEach(cb => cb.checked = false);
                 categoryCheckboxes.forEach(cb => cb.checked = false);
+            }
+            const topicContainerId = prefix === 'ad' ? 'adTopicsContainer' : (prefix === 'template' ? 'templateTopicsContainer' : null);
+            if (topicContainerId) {
+                renderGroupTopicSelectors(prefix, topicContainerId);
             }
         }
         
@@ -597,6 +737,10 @@ $admin_username = $_SESSION['admin_username'] ?? 'Admin';
             // 选中分类复选框
             const categoryCheckbox = document.querySelector(`.${prefix}-category-checkbox[data-category="${categoryId}"]`);
             if (categoryCheckbox) categoryCheckbox.checked = true;
+            const topicContainerId = prefix === 'ad' ? 'adTopicsContainer' : (prefix === 'template' ? 'templateTopicsContainer' : null);
+            if (topicContainerId) {
+                renderGroupTopicSelectors(prefix, topicContainerId);
+            }
         }
         
         // 切换分类复选框
@@ -609,6 +753,10 @@ $admin_username = $_SESSION['admin_username'] ?? 'Admin';
                 // 取消"所有群组"
                 const allCheckbox = document.getElementById(`${prefix}GroupAll`);
                 if (allCheckbox) allCheckbox.checked = false;
+            }
+            const topicContainerId = prefix === 'ad' ? 'adTopicsContainer' : (prefix === 'template' ? 'templateTopicsContainer' : null);
+            if (topicContainerId) {
+                renderGroupTopicSelectors(prefix, topicContainerId);
             }
         }
         
@@ -629,6 +777,7 @@ $admin_username = $_SESSION['admin_username'] ?? 'Admin';
             document.getElementById('adGroupAll').checked = false;
             document.querySelectorAll('.ad-group-checkbox').forEach(cb => cb.checked = true);
             document.querySelectorAll('.ad-category-checkbox').forEach(cb => cb.checked = true);
+            renderGroupTopicSelectors('ad', 'adTopicsContainer');
         }
         
         // 取消全选广告群组
@@ -636,6 +785,7 @@ $admin_username = $_SESSION['admin_username'] ?? 'Admin';
             document.getElementById('adGroupAll').checked = false;
             document.querySelectorAll('.ad-group-checkbox').forEach(cb => cb.checked = false);
             document.querySelectorAll('.ad-category-checkbox').forEach(cb => cb.checked = false);
+            renderGroupTopicSelectors('ad', 'adTopicsContainer');
         }
         
         // 全选模板群组
@@ -643,6 +793,7 @@ $admin_username = $_SESSION['admin_username'] ?? 'Admin';
             document.getElementById('templateGroupAll').checked = false;
             document.querySelectorAll('.template-group-checkbox').forEach(cb => cb.checked = true);
             document.querySelectorAll('.template-category-checkbox').forEach(cb => cb.checked = true);
+            renderGroupTopicSelectors('template', 'templateTopicsContainer');
         }
         
         // 取消全选模板群组
@@ -650,6 +801,7 @@ $admin_username = $_SESSION['admin_username'] ?? 'Admin';
             document.getElementById('templateGroupAll').checked = false;
             document.querySelectorAll('.template-group-checkbox').forEach(cb => cb.checked = false);
             document.querySelectorAll('.template-category-checkbox').forEach(cb => cb.checked = false);
+            renderGroupTopicSelectors('template', 'templateTopicsContainer');
         }
         
         // 当选择具体群组时，取消"所有群组"，并更新分类复选框状态
@@ -659,6 +811,7 @@ $admin_username = $_SESSION['admin_username'] ?? 'Admin';
                     document.getElementById('adGroupAll').checked = false;
                 }
                 updateCategoryCheckboxState('ad', e.target.dataset.category);
+                renderGroupTopicSelectors('ad', 'adTopicsContainer');
             }
             if (e.target.classList.contains('editAd-group-checkbox')) {
                 if (e.target.checked) {
@@ -670,6 +823,7 @@ $admin_username = $_SESSION['admin_username'] ?? 'Admin';
                     document.getElementById('templateGroupAll').checked = false;
                 }
                 updateCategoryCheckboxState('template', e.target.dataset.category);
+                renderGroupTopicSelectors('template', 'templateTopicsContainer');
             }
             if (e.target.classList.contains('editTemplate-group-checkbox')) {
                 if (e.target.checked) {
@@ -702,6 +856,29 @@ $admin_username = $_SESSION['admin_username'] ?? 'Admin';
             const checkboxes = document.querySelectorAll(`.${prefix}-group-checkbox:checked`);
             checkboxes.forEach(cb => selectedIds.push(cb.value));
             return selectedIds;
+        }
+
+        async function loadTopicsToSelect(groupSelectId, topicSelectId, selectedTopicId = '') {
+            const groupSelect = document.getElementById(groupSelectId);
+            const topicSelect = document.getElementById(topicSelectId);
+            if (!groupSelect || !topicSelect) return;
+
+            const groupId = groupSelect.value;
+            topicSelect.innerHTML = '<option value="">#General（默认）</option>';
+            if (!groupId || groupId === '0') return;
+
+            const topics = await fetchGroupTopics(groupId);
+            topics.forEach(topic => {
+                const option = document.createElement('option');
+                option.value = String(topic.topic_id);
+                const closedSuffix = topic.is_closed == 1 ? '（已关闭）' : '';
+                option.textContent = `${topic.topic_name || ('Topic #' + topic.topic_id)}${closedSuffix}`;
+                topicSelect.appendChild(option);
+            });
+
+            if (selectedTopicId !== null && selectedTopicId !== undefined && selectedTopicId !== '') {
+                topicSelect.value = String(selectedTopicId);
+            }
         }
         
         // 当前标签页
@@ -748,7 +925,7 @@ $admin_username = $_SESSION['admin_username'] ?? 'Admin';
             const tbody = document.getElementById('templatesTable');
             
             if (templates.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="8" class="no-data">暂无数据</td></tr>';
+                tbody.innerHTML = '<tr><td colspan="9" class="no-data">暂无数据</td></tr>';
                 return;
             }
             
@@ -757,6 +934,7 @@ $admin_username = $_SESSION['admin_username'] ?? 'Admin';
                     <td>${template.id}</td>
                     <td><strong>${template.template_name}</strong></td>
                     <td>${template.group_title}</td>
+                    <td>${template.topic_title || '#General'}</td>
                     <td>${template.ad_count} 条</td>
                     <td>第 ${(template.current_index || 0) + 1} 条</td>
                     <td>${template.interval_minutes} 分钟</td>
@@ -1114,13 +1292,13 @@ $admin_username = $_SESSION['admin_username'] ?? 'Admin';
         // 保存模板
         async function saveTemplate() {
             const templateName = document.getElementById('templateName').value;
-            const selectedGroupIds = getSelectedGroupIds('template');
+            const selectedGroupTargets = getSelectedGroupTargets('template', 'templateTopicsContainer');
             const interval = document.getElementById('templateInterval').value;
             const cycleInterval = document.getElementById('templateCycleInterval').value || 0;
             const deleteAfter = document.getElementById('templateDeleteAfter').value || 0;
             const ads = getTemplateAds('templateAdsContainer');
             
-            if (!templateName || selectedGroupIds.length === 0) {
+            if (!templateName || selectedGroupTargets.length === 0) {
                 App.showAlert('请填写所有必填字段', 'error');
                 return;
             }
@@ -1166,14 +1344,15 @@ $admin_username = $_SESSION['admin_username'] ?? 'Admin';
                 }
                 
                 // 为每个群组保存模板
-                for (const groupId of selectedGroupIds) {
+                for (const target of selectedGroupTargets) {
                     const response = await fetch('api/auto_ad_templates.php', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
                             action: 'add',
                             template_name: templateName,
-                            group_id: groupId,
+                            group_id: target.group_id,
+                            topic_id: target.topic_id,
                             interval_minutes: interval,
                             cycle_interval_minutes: cycleInterval,
                             delete_after_seconds: deleteAfter,
@@ -1189,7 +1368,7 @@ $admin_username = $_SESSION['admin_username'] ?? 'Admin';
                     }
                 }
                 
-                App.showAlert(`创建成功，共创建 ${selectedGroupIds.length} 个模板`);
+                App.showAlert(`创建成功，共创建 ${selectedGroupTargets.length} 个模板`);
                 App.hideModal('addTemplateModal');
                 // 清空表单
                 document.getElementById('templateName').value = '';
@@ -1197,6 +1376,7 @@ $admin_username = $_SESSION['admin_username'] ?? 'Admin';
                 document.getElementById('templateCycleInterval').value = '0';
                 document.getElementById('templateDeleteAfter').value = '0';
                 document.getElementById('templateAdsContainer').innerHTML = '';
+                document.getElementById('templateTopicsContainer').innerHTML = '<small style="color: #666;">请先选择群组后，再为每个群组选择发送话题（默认 #General）</small>';
                 templateAdCounter = 0;
                 // 清空复选框
                 document.querySelectorAll('.template-group-checkbox').forEach(cb => cb.checked = false);
@@ -1305,6 +1485,7 @@ $admin_username = $_SESSION['admin_username'] ?? 'Admin';
                     document.getElementById('editTemplateId').value = template.id;
                     document.getElementById('editTemplateName').value = template.template_name;
                     document.getElementById('editTemplateGroupId').value = template.group_id || 0;
+                    await loadTopicsToSelect('editTemplateGroupId', 'editTemplateTopicId', template.topic_id || '');
                     document.getElementById('editTemplateInterval').value = template.interval_minutes;
                     document.getElementById('editTemplateCycleInterval').value = template.cycle_interval_minutes || 0;
                     document.getElementById('editTemplateDeleteAfter').value = template.delete_after_seconds || 0;
@@ -1332,6 +1513,7 @@ $admin_username = $_SESSION['admin_username'] ?? 'Admin';
             const id = document.getElementById('editTemplateId').value;
             const templateName = document.getElementById('editTemplateName').value;
             const groupId = document.getElementById('editTemplateGroupId').value;
+            const topicId = document.getElementById('editTemplateTopicId')?.value || '';
             const interval = document.getElementById('editTemplateInterval').value;
             const cycleInterval = document.getElementById('editTemplateCycleInterval').value || 0;
             const deleteAfter = document.getElementById('editTemplateDeleteAfter').value || 0;
@@ -1391,6 +1573,7 @@ $admin_username = $_SESSION['admin_username'] ?? 'Admin';
                         id: id,
                         template_name: templateName,
                         group_id: groupId,
+                        topic_id: topicId || null,
                         interval_minutes: interval,
                         cycle_interval_minutes: cycleInterval,
                         delete_after_seconds: deleteAfter,
@@ -1531,6 +1714,19 @@ $admin_username = $_SESSION['admin_username'] ?? 'Admin';
                     }
                 });
             }
+
+            const editAdGroupSelect = document.getElementById('editAdGroupId');
+            if (editAdGroupSelect) {
+                editAdGroupSelect.addEventListener('change', () => loadTopicsToSelect('editAdGroupId', 'editAdTopicId', ''));
+            }
+
+            const editTemplateGroupSelect = document.getElementById('editTemplateGroupId');
+            if (editTemplateGroupSelect) {
+                editTemplateGroupSelect.addEventListener('change', () => loadTopicsToSelect('editTemplateGroupId', 'editTemplateTopicId', ''));
+            }
+
+            renderGroupTopicSelectors('ad', 'adTopicsContainer');
+            renderGroupTopicSelectors('template', 'templateTopicsContainer');
         });
         
         // ========== 新版按钮配置（支持每行多按钮和二级菜单）==========
@@ -1761,7 +1957,8 @@ $admin_username = $_SESSION['admin_username'] ?? 'Admin';
                     
                     // Fill form
                     document.getElementById('editAdId').value = ad.id;
-                    document.getElementById('editAdGroupId').value = ad.group_id;
+                    document.getElementById('editAdGroupId').value = ad.group_id || 0;
+                    await loadTopicsToSelect('editAdGroupId', 'editAdTopicId', ad.topic_id || '');
                     document.getElementById('editAdMessage').value = ad.message;
                     
                     // 处理关键词 - 从JSON数组转回文本格式
@@ -1834,6 +2031,7 @@ $admin_username = $_SESSION['admin_username'] ?? 'Admin';
         async function updateAd() {
             const id = document.getElementById('editAdId').value;
             const groupId = document.getElementById('editAdGroupId').value;
+            const topicId = document.getElementById('editAdTopicId')?.value || '';
             const message = document.getElementById('editAdMessage').value;
             const keywords = document.getElementById('editAdKeywords')?.value || '';
             const keywordsPerSend = document.getElementById('editAdKeywordsPerSend')?.value || 3;
@@ -1847,6 +2045,7 @@ $admin_username = $_SESSION['admin_username'] ?? 'Admin';
             formData.append('action', 'update');
             formData.append('id', id);
             formData.append('group_id', groupId);
+            formData.append('topic_id', topicId);
             formData.append('message', message);
             formData.append('keywords', keywords);
             formData.append('keywords_per_send', keywordsPerSend);

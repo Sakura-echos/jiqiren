@@ -285,7 +285,7 @@ const AutoAds = {
         const independentAds = ads.filter(ad => !ad.template_id);
 
         if (independentAds.length === 0) {
-            tbody.innerHTML = '<tr><td colspan="8" class="empty-state">暂无自动广告</td></tr>';
+            tbody.innerHTML = '<tr><td colspan="9" class="empty-state">暂无自动广告</td></tr>';
             return;
         }
 
@@ -300,6 +300,7 @@ const AutoAds = {
             <tr>
                 <td>${ad.id}</td>
                 <td>${ad.group_title}${categoryBadge}</td>
+                <td>${ad.topic_title || '#General'}</td>
                 <td>${ad.message.substring(0, 50)}${ad.message.length > 50 ? '...' : ''}</td>
                 <td>${ad.image_url ? '<span class="badge badge-success">✓</span>' : '-'}</td>
                 <td>${buttonCount > 0 ? '<span class="badge badge-info">' + buttonCount + '</span>' : '-'}</td>
@@ -315,14 +316,20 @@ const AutoAds = {
     },
 
     async add() {
-        // 获取选中的群组ID
-        let selectedGroupIds = [];
-        const allCheckbox = document.getElementById('adGroupAll');
-        if (allCheckbox && allCheckbox.checked) {
-            selectedGroupIds = ['0'];
+        // 获取选中的群组与话题
+        let selectedTargets = [];
+        if (typeof getSelectedGroupTargets === 'function') {
+            selectedTargets = getSelectedGroupTargets('ad', 'adTopicsContainer');
         } else {
-            const checkboxes = document.querySelectorAll('.ad-group-checkbox:checked');
-            checkboxes.forEach(cb => selectedGroupIds.push(cb.value));
+            let selectedGroupIds = [];
+            const allCheckbox = document.getElementById('adGroupAll');
+            if (allCheckbox && allCheckbox.checked) {
+                selectedGroupIds = ['0'];
+            } else {
+                const checkboxes = document.querySelectorAll('.ad-group-checkbox:checked');
+                checkboxes.forEach(cb => selectedGroupIds.push(cb.value));
+            }
+            selectedTargets = selectedGroupIds.map(id => ({ group_id: id, topic_id: null }));
         }
         
         const message = document.getElementById('adMessage').value;
@@ -333,7 +340,7 @@ const AutoAds = {
         const deleteAfter = document.getElementById('adDeleteAfter')?.value || 0;
         const buttons = typeof getAdButtons === 'function' ? getAdButtons() : [];
 
-        if (selectedGroupIds.length === 0 || !message || !interval) {
+        if (selectedTargets.length === 0 || !message || !interval) {
             App.showAlert('请选择群组并填写所有字段', 'error');
             return;
         }
@@ -341,7 +348,7 @@ const AutoAds = {
         // Use FormData for file upload
         const formData = new FormData();
         formData.append('action', 'add');
-        formData.append('group_ids', JSON.stringify(selectedGroupIds)); // 发送多个群组ID
+        formData.append('group_targets', JSON.stringify(selectedTargets));
         formData.append('message', message);
         formData.append('keywords', keywords);
         formData.append('keywords_per_send', keywordsPerSend);
